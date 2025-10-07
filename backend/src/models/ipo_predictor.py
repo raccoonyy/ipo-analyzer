@@ -2,6 +2,7 @@
 IPO Price Prediction Models
 Train and evaluate models to predict IPO day and next day prices
 """
+
 import pandas as pd
 import numpy as np
 from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor
@@ -36,24 +37,23 @@ class IPOPricePredictor:
                 min_samples_split=5,
                 min_samples_leaf=2,
                 random_state=42,
-                n_jobs=-1
+                n_jobs=-1,
             )
         elif model_type == "gradient_boosting":
             base_model = GradientBoostingRegressor(
-                n_estimators=100,
-                learning_rate=0.1,
-                max_depth=5,
-                random_state=42
+                n_estimators=100, learning_rate=0.1, max_depth=5, random_state=42
             )
         else:
             raise ValueError(f"Unknown model type: {model_type}")
 
         # Create separate models for each target
-        self.models['day0_high'] = base_model
-        self.models['day0_close'] = base_model.__class__(**base_model.get_params())
-        self.models['day1_close'] = base_model.__class__(**base_model.get_params())
+        self.models["day0_high"] = base_model
+        self.models["day0_close"] = base_model.__class__(**base_model.get_params())
+        self.models["day1_close"] = base_model.__class__(**base_model.get_params())
 
-    def train(self, X: np.ndarray, y_dict: Dict[str, np.ndarray], test_size: float = 0.2) -> Dict[str, Any]:
+    def train(
+        self, X: np.ndarray, y_dict: Dict[str, np.ndarray], test_size: float = 0.2
+    ) -> Dict[str, Any]:
         """
         Train models for all target variables
 
@@ -69,7 +69,9 @@ class IPOPricePredictor:
 
         # Split data
         indices = np.arange(len(X))
-        train_idx, test_idx = train_test_split(indices, test_size=test_size, random_state=42)
+        train_idx, test_idx = train_test_split(
+            indices, test_size=test_size, random_state=42
+        )
 
         X_train, X_test = X[train_idx], X[test_idx]
 
@@ -90,17 +92,20 @@ class IPOPricePredictor:
             train_metrics = self._calculate_metrics(y_train, y_pred_train)
             test_metrics = self._calculate_metrics(y_test, y_pred_test)
 
-            results[target_name] = {
-                'train': train_metrics,
-                'test': test_metrics
-            }
+            results[target_name] = {"train": train_metrics, "test": test_metrics}
 
-            print(f"  Train - MAE: {train_metrics['mae']:.2f}, RMSE: {train_metrics['rmse']:.2f}, R²: {train_metrics['r2']:.4f}")
-            print(f"  Test  - MAE: {test_metrics['mae']:.2f}, RMSE: {test_metrics['rmse']:.2f}, R²: {test_metrics['r2']:.4f}")
+            print(
+                f"  Train - MAE: {train_metrics['mae']:.2f}, RMSE: {train_metrics['rmse']:.2f}, R²: {train_metrics['r2']:.4f}"
+            )
+            print(
+                f"  Test  - MAE: {test_metrics['mae']:.2f}, RMSE: {test_metrics['rmse']:.2f}, R²: {test_metrics['r2']:.4f}"
+            )
 
             # Feature importance (if available)
-            if hasattr(self.models[target_name], 'feature_importances_'):
-                results[target_name]['feature_importance'] = self.models[target_name].feature_importances_.tolist()
+            if hasattr(self.models[target_name], "feature_importances_"):
+                results[target_name]["feature_importance"] = self.models[
+                    target_name
+                ].feature_importances_.tolist()
 
         self.metrics = results
         return results
@@ -122,13 +127,16 @@ class IPOPricePredictor:
 
         return predictions
 
-    def _calculate_metrics(self, y_true: np.ndarray, y_pred: np.ndarray) -> Dict[str, float]:
+    def _calculate_metrics(
+        self, y_true: np.ndarray, y_pred: np.ndarray
+    ) -> Dict[str, float]:
         """Calculate regression metrics"""
         return {
-            'mae': mean_absolute_error(y_true, y_pred),
-            'rmse': np.sqrt(mean_squared_error(y_true, y_pred)),
-            'r2': r2_score(y_true, y_pred),
-            'mape': np.mean(np.abs((y_true - y_pred) / y_true)) * 100  # Mean Absolute Percentage Error
+            "mae": mean_absolute_error(y_true, y_pred),
+            "rmse": np.sqrt(mean_squared_error(y_true, y_pred)),
+            "r2": r2_score(y_true, y_pred),
+            "mape": np.mean(np.abs((y_true - y_pred) / y_true))
+            * 100,  # Mean Absolute Percentage Error
         }
 
     def save_models(self, output_dir: str = "models"):
@@ -153,7 +161,7 @@ class IPOPricePredictor:
         """Load trained models"""
         input_path = Path(input_dir)
 
-        for target_name in ['day0_high', 'day0_close', 'day1_close']:
+        for target_name in ["day0_high", "day0_close", "day1_close"]:
             model_file = input_path / f"model_{target_name}.pkl"
             if model_file.exists():
                 with open(model_file, "rb") as f:
@@ -168,7 +176,9 @@ class IPOPricePredictor:
             with open(metrics_file, "r") as f:
                 self.metrics = json.load(f)
 
-    def get_feature_importance(self, feature_names: list, target_name: str = 'day0_high', top_n: int = 10) -> pd.DataFrame:
+    def get_feature_importance(
+        self, feature_names: list, target_name: str = "day0_high", top_n: int = 10
+    ) -> pd.DataFrame:
         """
         Get feature importance for a specific target
 
@@ -185,15 +195,16 @@ class IPOPricePredictor:
 
         model = self.models[target_name]
 
-        if not hasattr(model, 'feature_importances_'):
+        if not hasattr(model, "feature_importances_"):
             return None
 
-        importance_df = pd.DataFrame({
-            'feature': feature_names,
-            'importance': model.feature_importances_
-        })
+        importance_df = pd.DataFrame(
+            {"feature": feature_names, "importance": model.feature_importances_}
+        )
 
-        importance_df = importance_df.sort_values('importance', ascending=False).head(top_n)
+        importance_df = importance_df.sort_values("importance", ascending=False).head(
+            top_n
+        )
 
         return importance_df
 
@@ -220,7 +231,7 @@ if __name__ == "__main__":
     engineer.save_transformers()
 
     # Show feature importance
-    for target in ['day0_high', 'day0_close', 'day1_close']:
+    for target in ["day0_high", "day0_close", "day1_close"]:
         print(f"\nTop features for {target}:")
         importance = predictor.get_feature_importance(engineer.feature_names, target)
         print(importance)

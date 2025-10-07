@@ -2,6 +2,7 @@
 Generate Static Predictions for Frontend
 Precompute predictions for all IPOs and save to JSON file
 """
+
 import pandas as pd
 import numpy as np
 import json
@@ -21,7 +22,9 @@ from src.models.ipo_predictor import IPOPricePredictor
 class PredictionGenerator:
     """Generate and save precomputed predictions for frontend consumption"""
 
-    def __init__(self, models_dir: str = "models", transformers_dir: str = "data/processed"):
+    def __init__(
+        self, models_dir: str = "models", transformers_dir: str = "data/processed"
+    ):
         self.models_dir = Path(models_dir)
         self.transformers_dir = Path(transformers_dir)
 
@@ -53,38 +56,50 @@ class PredictionGenerator:
         results = []
         for idx, row in df.iterrows():
             prediction_dict = {
-                "company_name": row['company_name'],
-                "code": row['code'],
-                "listing_date": row['listing_date'].strftime('%Y-%m-%d') if isinstance(row['listing_date'], pd.Timestamp) else row['listing_date'],
-                "ipo_price": int(row['ipo_price_confirmed']),
+                "company_name": row["company_name"],
+                "code": row["code"],
+                "listing_date": (
+                    row["listing_date"].strftime("%Y-%m-%d")
+                    if isinstance(row["listing_date"], pd.Timestamp)
+                    else row["listing_date"]
+                ),
+                "ipo_price": int(row["ipo_price_confirmed"]),
                 "predicted": {
-                    "day0_high": int(round(predictions['day0_high'][idx])),
-                    "day0_close": int(round(predictions['day0_close'][idx])),
-                    "day1_close": int(round(predictions['day1_close'][idx]))
+                    "day0_high": int(round(predictions["day0_high"][idx])),
+                    "day0_close": int(round(predictions["day0_close"][idx])),
+                    "day1_close": int(round(predictions["day1_close"][idx])),
                 },
                 "metadata": {
-                    "shares_offered": int(row['shares_offered']),
-                    "institutional_demand_rate": float(row['institutional_demand_rate']),
-                    "subscription_competition_rate": float(row['subscription_competition_rate']),
-                    "industry": row['industry'],
-                    "theme": row['theme']
-                }
+                    "shares_offered": int(row["shares_offered"]),
+                    "institutional_demand_rate": float(
+                        row["institutional_demand_rate"]
+                    ),
+                    "subscription_competition_rate": float(
+                        row["subscription_competition_rate"]
+                    ),
+                    "industry": row["industry"],
+                    "theme": row["theme"],
+                },
             }
 
             # Add actual values if available (for model validation)
-            if 'day0_high' in df.columns and pd.notna(row.get('day0_high')):
-                prediction_dict['actual'] = {
-                    "day0_high": int(row['day0_high']),
-                    "day0_close": int(row['day0_close']),
-                    "day1_close": int(row['day1_close'])
+            if "day0_high" in df.columns and pd.notna(row.get("day0_high")):
+                prediction_dict["actual"] = {
+                    "day0_high": int(row["day0_high"]),
+                    "day0_close": int(row["day0_close"]),
+                    "day1_close": int(row["day1_close"]),
                 }
 
             results.append(prediction_dict)
 
         return results
 
-    def generate_and_save(self, start_year: int = 2022, end_year: int = 2025,
-                         output_file: str = "output/ipo_precomputed.json"):
+    def generate_and_save(
+        self,
+        start_year: int = 2022,
+        end_year: int = 2025,
+        output_file: str = "output/ipo_precomputed.json",
+    ):
         """
         Generate predictions and save to JSON file
 
@@ -106,7 +121,7 @@ class PredictionGenerator:
         output_path = Path(output_file)
         output_path.parent.mkdir(parents=True, exist_ok=True)
 
-        with open(output_path, 'w', encoding='utf-8') as f:
+        with open(output_path, "w", encoding="utf-8") as f:
             json.dump(predictions, f, indent=2, ensure_ascii=False)
 
         print(f"✓ Saved {len(predictions)} predictions to {output_path}")
@@ -118,17 +133,17 @@ class PredictionGenerator:
 
     def _print_summary(self, predictions: List[Dict]):
         """Print summary statistics of predictions"""
-        print("\n" + "="*60)
+        print("\n" + "=" * 60)
         print("PREDICTION SUMMARY")
-        print("="*60)
+        print("=" * 60)
 
         total_ipos = len(predictions)
         print(f"Total IPOs: {total_ipos}")
 
         # Calculate statistics
-        day0_highs = [p['predicted']['day0_high'] for p in predictions]
-        day0_closes = [p['predicted']['day0_close'] for p in predictions]
-        day1_closes = [p['predicted']['day1_close'] for p in predictions]
+        day0_highs = [p["predicted"]["day0_high"] for p in predictions]
+        day0_closes = [p["predicted"]["day0_close"] for p in predictions]
+        day1_closes = [p["predicted"]["day1_close"] for p in predictions]
 
         print(f"\nDay 0 High Price:")
         print(f"  Mean: ₩{np.mean(day0_highs):,.0f}")
@@ -146,22 +161,29 @@ class PredictionGenerator:
         print(f"  Range: ₩{np.min(day1_closes):,.0f} - ₩{np.max(day1_closes):,.0f}")
 
         # If actual values exist, calculate accuracy
-        if 'actual' in predictions[0]:
+        if "actual" in predictions[0]:
             self._calculate_accuracy(predictions)
 
-        print("="*60)
+        print("=" * 60)
 
     def _calculate_accuracy(self, predictions: List[Dict]):
         """Calculate prediction accuracy if actual values are available"""
         print("\nMODEL ACCURACY:")
 
-        for target in ['day0_high', 'day0_close', 'day1_close']:
-            actual = [p['actual'][target] for p in predictions if 'actual' in p]
-            predicted = [p['predicted'][target] for p in predictions if 'actual' in p]
+        for target in ["day0_high", "day0_close", "day1_close"]:
+            actual = [p["actual"][target] for p in predictions if "actual" in p]
+            predicted = [p["predicted"][target] for p in predictions if "actual" in p]
 
             if len(actual) > 0:
                 mae = np.mean(np.abs(np.array(actual) - np.array(predicted)))
-                mape = np.mean(np.abs((np.array(actual) - np.array(predicted)) / np.array(actual))) * 100
+                mape = (
+                    np.mean(
+                        np.abs(
+                            (np.array(actual) - np.array(predicted)) / np.array(actual)
+                        )
+                    )
+                    * 100
+                )
 
                 print(f"  {target}:")
                 print(f"    MAE: ₩{mae:,.0f}")
@@ -170,9 +192,9 @@ class PredictionGenerator:
 
 def main():
     """Main execution function"""
-    print("="*60)
+    print("=" * 60)
     print("IPO PREDICTION GENERATOR")
-    print("="*60)
+    print("=" * 60)
 
     # Check if models exist
     models_path = Path("models")
@@ -202,9 +224,7 @@ def main():
     # Generate predictions
     generator = PredictionGenerator()
     predictions = generator.generate_and_save(
-        start_year=2022,
-        end_year=2025,
-        output_file="output/ipo_precomputed.json"
+        start_year=2022, end_year=2025, output_file="output/ipo_precomputed.json"
     )
 
     print("\n✓ Prediction generation complete!")

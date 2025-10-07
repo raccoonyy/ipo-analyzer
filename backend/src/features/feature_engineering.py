@@ -2,6 +2,7 @@
 Feature Engineering Pipeline
 Transform raw IPO metadata into ML-ready features
 """
+
 import pandas as pd
 import numpy as np
 from sklearn.preprocessing import StandardScaler, LabelEncoder
@@ -31,69 +32,79 @@ class IPOFeatureEngineer:
         df = df.copy()
 
         # Convert date to datetime
-        df['listing_date'] = pd.to_datetime(df['listing_date'])
+        df["listing_date"] = pd.to_datetime(df["listing_date"])
 
         # Create temporal features
-        df['listing_month'] = df['listing_date'].dt.month
-        df['listing_quarter'] = df['listing_date'].dt.quarter
-        df['listing_day_of_week'] = df['listing_date'].dt.dayofweek
+        df["listing_month"] = df["listing_date"].dt.month
+        df["listing_quarter"] = df["listing_date"].dt.quarter
+        df["listing_day_of_week"] = df["listing_date"].dt.dayofweek
 
         # Price-related features
-        df['ipo_price_range'] = df['ipo_price_upper'] - df['ipo_price_lower']
-        df['ipo_price_range_pct'] = (df['ipo_price_range'] / df['ipo_price_lower']) * 100
-        df['price_positioning'] = (df['ipo_price_confirmed'] - df['ipo_price_lower']) / df['ipo_price_range']
+        df["ipo_price_range"] = df["ipo_price_upper"] - df["ipo_price_lower"]
+        df["ipo_price_range_pct"] = (
+            df["ipo_price_range"] / df["ipo_price_lower"]
+        ) * 100
+        df["price_positioning"] = (
+            df["ipo_price_confirmed"] - df["ipo_price_lower"]
+        ) / df["ipo_price_range"]
 
         # Market cap features
-        df['market_cap_ratio'] = df['estimated_market_cap'] / df['paid_in_capital']
-        df['total_offering_value'] = df['shares_offered'] * df['ipo_price_confirmed']
+        df["market_cap_ratio"] = df["estimated_market_cap"] / df["paid_in_capital"]
+        df["total_offering_value"] = df["shares_offered"] * df["ipo_price_confirmed"]
 
         # Demand indicators
-        df['demand_to_lockup_ratio'] = df['institutional_demand_rate'] / (df['lockup_ratio'] + 1)
-        df['high_competition'] = (df['subscription_competition_rate'] > 1000).astype(int)
-        df['high_demand'] = (df['institutional_demand_rate'] > 500).astype(int)
+        df["demand_to_lockup_ratio"] = df["institutional_demand_rate"] / (
+            df["lockup_ratio"] + 1
+        )
+        df["high_competition"] = (df["subscription_competition_rate"] > 1000).astype(
+            int
+        )
+        df["high_demand"] = (df["institutional_demand_rate"] > 500).astype(int)
 
         # Allocation features
-        df['allocation_balance'] = abs(df['allocation_ratio_equal'] - df['allocation_ratio_proportional'])
+        df["allocation_balance"] = abs(
+            df["allocation_ratio_equal"] - df["allocation_ratio_proportional"]
+        )
 
         # Categorical encoding
-        categorical_cols = ['listing_method', 'industry', 'theme']
+        categorical_cols = ["listing_method", "industry", "theme"]
 
         for col in categorical_cols:
             if fit:
                 le = LabelEncoder()
-                df[f'{col}_encoded'] = le.fit_transform(df[col])
+                df[f"{col}_encoded"] = le.fit_transform(df[col])
                 self.label_encoders[col] = le
             else:
                 if col in self.label_encoders:
                     # Handle unseen categories
                     le = self.label_encoders[col]
-                    df[f'{col}_encoded'] = df[col].apply(
+                    df[f"{col}_encoded"] = df[col].apply(
                         lambda x: le.transform([x])[0] if x in le.classes_ else -1
                     )
                 else:
-                    df[f'{col}_encoded'] = -1
+                    df[f"{col}_encoded"] = -1
 
         # Select feature columns for model
         feature_cols = [
-            'ipo_price_confirmed',
-            'shares_offered',
-            'institutional_demand_rate',
-            'lockup_ratio',
-            'subscription_competition_rate',
-            'market_cap_ratio',
-            'total_offering_value',
-            'ipo_price_range_pct',
-            'price_positioning',
-            'demand_to_lockup_ratio',
-            'allocation_balance',
-            'high_competition',
-            'high_demand',
-            'listing_month',
-            'listing_quarter',
-            'listing_day_of_week',
-            'listing_method_encoded',
-            'industry_encoded',
-            'theme_encoded'
+            "ipo_price_confirmed",
+            "shares_offered",
+            "institutional_demand_rate",
+            "lockup_ratio",
+            "subscription_competition_rate",
+            "market_cap_ratio",
+            "total_offering_value",
+            "ipo_price_range_pct",
+            "price_positioning",
+            "demand_to_lockup_ratio",
+            "allocation_balance",
+            "high_competition",
+            "high_demand",
+            "listing_month",
+            "listing_quarter",
+            "listing_day_of_week",
+            "listing_method_encoded",
+            "industry_encoded",
+            "theme_encoded",
         ]
 
         # Store feature names
@@ -113,7 +124,7 @@ class IPOFeatureEngineer:
         X_scaled_df = pd.DataFrame(X_scaled, columns=feature_cols, index=df.index)
 
         # Add metadata columns back
-        metadata_cols = ['company_name', 'code', 'listing_date']
+        metadata_cols = ["company_name", "code", "listing_date"]
         for col in metadata_cols:
             if col in df.columns:
                 X_scaled_df[col] = df[col].values
@@ -137,13 +148,13 @@ class IPOFeatureEngineer:
 
         # Prepare targets
         y_dict = {
-            'day0_high': df['day0_high'].values,
-            'day0_close': df['day0_close'].values,
-            'day1_close': df['day1_close'].values
+            "day0_high": df["day0_high"].values,
+            "day0_close": df["day0_close"].values,
+            "day1_close": df["day1_close"].values,
         }
 
         # Metadata for tracking
-        metadata = df[['company_name', 'code', 'listing_date']].copy()
+        metadata = df[["company_name", "code", "listing_date"]].copy()
 
         return X, y_dict, metadata
 

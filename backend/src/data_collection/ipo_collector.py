@@ -2,6 +2,7 @@
 IPO Data Collection Module
 Collects IPO metadata and execution price data from KRX for 2022-2025
 """
+
 import pandas as pd
 from datetime import datetime, timedelta
 from typing import Dict, List, Optional
@@ -16,7 +17,9 @@ class IPODataCollector:
         self.data_dir = Path(data_dir)
         self.data_dir.mkdir(parents=True, exist_ok=True)
 
-    def collect_ipo_metadata(self, start_year: int = 2022, end_year: int = 2025) -> pd.DataFrame:
+    def collect_ipo_metadata(
+        self, start_year: int = 2022, end_year: int = 2025
+    ) -> pd.DataFrame:
         """
         Collect IPO metadata for companies listed between start_year and end_year
 
@@ -55,7 +58,7 @@ class IPODataCollector:
             "allocation_ratio_equal": 50.0,  # %
             "allocation_ratio_proportional": 50.0,  # %
             "industry": "IT",
-            "theme": "TECH"
+            "theme": "TECH",
         }
 
         metadata.append(sample_data)
@@ -64,7 +67,7 @@ class IPODataCollector:
 
         # Save to CSV
         output_file = self.data_dir / f"ipo_metadata_{start_year}_{end_year}.csv"
-        df.to_csv(output_file, index=False, encoding='utf-8-sig')
+        df.to_csv(output_file, index=False, encoding="utf-8-sig")
         print(f"Saved IPO metadata to {output_file}")
 
         return df
@@ -85,36 +88,39 @@ class IPODataCollector:
         base_price = 22000
         for hour in range(9, 16):
             for minute in range(0, 60, 5):
-                intraday_data.append({
-                    "time": f"{hour:02d}:{minute:02d}",
-                    "price": base_price + (hour - 9) * 100 + minute,
-                    "volume": 1000
-                })
+                intraday_data.append(
+                    {
+                        "time": f"{hour:02d}:{minute:02d}",
+                        "price": base_price + (hour - 9) * 100 + minute,
+                        "volume": 1000,
+                    }
+                )
 
         df = pd.DataFrame(intraday_data)
 
         # Save to CSV
         date_str = date.strftime("%Y%m%d")
         output_file = self.data_dir / f"intraday_{code}_{date_str}.csv"
-        df.to_csv(output_file, index=False, encoding='utf-8-sig')
+        df.to_csv(output_file, index=False, encoding="utf-8-sig")
 
         return df
 
-    def get_highest_and_closing_price(self, code: str, date: datetime) -> Dict[str, float]:
+    def get_highest_and_closing_price(
+        self, code: str, date: datetime
+    ) -> Dict[str, float]:
         """
         Extract highest execution price and closing price from intraday data
         """
         df = self.collect_intraday_prices(code, date)
 
-        highest_price = df['price'].max()
-        closing_price = df.iloc[-1]['price']  # Last price of the day
+        highest_price = df["price"].max()
+        closing_price = df.iloc[-1]["price"]  # Last price of the day
 
-        return {
-            "highest": highest_price,
-            "closing": closing_price
-        }
+        return {"highest": highest_price, "closing": closing_price}
 
-    def collect_full_dataset(self, start_year: int = 2022, end_year: int = 2025) -> pd.DataFrame:
+    def collect_full_dataset(
+        self, start_year: int = 2022, end_year: int = 2025
+    ) -> pd.DataFrame:
         """
         Collect complete dataset with IPO metadata and price data for both Day 0 and Day 1
         """
@@ -125,8 +131,8 @@ class IPODataCollector:
         enriched_data = []
 
         for _, row in metadata_df.iterrows():
-            code = row['code']
-            listing_date = pd.to_datetime(row['listing_date'])
+            code = row["code"]
+            listing_date = pd.to_datetime(row["listing_date"])
             next_day = listing_date + timedelta(days=1)
 
             # Get Day 0 prices
@@ -137,12 +143,14 @@ class IPODataCollector:
 
             # Combine all data
             enriched_row = row.to_dict()
-            enriched_row.update({
-                "day0_high": day0_prices["highest"],
-                "day0_close": day0_prices["closing"],
-                "day1_high": day1_prices["highest"],
-                "day1_close": day1_prices["closing"]
-            })
+            enriched_row.update(
+                {
+                    "day0_high": day0_prices["highest"],
+                    "day0_close": day0_prices["closing"],
+                    "day1_high": day1_prices["highest"],
+                    "day1_close": day1_prices["closing"],
+                }
+            )
 
             enriched_data.append(enriched_row)
 
@@ -150,7 +158,7 @@ class IPODataCollector:
 
         # Save complete dataset
         output_file = self.data_dir / f"ipo_full_dataset_{start_year}_{end_year}.csv"
-        full_df.to_csv(output_file, index=False, encoding='utf-8-sig')
+        full_df.to_csv(output_file, index=False, encoding="utf-8-sig")
         print(f"Saved full dataset to {output_file}")
 
         return full_df

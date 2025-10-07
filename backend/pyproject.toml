@@ -2,7 +2,6 @@
 name = "backend"
 version = "0.1.0"
 description = "IPO Analyzer - Predict IPO execution prices using ML"
-readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "pandas>=2.0.0",
@@ -32,4 +31,19 @@ dev-dependencies = [
     "jupyter>=1.0.0",
     "matplotlib>=3.7.0",
     "seaborn>=0.12.0",
+    "black>=25.9.0",
+    "pytest-cov>=7.0.0",
 ]
+
+[tool.black]
+line-length = 88
+target-version = ['py313']
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+  | \.venv
+  | build
+  | dist
+)/
+'''
