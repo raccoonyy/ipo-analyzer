@@ -18,6 +18,7 @@ sys.path.append(str(Path(__file__).parent.parent.parent))
 from src.data_collection.ipo_collector import IPODataCollector
 from src.features.feature_engineering import IPOFeatureEngineer
 from src.models.ipo_predictor import IPOPricePredictor
+from src.config import settings
 
 logger = logging.getLogger(__name__)
 
@@ -99,19 +100,29 @@ class PredictionGenerator:
 
     def generate_and_save(
         self,
-        start_year: int = 2022,
-        end_year: int = 2025,
-        output_file: str = "output/ipo_precomputed.json",
+        start_year: int = None,
+        end_year: int = None,
+        output_file: str = None,
     ):
         """
         Generate predictions and save to JSON file
 
         Args:
-            start_year: Start year for IPO data
-            end_year: End year for IPO data
-            output_file: Output JSON file path
+            start_year: Start year for IPO data (default: from settings)
+            end_year: End year for IPO data (default: from settings)
+            output_file: Output JSON file path (default: from settings)
         """
-        print(f"Generating predictions for IPOs from {start_year} to {end_year}...")
+        # Use settings defaults if not provided
+        if start_year is None:
+            start_year = settings.DATA_START_YEAR
+        if end_year is None:
+            end_year = settings.DATA_END_YEAR
+        if output_file is None:
+            output_file = settings.PREDICTION_OUTPUT_FILE
+
+        logger.info(
+            f"Generating predictions for IPOs from {start_year} to {end_year}..."
+        )
 
         # Collect IPO data
         collector = IPODataCollector()
@@ -224,14 +235,12 @@ def main():
         predictor.save_models()
         engineer.save_transformers()
 
-    # Generate predictions
+    # Generate predictions (uses settings defaults)
     generator = PredictionGenerator()
-    predictions = generator.generate_and_save(
-        start_year=2022, end_year=2025, output_file="output/ipo_precomputed.json"
-    )
+    predictions = generator.generate_and_save()
 
     print("\n✓ Prediction generation complete!")
-    print(f"Frontend can now consume: output/ipo_precomputed.json")
+    print(f"Frontend can now consume: {settings.PREDICTION_OUTPUT_FILE}")
 
 
 if __name__ == "__main__":

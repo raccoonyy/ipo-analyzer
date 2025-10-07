@@ -34,6 +34,9 @@ class Settings:
     DATA_PROCESSED_DIR: str = os.getenv("DATA_PROCESSED_DIR", "data/processed")
     MODELS_DIR: str = os.getenv("MODELS_DIR", "models")
     OUTPUT_DIR: str = os.getenv("OUTPUT_DIR", "output")
+    PREDICTION_OUTPUT_FILE: str = os.getenv(
+        "PREDICTION_OUTPUT_FILE", "../frontend/public/ipo_precomputed.json"
+    )
 
     # Model Settings
     MODEL_TYPE: str = os.getenv("MODEL_TYPE", "random_forest")
