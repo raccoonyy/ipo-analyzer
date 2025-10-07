@@ -8,6 +8,9 @@ import numpy as np
 from sklearn.preprocessing import StandardScaler, LabelEncoder
 from pathlib import Path
 import pickle
+import logging
+
+logger = logging.getLogger(__name__)
 
 
 class IPOFeatureEngineer:
@@ -175,7 +178,7 @@ class IPOFeatureEngineer:
         with open(output_path / "feature_names.pkl", "wb") as f:
             pickle.dump(self.feature_names, f)
 
-        print(f"Saved transformers to {output_path}")
+        logger.info(f"Saved transformers to {output_path}")
 
     def load_transformers(self, input_dir: str = "data/processed"):
         """Load fitted transformers"""
@@ -190,7 +193,7 @@ class IPOFeatureEngineer:
         with open(input_path / "feature_names.pkl", "rb") as f:
             self.feature_names = pickle.load(f)
 
-        print(f"Loaded transformers from {input_path}")
+        logger.info(f"Loaded transformers from {input_path}")
 
 
 if __name__ == "__main__":

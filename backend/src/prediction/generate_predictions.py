@@ -10,6 +10,7 @@ from pathlib import Path
 from typing import List, Dict
 import sys
 from datetime import datetime
+import logging
 
 # Add parent directory to path
 sys.path.append(str(Path(__file__).parent.parent.parent))
@@ -17,6 +18,8 @@ sys.path.append(str(Path(__file__).parent.parent.parent))
 from src.data_collection.ipo_collector import IPODataCollector
 from src.features.feature_engineering import IPOFeatureEngineer
 from src.models.ipo_predictor import IPOPricePredictor
+
+logger = logging.getLogger(__name__)
 
 
 class PredictionGenerator:
@@ -124,7 +127,7 @@ class PredictionGenerator:
         with open(output_path, "w", encoding="utf-8") as f:
             json.dump(predictions, f, indent=2, ensure_ascii=False)
 
-        print(f"✓ Saved {len(predictions)} predictions to {output_path}")
+        logger.info(f"Saved {len(predictions)} predictions to {output_path}")
 
         # Generate summary statistics
         self._print_summary(predictions)

@@ -13,6 +13,9 @@ import pickle
 from pathlib import Path
 from typing import Dict, Tuple, Any
 import json
+import logging
+
+logger = logging.getLogger(__name__)
 
 
 class IPOPricePredictor:
@@ -77,7 +80,7 @@ class IPOPricePredictor:
 
         # Train each model
         for target_name, y in y_dict.items():
-            print(f"\nTraining model for {target_name}...")
+            logger.info(f"Training model for {target_name}...")
 
             y_train, y_test = y[train_idx], y[test_idx]
 
@@ -94,10 +97,10 @@ class IPOPricePredictor:
 
             results[target_name] = {"train": train_metrics, "test": test_metrics}
 
-            print(
+            logger.info(
                 f"  Train - MAE: {train_metrics['mae']:.2f}, RMSE: {train_metrics['rmse']:.2f}, R²: {train_metrics['r2']:.4f}"
             )
-            print(
+            logger.info(
                 f"  Test  - MAE: {test_metrics['mae']:.2f}, RMSE: {test_metrics['rmse']:.2f}, R²: {test_metrics['r2']:.4f}"
             )
 
@@ -149,13 +152,13 @@ class IPOPricePredictor:
             model_file = output_path / f"model_{target_name}.pkl"
             with open(model_file, "wb") as f:
                 pickle.dump(model, f)
-            print(f"Saved model for {target_name} to {model_file}")
+            logger.info(f"Saved model for {target_name} to {model_file}")
 
         # Save metrics
         metrics_file = output_path / "metrics.json"
         with open(metrics_file, "w") as f:
             json.dump(self.metrics, f, indent=2)
-        print(f"Saved metrics to {metrics_file}")
+        logger.info(f"Saved metrics to {metrics_file}")
 
     def load_models(self, input_dir: str = "models"):
         """Load trained models"""
@@ -166,9 +169,9 @@ class IPOPricePredictor:
             if model_file.exists():
                 with open(model_file, "rb") as f:
                     self.models[target_name] = pickle.load(f)
-                print(f"Loaded model for {target_name}")
+                logger.info(f"Loaded model for {target_name}")
             else:
-                print(f"Warning: Model file not found for {target_name}")
+                logger.warning(f"Model file not found for {target_name}")
 
         # Load metrics
         metrics_file = input_path / "metrics.json"

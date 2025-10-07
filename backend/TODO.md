@@ -128,14 +128,16 @@
 - [ ] Add retry logic with exponential backoff
 - [ ] Update `config/config.yaml` with actual API endpoints
 
-### 🔲 Testing
-- [ ] Write unit tests for `IPODataCollector`
-- [ ] Write unit tests for `IPOFeatureEngineer`
-- [ ] Write unit tests for `IPOPricePredictor`
-- [ ] Write unit tests for `PredictionGenerator`
+### ✅ Testing
+- [x] Write unit tests for `IPODataCollector`
+- [x] Write unit tests for `IPOFeatureEngineer`
+- [x] Write unit tests for `IPOPricePredictor`
+- [x] Write unit tests for `PredictionGenerator`
 - [ ] Write integration tests for full pipeline
-- [ ] Add test fixtures with sample IPO data
-- [ ] Configure pytest settings
+- [x] Add test fixtures with sample IPO data
+- [x] Configure pytest settings
+- [x] Add black formatter for code formatting
+- [x] Achieve 81% code coverage (24 tests passing)
 
 ### 🔲 Model Improvements
 - [ ] Implement hyperparameter tuning (GridSearchCV / RandomizedSearchCV)

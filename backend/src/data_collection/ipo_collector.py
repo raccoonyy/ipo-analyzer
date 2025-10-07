@@ -8,6 +8,9 @@ from datetime import datetime, timedelta
 from typing import Dict, List, Optional
 import requests
 from pathlib import Path
+import logging
+
+logger = logging.getLogger(__name__)
 
 
 class IPODataCollector:
@@ -16,6 +19,7 @@ class IPODataCollector:
     def __init__(self, data_dir: str = "data/raw"):
         self.data_dir = Path(data_dir)
         self.data_dir.mkdir(parents=True, exist_ok=True)
+        logger.info(f"Initialized IPODataCollector with data_dir: {self.data_dir}")
 
     def collect_ipo_metadata(
         self, start_year: int = 2022, end_year: int = 2025
@@ -65,10 +69,17 @@ class IPODataCollector:
 
         df = pd.DataFrame(metadata)
 
+        # Validate data
+        from src.validation import DataValidator
+
+        is_valid, errors = DataValidator.validate_ipo_metadata(df)
+        if not is_valid:
+            logger.warning(f"Data validation warnings: {errors}")
+
         # Save to CSV
         output_file = self.data_dir / f"ipo_metadata_{start_year}_{end_year}.csv"
         df.to_csv(output_file, index=False, encoding="utf-8-sig")
-        print(f"Saved IPO metadata to {output_file}")
+        logger.info(f"Saved IPO metadata to {output_file} ({len(df)} records)")
 
         return df
 
@@ -159,7 +170,9 @@ class IPODataCollector:
         # Save complete dataset
         output_file = self.data_dir / f"ipo_full_dataset_{start_year}_{end_year}.csv"
         full_df.to_csv(output_file, index=False, encoding="utf-8-sig")
-        print(f"Saved full dataset to {output_file}")
+        logger.info(
+            f"Saved full dataset to {output_file} ({len(full_df)} records with price data)"
+        )
 
         return full_df
 
