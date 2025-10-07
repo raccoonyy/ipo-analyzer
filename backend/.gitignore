@@ -29,6 +29,11 @@ ENV/
 # uv
 uv.lock
 
+# Environment variables
+.env
+.env.local
+.env.*.local
+
 # IPO Analyzer specific
 data/raw/*.csv
 data/processed/*.pkl
