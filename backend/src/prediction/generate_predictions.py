@@ -18,7 +18,7 @@ sys.path.append(str(Path(__file__).parent.parent.parent))
 from src.data_collection.ipo_collector import IPODataCollector
 from src.features.feature_engineering import IPOFeatureEngineer
 from src.models.ipo_predictor import IPOPricePredictor
-from src.config import settings
+from src.config.settings import settings
 
 logger = logging.getLogger(__name__)
 

@@ -44,28 +44,106 @@ class IPODataCollector:
         metadata = []
 
         # Placeholder: Replace with actual KRX API calls
-        # Example structure of collected data
-        sample_data = {
-            "company_name": "ExampleTech",
-            "code": "123456",
-            "listing_date": "2024-10-01",
-            "ipo_price_lower": 20000,
-            "ipo_price_upper": 24000,
-            "ipo_price_confirmed": 22000,
-            "shares_offered": 1000000,
-            "institutional_demand_rate": 850.5,  # %
-            "lockup_ratio": 30.0,  # %
-            "subscription_competition_rate": 1234.56,  # to 1
-            "paid_in_capital": 50000000000,  # KRW
-            "estimated_market_cap": 220000000000,  # KRW
-            "listing_method": "GENERAL",  # GENERAL, BOOK_BUILDING, etc.
-            "allocation_ratio_equal": 50.0,  # %
-            "allocation_ratio_proportional": 50.0,  # %
-            "industry": "IT",
-            "theme": "TECH",
-        }
+        # Generate sample data for testing
+        sample_companies = [
+            {
+                "company_name": "TechCorp A",
+                "code": "100001",
+                "listing_date": "2024-01-15",
+                "ipo_price_lower": 18000,
+                "ipo_price_upper": 22000,
+                "ipo_price_confirmed": 20000,
+                "shares_offered": 1000000,
+                "institutional_demand_rate": 500.0,
+                "lockup_ratio": 25.0,
+                "subscription_competition_rate": 800.0,
+                "paid_in_capital": 40000000000,
+                "estimated_market_cap": 200000000000,
+                "listing_method": "GENERAL",
+                "allocation_ratio_equal": 40.0,
+                "allocation_ratio_proportional": 60.0,
+                "industry": "IT",
+                "theme": "TECH",
+            },
+            {
+                "company_name": "BioPharma B",
+                "code": "100002",
+                "listing_date": "2024-02-20",
+                "ipo_price_lower": 25000,
+                "ipo_price_upper": 30000,
+                "ipo_price_confirmed": 28000,
+                "shares_offered": 500000,
+                "institutional_demand_rate": 1200.0,
+                "lockup_ratio": 30.0,
+                "subscription_competition_rate": 1500.0,
+                "paid_in_capital": 50000000000,
+                "estimated_market_cap": 280000000000,
+                "listing_method": "BOOK_BUILDING",
+                "allocation_ratio_equal": 50.0,
+                "allocation_ratio_proportional": 50.0,
+                "industry": "BIOTECH",
+                "theme": "HEALTHCARE",
+            },
+            {
+                "company_name": "GreenEnergy C",
+                "code": "100003",
+                "listing_date": "2024-03-10",
+                "ipo_price_lower": 15000,
+                "ipo_price_upper": 18000,
+                "ipo_price_confirmed": 17000,
+                "shares_offered": 800000,
+                "institutional_demand_rate": 600.0,
+                "lockup_ratio": 20.0,
+                "subscription_competition_rate": 950.0,
+                "paid_in_capital": 35000000000,
+                "estimated_market_cap": 170000000000,
+                "listing_method": "GENERAL",
+                "allocation_ratio_equal": 45.0,
+                "allocation_ratio_proportional": 55.0,
+                "industry": "ENERGY",
+                "theme": "GREEN",
+            },
+            {
+                "company_name": "FinTech D",
+                "code": "100004",
+                "listing_date": "2024-04-25",
+                "ipo_price_lower": 30000,
+                "ipo_price_upper": 35000,
+                "ipo_price_confirmed": 33000,
+                "shares_offered": 600000,
+                "institutional_demand_rate": 1500.0,
+                "lockup_ratio": 35.0,
+                "subscription_competition_rate": 2000.0,
+                "paid_in_capital": 60000000000,
+                "estimated_market_cap": 330000000000,
+                "listing_method": "BOOK_BUILDING",
+                "allocation_ratio_equal": 50.0,
+                "allocation_ratio_proportional": 50.0,
+                "industry": "FINANCE",
+                "theme": "FINTECH",
+            },
+            {
+                "company_name": "AIRobotics E",
+                "code": "100005",
+                "listing_date": "2024-05-30",
+                "ipo_price_lower": 22000,
+                "ipo_price_upper": 26000,
+                "ipo_price_confirmed": 24000,
+                "shares_offered": 700000,
+                "institutional_demand_rate": 900.0,
+                "lockup_ratio": 28.0,
+                "subscription_competition_rate": 1300.0,
+                "paid_in_capital": 45000000000,
+                "estimated_market_cap": 240000000000,
+                "listing_method": "GENERAL",
+                "allocation_ratio_equal": 42.0,
+                "allocation_ratio_proportional": 58.0,
+                "industry": "IT",
+                "theme": "AI",
+            },
+        ]
 
-        metadata.append(sample_data)
+        metadata.extend(sample_companies)
 
         df = pd.DataFrame(metadata)
 
