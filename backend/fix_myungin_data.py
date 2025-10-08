@@ -11,6 +11,7 @@ CORRECT_DATA = {
     "ipo_price_lower": 45000.0,
     "ipo_price_upper": 58000.0,
     "ipo_price_confirmed": 58000.0,
+    "shares_offered": 3400000.0,  # 청약주식수: 3,400,000주
     "institutional_demand_rate": 488.95,
     "subscription_competition_rate": 587.00,
     "lockup_ratio": 73.81,

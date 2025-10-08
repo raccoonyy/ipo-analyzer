@@ -116,7 +116,7 @@ export function IPOInputForm({
             <div>
               <p className="text-sm text-muted-foreground">기관경쟁률</p>
               <p className="font-medium">
-                {selectedCompany.institutional_demand_rate.toFixed(2)}%
+                {selectedCompany.institutional_demand_rate.toFixed(2)}:1
               </p>
             </div>
             <div>
@@ -128,7 +128,7 @@ export function IPOInputForm({
             <div>
               <p className="text-sm text-muted-foreground">의무보유비율</p>
               <p className="font-medium">
-                {(selectedCompany.lockup_ratio * 100).toFixed(2)}%
+                {selectedCompany.lockup_ratio.toFixed(2)}%
               </p>
             </div>
           </div>

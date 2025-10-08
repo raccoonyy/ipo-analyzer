@@ -111,6 +111,21 @@ def parse_ipo_html(html):
             except:
                 pass
 
+    # 8. 청약주식수 (공모주식수)
+    patterns = [
+        r"청약주식수.*?<td[^>]*>\s*([0-9,]+)\s*주",  # 청약주식수
+        r"공모주식수.*?<td[^>]*>\s*([0-9,]+)\s*주",  # 공모주식수
+    ]
+    for pattern in patterns:
+        match = re.search(pattern, html, re.DOTALL | re.IGNORECASE)
+        if match:
+            shares = match.group(1).replace(",", "")
+            try:
+                data["shares_offered"] = int(shares)
+                break
+            except:
+                pass
+
     return data if len(data) >= 2 else None  # At least code and one other field
 
 
