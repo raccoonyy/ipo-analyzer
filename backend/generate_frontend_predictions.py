@@ -126,6 +126,32 @@ def format_ipo_record(row, index):
             2,
         )
 
+    # OHLCV data for day0 (if available)
+    if pd.notna(row.get("day0_open_kis")):
+        record["day0_ohlcv"] = [{
+            "timestamp": str(row["listing_date"])[:10],
+            "open": int(row.get("day0_open_kis", 0)),
+            "high": int(row.get("day0_high_kis", row.get("actual_day0_high", 0))),
+            "low": int(row.get("day0_low_kis", 0)),
+            "close": int(row.get("day0_close_kis", row.get("actual_day0_close", 0))),
+            "volume": int(row.get("day0_volume_kis", 0)),
+        }]
+
+    # OHLCV data for day1 (if available)
+    if pd.notna(row.get("day1_open")):
+        # Calculate day1 date (listing_date + 1 day)
+        listing_date = pd.to_datetime(row["listing_date"])
+        day1_date = listing_date + pd.Timedelta(days=1)
+
+        record["day1_ohlcv"] = [{
+            "timestamp": str(day1_date)[:10],
+            "open": int(row.get("day1_open", 0)),
+            "high": int(row.get("day1_high", 0)),
+            "low": int(row.get("day1_low", 0)),
+            "close": int(row.get("day1_close", row.get("actual_day1_close", 0))),
+            "volume": int(row.get("day1_volume", 0)),
+        }]
+
     return record
 
 
@@ -142,7 +168,7 @@ def main():
     print("LOADING DATA")
     print("=" * 80)
 
-    input_file = "data/raw/ipo_full_dataset_2022_2024_enhanced.csv"
+    input_file = "data/raw/ipo_full_dataset_2022_2025.csv"
     df = pd.read_csv(input_file)
     df["listing_date"] = pd.to_datetime(df["listing_date"])
 
