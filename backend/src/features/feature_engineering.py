@@ -44,16 +44,25 @@ class IPOFeatureEngineer:
 
         # Price-related features
         df["ipo_price_range"] = df["ipo_price_upper"] - df["ipo_price_lower"]
-        df["ipo_price_range_pct"] = (
-            df["ipo_price_range"] / df["ipo_price_lower"]
-        ) * 100
-        df["price_positioning"] = (
-            df["ipo_price_confirmed"] - df["ipo_price_lower"]
-        ) / df["ipo_price_range"]
+        # Avoid division by zero
+        df["ipo_price_range_pct"] = np.where(
+            df["ipo_price_lower"] > 0,
+            (df["ipo_price_range"] / df["ipo_price_lower"]) * 100,
+            0
+        )
+        df["price_positioning"] = np.where(
+            df["ipo_price_range"] > 0,
+            (df["ipo_price_confirmed"] - df["ipo_price_lower"]) / df["ipo_price_range"],
+            0
+        )
 
         # Market cap features
-        df["market_cap_ratio"] = df["estimated_market_cap"] / df["paid_in_capital"]
-        df["total_offering_value"] = df["shares_offered"] * df["ipo_price_confirmed"]
+        df["market_cap_ratio"] = np.where(
+            df["paid_in_capital"] > 0,
+            df["estimated_market_cap"] / df["paid_in_capital"],
+            0
+        )
+        df["total_offering_value"] = df.get("shares_offered", 0) * df["ipo_price_confirmed"]
 
         # Demand indicators
         df["demand_to_lockup_ratio"] = df["institutional_demand_rate"] / (
@@ -129,6 +138,10 @@ class IPOFeatureEngineer:
         # Create feature matrix
         # Fill missing columns with 0
         X = df[feature_cols].copy()
+
+        # Clean data: replace inf and NaN with 0
+        X = X.replace([np.inf, -np.inf], 0)
+        X = X.fillna(0)
 
         # Scale numerical features
         if fit:
