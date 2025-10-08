@@ -20,6 +20,7 @@ interface StockChartProps {
   // 폴백: OHLCV 데이터가 없을 때 사용할 기본 데이터
   day0High?: number;
   day0Close?: number;
+  day1High?: number;
   day1Close?: number;
 }
 
@@ -30,6 +31,7 @@ export function StockChart({
   day1Ohlcv,
   day0High,
   day0Close,
+  day1High,
   day1Close,
 }: StockChartProps) {
   // 상장일과 다음날 데이터를 합침
@@ -59,8 +61,8 @@ export function StockChart({
       allData.push({
         timestamp: "상장 다음날",
         open: day0Close || ipoPrice,
-        high: day1Close,
-        low: day1Close,
+        high: day1High || day1Close,
+        low: Math.min(day0Close || ipoPrice, day1Close),
         close: day1Close,
         volume: 0,
       });

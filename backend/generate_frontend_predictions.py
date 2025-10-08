@@ -37,10 +37,8 @@ def calculate_returns(row):
             (row["predicted_day0_high"] - ipo_price) / ipo_price * 100
         ),
         "day0_close_return": ((day0_close - ipo_price) / ipo_price * 100),
-        "day1_close_return": (
-            (day1_close - ipo_price) / ipo_price * 100
-        ),  # Cumulative from IPO price
-        "day0_to_day1_return": day0_to_day1_return,  # Day0→Day1 change
+        "day1_close_return": day0_to_day1_return,  # Day0 close relative
+        "day0_to_day1_return": day0_to_day1_return,  # Day0→Day1 change (same as above)
     }
 
     # Actual returns
@@ -48,20 +46,20 @@ def calculate_returns(row):
         actual_day0_close = row["actual_day0_close"]
         actual_day1_close = row["actual_day1_close"]
 
+        actual_day0_to_day1_return = (
+            ((actual_day1_close - actual_day0_close) / actual_day0_close * 100)
+            if actual_day0_close > 0
+            else 0
+        )
+
         returns["actual_day0_high_return"] = (
             (row["actual_day0_high"] - ipo_price) / ipo_price * 100
         )
         returns["actual_day0_close_return"] = (
             (actual_day0_close - ipo_price) / ipo_price * 100
         )
-        returns["actual_day1_close_return"] = (
-            (actual_day1_close - ipo_price) / ipo_price * 100
-        )
-        returns["actual_day0_to_day1_return"] = (
-            ((actual_day1_close - actual_day0_close) / actual_day0_close * 100)
-            if actual_day0_close > 0
-            else 0
-        )
+        returns["actual_day1_close_return"] = actual_day0_to_day1_return  # Day0 close relative
+        returns["actual_day0_to_day1_return"] = actual_day0_to_day1_return
 
     return returns
 
@@ -101,8 +99,11 @@ def format_ipo_record(row, index):
 
     # Actual values (if available)
     if pd.notna(row.get("actual_day0_high")):
+        actual_day1_high = row.get("actual_day1_high", row.get("day1_high", 0))
+
         record["actual_day0_high"] = int(row["actual_day0_high"])
         record["actual_day0_close"] = int(row["actual_day0_close"])
+        record["actual_day1_high"] = int(actual_day1_high) if pd.notna(actual_day1_high) else 0
         record["actual_day1_close"] = int(row["actual_day1_close"])
         record["actual_day0_high_return"] = round(returns["actual_day0_high_return"], 2)
         record["actual_day0_close_return"] = round(
@@ -114,6 +115,12 @@ def format_ipo_record(row, index):
         record["actual_day0_to_day1_return"] = round(
             returns["actual_day0_to_day1_return"], 2
         )
+
+        # Calculate day1_high return (day0 close relative)
+        if actual_day1_high > 0 and row["actual_day0_close"] > 0:
+            record["actual_day1_high_return"] = round(
+                ((actual_day1_high - row["actual_day0_close"]) / row["actual_day0_close"] * 100), 2
+            )
 
         # Prediction accuracy
         record["error_day0_close"] = int(

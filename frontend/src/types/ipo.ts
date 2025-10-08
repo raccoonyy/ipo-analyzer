@@ -29,9 +29,11 @@ export interface IPOCompany {
   predicted_day1_close_return: number;
   actual_day0_high?: number;
   actual_day0_close?: number;
+  actual_day1_high?: number;
   actual_day1_close?: number;
   actual_day0_high_return?: number;
   actual_day0_close_return?: number;
+  actual_day1_high_return?: number;
   actual_day1_close_return?: number;
   error_day0_close?: number;
   error_pct_day0_close?: number;

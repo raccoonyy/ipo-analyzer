@@ -126,7 +126,7 @@ export function PredictionResult({ company }: PredictionResultProps) {
                 }`}
               >
                 {predicted_day1_close_return > 0 ? "+" : ""}
-                {predicted_day1_close_return.toFixed(2)}%
+                {predicted_day1_close_return.toFixed(2)}% (전일 대비)
               </p>
             </div>
           </div>
@@ -222,10 +222,10 @@ export function PredictionResult({ company }: PredictionResultProps) {
               )}
             </div>
 
-            {/* 다음날 종가 수익률 */}
+            {/* 다음날 종가 수익률 (상장일 대비) */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-2 pt-2 border-t">
               <div>
-                <p className="text-xs text-muted-foreground mb-1">다음날 종가 수익률 (예상)</p>
+                <p className="text-xs text-muted-foreground mb-1">다음날 종가 수익률 (예상, 상장일 대비)</p>
                 <span
                   className={`text-lg font-semibold ${
                     predicted_day1_close_return > 0
@@ -239,7 +239,7 @@ export function PredictionResult({ company }: PredictionResultProps) {
               </div>
               {company.actual_day1_close_return !== undefined && (
                 <div>
-                  <p className="text-xs text-muted-foreground mb-1">다음날 종가 수익률 (실제)</p>
+                  <p className="text-xs text-muted-foreground mb-1">다음날 종가 수익률 (실제, 상장일 대비)</p>
                   <span
                     className={`text-lg font-semibold ${
                       company.actual_day1_close_return > 0
@@ -256,6 +256,28 @@ export function PredictionResult({ company }: PredictionResultProps) {
                 </div>
               )}
             </div>
+
+            {/* 다음날 최고가 (실제값만 있음) */}
+            {company.actual_day1_high !== undefined && company.actual_day1_high > 0 && (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-2 pt-2 border-t">
+                <div>
+                  <p className="text-xs text-muted-foreground mb-1">다음날 최고 수익률 (실제, 상장일 대비)</p>
+                  <span
+                    className={`text-lg font-semibold ${
+                      (company.actual_day1_high_return || 0) > 0
+                        ? "text-green-600"
+                        : "text-red-600"
+                    }`}
+                  >
+                    {(company.actual_day1_high_return || 0) > 0 ? "+" : ""}
+                    {(company.actual_day1_high_return || 0).toFixed(2)}%
+                  </span>
+                  <p className="text-xs text-muted-foreground mt-1">
+                    ₩{company.actual_day1_high.toLocaleString()}
+                  </p>
+                </div>
+              </div>
+            )}
           </div>
         </div>
 
@@ -267,6 +289,7 @@ export function PredictionResult({ company }: PredictionResultProps) {
           day1Ohlcv={company.day1_ohlcv}
           day0High={company.actual_day0_high}
           day0Close={company.actual_day0_close}
+          day1High={company.actual_day1_high}
           day1Close={company.actual_day1_close}
         />
       </CardContent>
