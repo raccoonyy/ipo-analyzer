@@ -5,6 +5,8 @@ Handles authentication and data retrieval for intraday stock data
 
 import requests
 import logging
+import json
+from pathlib import Path
 from typing import Dict, List, Optional, Any
 from datetime import datetime, timedelta
 from tenacity import retry, stop_after_attempt, wait_exponential
@@ -41,8 +43,59 @@ class KISApiClient:
 
         self.access_token = None
         self.token_expires_at = None
+        self.token_cache_file = Path("data/cache/kis_token.json")
+        self.token_cache_file.parent.mkdir(parents=True, exist_ok=True)
+
+        # Load cached token if available
+        self._load_cached_token()
 
         logger.info("Initialized KISApiClient")
+
+    def _load_cached_token(self):
+        """Load cached token from file if available and not expired"""
+        if not self.token_cache_file.exists():
+            return
+
+        try:
+            with open(self.token_cache_file, "r") as f:
+                cache_data = json.load(f)
+
+            # Parse expiration time
+            expires_at_str = cache_data.get("expires_at")
+            if expires_at_str:
+                expires_at = datetime.fromisoformat(expires_at_str)
+
+                # Check if token is still valid
+                if datetime.now() < expires_at:
+                    self.access_token = cache_data.get("access_token")
+                    self.token_expires_at = expires_at
+                    logger.info(
+                        f"✅ Loaded cached token, expires at {expires_at.strftime('%Y-%m-%d %H:%M:%S')}"
+                    )
+                else:
+                    logger.info("Cached token expired, will request new one")
+
+        except Exception as e:
+            logger.warning(f"Failed to load cached token: {e}")
+
+    def _save_token_to_cache(self):
+        """Save current token to cache file"""
+        if not self.access_token or not self.token_expires_at:
+            return
+
+        try:
+            cache_data = {
+                "access_token": self.access_token,
+                "expires_at": self.token_expires_at.isoformat(),
+            }
+
+            with open(self.token_cache_file, "w") as f:
+                json.dump(cache_data, f, indent=2)
+
+            logger.info(f"Token cached to {self.token_cache_file}")
+
+        except Exception as e:
+            logger.warning(f"Failed to save token to cache: {e}")
 
     def authenticate(self) -> str:
         """
@@ -72,6 +125,9 @@ class KISApiClient:
             expires_in = int(data.get("expires_in", 86400))  # Default 24 hours
 
             self.token_expires_at = datetime.now() + timedelta(seconds=expires_in)
+
+            # Save token to cache
+            self._save_token_to_cache()
 
             logger.info(
                 f"✅ Access token obtained, expires at {self.token_expires_at.strftime('%Y-%m-%d %H:%M:%S')}"

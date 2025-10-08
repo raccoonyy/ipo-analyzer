@@ -108,6 +108,14 @@ class IPOFeatureEngineer:
             "listing_method_encoded",
             "industry_encoded",
             "theme_encoded",
+            # KIS API daily indicators
+            "day0_volume_kis",
+            "day0_trading_value",
+            "day1_volume",
+            "day1_trading_value",
+            "day0_turnover_rate",
+            "day1_turnover_rate",
+            "day0_volatility",
         ]
 
         # Store feature names

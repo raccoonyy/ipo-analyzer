@@ -13,13 +13,13 @@ class TestIPODataCollector:
 
     def test_init(self, temp_data_dir):
         """Test collector initialization"""
-        collector = IPODataCollector(data_dir=temp_data_dir)
+        collector = IPODataCollector(data_dir=temp_data_dir, use_sample_data=True)
         assert collector.data_dir.exists()
         assert collector.data_dir == Path(temp_data_dir)
 
     def test_collect_ipo_metadata(self, temp_data_dir):
         """Test IPO metadata collection"""
-        collector = IPODataCollector(data_dir=temp_data_dir)
+        collector = IPODataCollector(data_dir=temp_data_dir, use_sample_data=True)
         df = collector.collect_ipo_metadata(2022, 2025)
 
         assert isinstance(df, pd.DataFrame)
@@ -52,7 +52,7 @@ class TestIPODataCollector:
 
     def test_collect_intraday_prices(self, temp_data_dir):
         """Test intraday price collection"""
-        collector = IPODataCollector(data_dir=temp_data_dir)
+        collector = IPODataCollector(data_dir=temp_data_dir, use_sample_data=True)
         date = datetime(2024, 1, 15)
         df = collector.collect_intraday_prices("100000", date)
 
@@ -67,7 +67,7 @@ class TestIPODataCollector:
 
     def test_get_highest_and_closing_price(self, temp_data_dir):
         """Test extraction of highest and closing prices"""
-        collector = IPODataCollector(data_dir=temp_data_dir)
+        collector = IPODataCollector(data_dir=temp_data_dir, use_sample_data=True)
         date = datetime(2024, 1, 15)
         prices = collector.get_highest_and_closing_price("100000", date)
 
@@ -79,7 +79,7 @@ class TestIPODataCollector:
 
     def test_collect_full_dataset(self, temp_data_dir):
         """Test full dataset collection"""
-        collector = IPODataCollector(data_dir=temp_data_dir)
+        collector = IPODataCollector(data_dir=temp_data_dir, use_sample_data=True)
         df = collector.collect_full_dataset(2022, 2025)
 
         assert isinstance(df, pd.DataFrame)

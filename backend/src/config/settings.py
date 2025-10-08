@@ -16,11 +16,26 @@ class Settings:
     """Application settings loaded from environment variables"""
 
     # KRX API Configuration
-    KRX_API_BASE_URL: str = os.getenv("KRX_API_BASE_URL", "https://api.krx.co.kr")
+    KRX_API_BASE_URL: str = os.getenv(
+        "KRX_API_BASE_URL", "https://data-dbg.krx.co.kr/svc/apis/sto"
+    )
     KRX_API_KEY: Optional[str] = os.getenv("KRX_API_KEY")
-    KRX_API_SECRET: Optional[str] = os.getenv("KRX_API_SECRET")
     KRX_API_TIMEOUT: int = int(os.getenv("KRX_API_TIMEOUT", "30"))
-    KRX_API_RETRY_ATTEMPTS: int = int(os.getenv("KRX_API_RETRY_ATTEMPTS", "3"))
+    KRX_API_RATE_LIMIT: int = int(
+        os.getenv("KRX_API_RATE_LIMIT", "10000")
+    )  # 10,000 requests per day per API
+
+    # Korea Investment Securities API Configuration
+    KIS_APP_KEY: Optional[str] = os.getenv("KIS_APP_KEY")
+    KIS_APP_SECRET: Optional[str] = os.getenv("KIS_APP_SECRET")
+    KIS_BASE_URL: str = os.getenv(
+        "KIS_BASE_URL", "https://openapi.koreainvestment.com:9443"
+    )
+    KIS_AUTH_URL: str = os.getenv(
+        "KIS_AUTH_URL", "https://openapi.koreainvestment.com:9443/oauth2/tokenP"
+    )
+    KIS_API_TIMEOUT: int = int(os.getenv("KIS_API_TIMEOUT", "30"))
+    KIS_API_RETRY_ATTEMPTS: int = int(os.getenv("KIS_API_RETRY_ATTEMPTS", "3"))
 
     # Application Settings
     ENVIRONMENT: str = os.getenv("ENVIRONMENT", "development")
@@ -63,8 +78,6 @@ class Settings:
         if cls.is_production():
             if not cls.KRX_API_KEY:
                 raise ValueError("KRX_API_KEY is required in production")
-            if not cls.KRX_API_SECRET:
-                raise ValueError("KRX_API_SECRET is required in production")
 
 
 # Create singleton instance
