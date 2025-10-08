@@ -1,0 +1,8 @@
+{
+  "correlations": {
+    "day0_close": [
+      {
+        "feature": "ipo_price_confirmed",
+        "correlation": -0.39181061294133823,
+        "p_value": 4.617177421658024e-07,
+        "sample_size": 
