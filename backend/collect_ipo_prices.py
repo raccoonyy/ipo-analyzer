@@ -5,6 +5,7 @@ Uses 예탁원정보(공모주청약일정) API to get real IPO prices
 
 import pandas as pd
 import logging
+import time
 from pathlib import Path
 from datetime import datetime
 from src.api.kis_client import KISApiClient
@@ -32,7 +33,12 @@ def collect_ipo_offering_data(start_year: int, end_year: int) -> pd.DataFrame:
 
     all_offerings = []
 
-    for year in range(start_year, end_year + 1):
+    for idx, year in enumerate(range(start_year, end_year + 1)):
+        # Add delay between API calls to avoid rate limit (except first call)
+        if idx > 0:
+            logger.info("Waiting 2 seconds to avoid rate limit...")
+            time.sleep(2)
+
         start_date = f"{year}0101"
         end_date = f"{year}1231"
 

@@ -343,8 +343,8 @@ class KISApiClient:
         try:
             response = self._make_request(endpoint, params, tr_id)
 
-            # Extract output data
-            offerings = response.get("output", [])
+            # Extract output data (output1 for IPO offering API)
+            offerings = response.get("output1", [])
 
             logger.info(f"Retrieved {len(offerings)} IPO offering records")
 
