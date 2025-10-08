@@ -17,7 +17,7 @@ export default function Analysis() {
   // Load IPO data
   useEffect(() => {
     setIsLoading(true);
-    fetch("/ipo_precomputed.json")
+    fetch(`${import.meta.env.BASE_URL}ipo_precomputed.json`)
       .then((response) => response.json())
       .then((response: IPODataResponse) => {
         if (!response.ipos || !Array.isArray(response.ipos)) {

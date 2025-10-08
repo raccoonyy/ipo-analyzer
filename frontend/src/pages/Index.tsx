@@ -15,7 +15,7 @@ const Index = () => {
 
   useEffect(() => {
     // Load precomputed data from backend
-    fetch('/ipo_precomputed.json')
+    fetch(`${import.meta.env.BASE_URL}ipo_precomputed.json`)
       .then(res => {
         if (!res.ok) {
           throw new Error(`HTTP error! status: ${res.status}`);
