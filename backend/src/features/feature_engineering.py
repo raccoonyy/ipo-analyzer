@@ -88,41 +88,46 @@ class IPOFeatureEngineer:
                     df[f"{col}_encoded"] = -1
 
         # Select feature columns for model
-        feature_cols = [
-            "ipo_price_confirmed",
-            "shares_offered",
-            "institutional_demand_rate",
-            "lockup_ratio",
-            "subscription_competition_rate",
-            "market_cap_ratio",
-            "total_offering_value",
-            "ipo_price_range_pct",
-            "price_positioning",
-            "demand_to_lockup_ratio",
-            "allocation_balance",
-            "high_competition",
-            "high_demand",
-            "listing_month",
-            "listing_quarter",
-            "listing_day_of_week",
-            "listing_method_encoded",
-            "industry_encoded",
-            "theme_encoded",
-            # KIS API daily indicators
-            "day0_volume_kis",
-            "day0_trading_value",
-            "day1_volume",
-            "day1_trading_value",
-            "day0_turnover_rate",
-            "day1_turnover_rate",
-            "day0_volatility",
-        ]
+        # Use stored feature names if available (for prediction)
+        if not fit and hasattr(self, 'feature_names') and self.feature_names:
+            feature_cols = self.feature_names
+        else:
+            feature_cols = [
+                "ipo_price_confirmed",
+                "shares_offered",
+                "institutional_demand_rate",
+                "lockup_ratio",
+                "subscription_competition_rate",
+                "market_cap_ratio",
+                "total_offering_value",
+                "ipo_price_range_pct",
+                "price_positioning",
+                "demand_to_lockup_ratio",
+                "allocation_balance",
+                "high_competition",
+                "high_demand",
+                "listing_month",
+                "listing_quarter",
+                "listing_day_of_week",
+                "listing_method_encoded",
+                "industry_encoded",
+                "theme_encoded",
+                # KIS API daily indicators
+                "day0_volume_kis",
+                "day0_trading_value",
+                "day1_volume",
+                "day1_trading_value",
+                "day0_turnover_rate",
+                "day1_turnover_rate",
+                "day0_volatility",
+            ]
 
         # Store feature names
         if fit:
             self.feature_names = feature_cols
 
         # Create feature matrix
+        # Fill missing columns with 0
         X = df[feature_cols].copy()
 
         # Scale numerical features
