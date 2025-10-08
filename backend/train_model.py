@@ -1,6 +1,6 @@
 """
 Train IPO Price Prediction Model
-Uses complete dataset (226 IPOs from 2022-2024)
+Uses complete dataset (2022-2025)
 """
 
 import pandas as pd
@@ -26,7 +26,7 @@ def main():
     parser.add_argument(
         "--data-path",
         type=str,
-        default="data/raw/ipo_full_dataset_2022_2024_enhanced.csv",
+        default="data/raw/ipo_full_dataset_2022_2025.csv",
         help="Path to training data CSV file",
     )
     args = parser.parse_args()
