@@ -56,3 +56,9 @@ Thumbs.db
 # Jupyter
 .ipynb_checkpoints/
 *.ipynb
+
+# Testing
+.coverage
+htmlcov/
+.pytest_cache/
+*.cover
