@@ -27,7 +27,13 @@ export default function Analysis() {
         const withActualData = response.ipos.filter(
           (ipo) => ipo.actual_day0_close_return !== undefined
         );
-        setIpoData(withActualData);
+        // Filter out SPAC companies
+        const filteredIpos = withActualData.filter(
+          (ipo) =>
+            !ipo.company_name.includes('기업인수목적') &&
+            !(ipo.industry && ipo.industry.includes('SPAC'))
+        );
+        setIpoData(filteredIpos);
       })
       .catch((error) => {
         console.error("Failed to load IPO data:", error);

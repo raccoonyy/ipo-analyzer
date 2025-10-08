@@ -128,14 +128,18 @@ def format_ipo_record(row, index):
 
     # OHLCV data for day0 (if available)
     if pd.notna(row.get("day0_open_kis")):
-        record["day0_ohlcv"] = [{
-            "timestamp": str(row["listing_date"])[:10],
-            "open": int(row.get("day0_open_kis", 0)),
-            "high": int(row.get("day0_high_kis", row.get("actual_day0_high", 0))),
-            "low": int(row.get("day0_low_kis", 0)),
-            "close": int(row.get("day0_close_kis", row.get("actual_day0_close", 0))),
-            "volume": int(row.get("day0_volume_kis", 0)),
-        }]
+        record["day0_ohlcv"] = [
+            {
+                "timestamp": str(row["listing_date"])[:10],
+                "open": int(row.get("day0_open_kis", 0)),
+                "high": int(row.get("day0_high_kis", row.get("actual_day0_high", 0))),
+                "low": int(row.get("day0_low_kis", 0)),
+                "close": int(
+                    row.get("day0_close_kis", row.get("actual_day0_close", 0))
+                ),
+                "volume": int(row.get("day0_volume_kis", 0)),
+            }
+        ]
 
     # OHLCV data for day1 (if available)
     if pd.notna(row.get("day1_open")):
@@ -143,14 +147,16 @@ def format_ipo_record(row, index):
         listing_date = pd.to_datetime(row["listing_date"])
         day1_date = listing_date + pd.Timedelta(days=1)
 
-        record["day1_ohlcv"] = [{
-            "timestamp": str(day1_date)[:10],
-            "open": int(row.get("day1_open", 0)),
-            "high": int(row.get("day1_high", 0)),
-            "low": int(row.get("day1_low", 0)),
-            "close": int(row.get("day1_close", row.get("actual_day1_close", 0))),
-            "volume": int(row.get("day1_volume", 0)),
-        }]
+        record["day1_ohlcv"] = [
+            {
+                "timestamp": str(day1_date)[:10],
+                "open": int(row.get("day1_open", 0)),
+                "high": int(row.get("day1_high", 0)),
+                "low": int(row.get("day1_low", 0)),
+                "close": int(row.get("day1_close", row.get("actual_day1_close", 0))),
+                "volume": int(row.get("day1_volume", 0)),
+            }
+        ]
 
     return record
 
@@ -175,6 +181,22 @@ def main():
     print(f"Loaded {len(df)} IPO records")
     print(f"Date range: {df['listing_date'].min()} to {df['listing_date'].max()}")
     print()
+
+    # Filter out SPAC companies
+    initial_count = len(df)
+    df = df[
+        (~df["company_name"].str.contains("기업인수목적", na=False))
+        & (
+            ~df.get("industry", pd.Series([""] * len(df))).str.contains(
+                "SPAC", na=False
+            )
+        )
+    ]
+    spac_count = initial_count - len(df)
+    if spac_count > 0:
+        print(f"Filtered out {spac_count} SPAC companies")
+        print(f"Remaining IPOs: {len(df)}")
+        print()
 
     # 2. Load trained models
     print("=" * 80)

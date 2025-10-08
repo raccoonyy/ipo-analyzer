@@ -26,10 +26,16 @@ const Index = () => {
         if (!response.ipos || !Array.isArray(response.ipos)) {
           throw new Error('Invalid data format: expected ipos array');
         }
-        setIpoData(response.ipos);
+        // Filter out SPAC companies
+        const filteredIpos = response.ipos.filter(
+          (ipo) =>
+            !ipo.company_name.includes('기업인수목적') &&
+            !(ipo.industry && ipo.industry.includes('SPAC'))
+        );
+        setIpoData(filteredIpos);
         setIsLoading(false);
-        if (response.ipos && response.ipos.length > 0) {
-          setSelectedCompany(response.ipos[0]);
+        if (filteredIpos && filteredIpos.length > 0) {
+          setSelectedCompany(filteredIpos[0]);
         }
       })
       .catch(err => {

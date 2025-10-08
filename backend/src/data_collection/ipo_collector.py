@@ -296,6 +296,20 @@ class IPODataCollector:
             logger.warning("No IPO data found. Using sample data instead.")
             return self._collect_sample_metadata(start_year, end_year)
 
+        # Filter out SPAC companies
+        initial_count = len(df)
+        df = df[
+            (~df["company_name"].str.contains("기업인수목적", na=False))
+            & (
+                ~df.get("industry", pd.Series([""] * len(df))).str.contains(
+                    "SPAC", na=False
+                )
+            )
+        ]
+        spac_count = initial_count - len(df)
+        if spac_count > 0:
+            logger.info(f"Filtered out {spac_count} SPAC companies")
+
         # Validate data
         from src.validation import DataValidator
 
@@ -409,6 +423,20 @@ class IPODataCollector:
             metadata.append(record)
 
         df = pd.DataFrame(metadata)
+
+        # Filter out SPAC companies
+        initial_count = len(df)
+        df = df[
+            (~df["company_name"].str.contains("기업인수목적", na=False))
+            & (
+                ~df.get("industry", pd.Series([""] * len(df))).str.contains(
+                    "SPAC", na=False
+                )
+            )
+        ]
+        spac_count = initial_count - len(df)
+        if spac_count > 0:
+            logger.info(f"Filtered out {spac_count} SPAC companies")
 
         # Validate data
         from src.validation import DataValidator

@@ -200,6 +200,14 @@ def main():
         # Convert to DataFrame
         df = pd.DataFrame(collected_data)
 
+        # Filter out SPAC companies
+        initial_count = len(df)
+        df = df[~df["company_name"].str.contains("기업인수목적", na=False)]
+        spac_count = initial_count - len(df)
+        if spac_count > 0:
+            print(f"Filtered out {spac_count} SPAC companies")
+            print()
+
         # Sort by listing date
         df = df.sort_values("listing_date")
 
