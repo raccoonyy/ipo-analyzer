@@ -58,18 +58,10 @@ export default function Analysis() {
         return false;
       }
 
-      // Industry filter
+      // Sector filter
       if (
-        filters.industries.length > 0 &&
-        !filters.industries.includes(company.industry)
-      ) {
-        return false;
-      }
-
-      // Sector 38 filter
-      if (
-        filters.sectors_38.length > 0 &&
-        !filters.sectors_38.includes(company.sector_38)
+        filters.sectors.length > 0 &&
+        !filters.sectors.includes(company.sector_grouped)
       ) {
         return false;
       }

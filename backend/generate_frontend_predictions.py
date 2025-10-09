@@ -11,6 +11,7 @@ from datetime import datetime
 from src.features.feature_engineering import IPOFeatureEngineer
 from src.models.ipo_predictor import IPOPricePredictor
 from src.config.settings import settings
+from src.utils.sector_mapping import get_sector_group
 import logging
 
 logging.basicConfig(
@@ -81,6 +82,11 @@ def format_ipo_record(row, index):
         "sector_38": (
             str(row.get("sector_38", "N/A"))
             if pd.notna(row.get("sector_38"))
+            else "N/A"
+        ),
+        "sector_grouped": (
+            str(row.get("sector_grouped", "N/A"))
+            if pd.notna(row.get("sector_grouped"))
             else "N/A"
         ),
         # IPO details
@@ -215,10 +221,20 @@ def main():
         )
         sector_count = df["sector_38"].notna().sum()
         print(f"Merged sector data: {sector_count} IPOs have sector information")
+
+        # Group sectors into broader categories
+        df["sector_grouped"] = df["sector_38"].apply(
+            lambda x: get_sector_group(x) if pd.notna(x) else "N/A"
+        )
+        grouped_count = df["sector_grouped"].nunique()
+        print(
+            f"Grouped into {grouped_count} broader categories (from {df['sector_38'].nunique()} detailed sectors)"
+        )
         print()
     except FileNotFoundError:
         print("⚠️  Sector data not found, skipping sector merge")
         df["sector_38"] = None
+        df["sector_grouped"] = "N/A"
         print()
 
     # Filter out SPAC companies

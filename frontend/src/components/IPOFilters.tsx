@@ -26,8 +26,7 @@ export interface FilterState {
     start: string;
     end: string;
   };
-  industries: string[];
-  sectors_38: string[];
+  sectors: string[];
   priceRange: {
     min: number;
     max: number;
@@ -41,8 +40,7 @@ interface IPOFiltersProps {
 
 export function IPOFilters({ companies, onFilterChange }: IPOFiltersProps) {
   // Extract unique values for filters
-  const allIndustries = Array.from(new Set(companies.map(c => c.industry))).sort();
-  const allSectors38 = Array.from(new Set(companies.map(c => c.sector_38).filter(s => s && s !== "N/A"))).sort();
+  const allSectors = Array.from(new Set(companies.map(c => c.sector_grouped).filter(s => s && s !== "N/A"))).sort();
 
   const allPrices = companies.map(c => c.ipo_price_confirmed);
   const minPrice = Math.min(...allPrices);
@@ -57,46 +55,27 @@ export function IPOFilters({ companies, onFilterChange }: IPOFiltersProps) {
       start: minDate,
       end: maxDate,
     },
-    industries: [],
-    sectors_38: [],
+    sectors: [],
     priceRange: {
       min: minPrice,
       max: maxPrice,
     },
   });
 
-  const [selectedIndustries, setSelectedIndustries] = useState<Set<string>>(new Set());
-  const [selectedSectors38, setSelectedSectors38] = useState<Set<string>>(new Set());
+  const [selectedSectors, setSelectedSectors] = useState<Set<string>>(new Set());
 
-  const handleIndustryToggle = (industry: string) => {
-    const newSet = new Set(selectedIndustries);
-    if (newSet.has(industry)) {
-      newSet.delete(industry);
-    } else {
-      newSet.add(industry);
-    }
-    setSelectedIndustries(newSet);
-
-    const newFilters = {
-      ...filters,
-      industries: Array.from(newSet),
-    };
-    setFilters(newFilters);
-    onFilterChange(newFilters);
-  };
-
-  const handleSector38Toggle = (sector: string) => {
-    const newSet = new Set(selectedSectors38);
+  const handleSectorToggle = (sector: string) => {
+    const newSet = new Set(selectedSectors);
     if (newSet.has(sector)) {
       newSet.delete(sector);
     } else {
       newSet.add(sector);
     }
-    setSelectedSectors38(newSet);
+    setSelectedSectors(newSet);
 
     const newFilters = {
       ...filters,
-      sectors_38: Array.from(newSet),
+      sectors: Array.from(newSet),
     };
     setFilters(newFilters);
     onFilterChange(newFilters);
@@ -133,16 +112,14 @@ export function IPOFilters({ companies, onFilterChange }: IPOFiltersProps) {
         start: minDate,
         end: maxDate,
       },
-      industries: [],
-      sectors_38: [],
+      sectors: [],
       priceRange: {
         min: minPrice,
         max: maxPrice,
       },
     };
     setFilters(defaultFilters);
-    setSelectedIndustries(new Set());
-    setSelectedSectors38(new Set());
+    setSelectedSectors(new Set());
     onFilterChange(defaultFilters);
   };
 
@@ -180,50 +157,19 @@ export function IPOFilters({ companies, onFilterChange }: IPOFiltersProps) {
           </div>
         </div>
 
-        {/* Industry Filter */}
+        {/* Sector Filter */}
         <div className="space-y-2">
-          <Label>업종 (KOSDAQ)</Label>
+          <Label>업종</Label>
           <div className="max-h-[200px] overflow-y-auto border rounded-md p-3 space-y-2">
-            {allIndustries.map((industry) => (
-              <div key={industry} className="flex items-center space-x-2">
-                <Checkbox
-                  id={`industry-${industry}`}
-                  checked={selectedIndustries.has(industry)}
-                  onCheckedChange={() => handleIndustryToggle(industry)}
-                />
-                <div
-                  className="w-4 h-4 rounded flex-shrink-0"
-                  style={{ backgroundColor: INDUSTRY_COLORS[industry] || "#8884d8" }}
-                ></div>
-                <label
-                  htmlFor={`industry-${industry}`}
-                  className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 cursor-pointer"
-                >
-                  {industry}
-                </label>
-              </div>
-            ))}
-          </div>
-          {selectedIndustries.size > 0 && (
-            <p className="text-xs text-muted-foreground">
-              {selectedIndustries.size}개 선택됨
-            </p>
-          )}
-        </div>
-
-        {/* Sector 38 Filter */}
-        <div className="space-y-2">
-          <Label>업종 (38.co.kr)</Label>
-          <div className="max-h-[200px] overflow-y-auto border rounded-md p-3 space-y-2">
-            {allSectors38.map((sector) => (
+            {allSectors.map((sector) => (
               <div key={sector} className="flex items-center space-x-2">
                 <Checkbox
-                  id={`sector38-${sector}`}
-                  checked={selectedSectors38.has(sector)}
-                  onCheckedChange={() => handleSector38Toggle(sector)}
+                  id={`sector-${sector}`}
+                  checked={selectedSectors.has(sector)}
+                  onCheckedChange={() => handleSectorToggle(sector)}
                 />
                 <label
-                  htmlFor={`sector38-${sector}`}
+                  htmlFor={`sector-${sector}`}
                   className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 cursor-pointer"
                 >
                   {sector}
@@ -231,9 +177,9 @@ export function IPOFilters({ companies, onFilterChange }: IPOFiltersProps) {
               </div>
             ))}
           </div>
-          {selectedSectors38.size > 0 && (
+          {selectedSectors.size > 0 && (
             <p className="text-xs text-muted-foreground">
-              {selectedSectors38.size}개 선택됨
+              {selectedSectors.size}개 선택됨
             </p>
           )}
         </div>
