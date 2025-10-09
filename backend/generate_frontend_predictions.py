@@ -58,7 +58,9 @@ def calculate_returns(row):
         returns["actual_day0_close_return"] = (
             (actual_day0_close - ipo_price) / ipo_price * 100
         )
-        returns["actual_day1_close_return"] = actual_day0_to_day1_return  # Day0 close relative
+        returns["actual_day1_close_return"] = (
+            actual_day0_to_day1_return  # Day0 close relative
+        )
         returns["actual_day0_to_day1_return"] = actual_day0_to_day1_return
 
     return returns
@@ -76,6 +78,11 @@ def format_ipo_record(row, index):
         "listing_date": str(row["listing_date"])[:10],  # YYYY-MM-DD
         "industry": str(row.get("industry", "N/A")),
         "theme": str(row.get("theme", "N/A")),
+        "sector_38": (
+            str(row.get("sector_38", "N/A"))
+            if pd.notna(row.get("sector_38"))
+            else "N/A"
+        ),
         # IPO details
         "ipo_price_lower": int(row["ipo_price_lower"]),
         "ipo_price_upper": int(row["ipo_price_upper"]),
@@ -103,7 +110,9 @@ def format_ipo_record(row, index):
 
         record["actual_day0_high"] = int(row["actual_day0_high"])
         record["actual_day0_close"] = int(row["actual_day0_close"])
-        record["actual_day1_high"] = int(actual_day1_high) if pd.notna(actual_day1_high) else 0
+        record["actual_day1_high"] = (
+            int(actual_day1_high) if pd.notna(actual_day1_high) else 0
+        )
         record["actual_day1_close"] = int(row["actual_day1_close"])
         record["actual_day0_high_return"] = round(returns["actual_day0_high_return"], 2)
         record["actual_day0_close_return"] = round(
@@ -119,7 +128,12 @@ def format_ipo_record(row, index):
         # Calculate day1_high return (day0 close relative)
         if actual_day1_high > 0 and row["actual_day0_close"] > 0:
             record["actual_day1_high_return"] = round(
-                ((actual_day1_high - row["actual_day0_close"]) / row["actual_day0_close"] * 100), 2
+                (
+                    (actual_day1_high - row["actual_day0_close"])
+                    / row["actual_day0_close"]
+                    * 100
+                ),
+                2,
             )
 
         # Prediction accuracy
@@ -188,6 +202,24 @@ def main():
     print(f"Loaded {len(df)} IPO records")
     print(f"Date range: {df['listing_date'].min()} to {df['listing_date'].max()}")
     print()
+
+    # Load sector data from 38.co.kr
+    try:
+        sector_data = pd.read_csv("data/raw/38_subscription_data.csv")
+        df["code"] = df["code"].astype(str).str.zfill(6)
+        sector_data["code"] = sector_data["code"].astype(str).str.zfill(6)
+        df = df.merge(
+            sector_data[["code", "sector_38"]],
+            on="code",
+            how="left",
+        )
+        sector_count = df["sector_38"].notna().sum()
+        print(f"Merged sector data: {sector_count} IPOs have sector information")
+        print()
+    except FileNotFoundError:
+        print("⚠️  Sector data not found, skipping sector merge")
+        df["sector_38"] = None
+        print()
 
     # Filter out SPAC companies
     initial_count = len(df)

@@ -27,6 +27,7 @@ export interface FilterState {
     end: string;
   };
   industries: string[];
+  sectors_38: string[];
   priceRange: {
     min: number;
     max: number;
@@ -41,6 +42,7 @@ interface IPOFiltersProps {
 export function IPOFilters({ companies, onFilterChange }: IPOFiltersProps) {
   // Extract unique values for filters
   const allIndustries = Array.from(new Set(companies.map(c => c.industry))).sort();
+  const allSectors38 = Array.from(new Set(companies.map(c => c.sector_38).filter(s => s && s !== "N/A"))).sort();
 
   const allPrices = companies.map(c => c.ipo_price_confirmed);
   const minPrice = Math.min(...allPrices);
@@ -56,6 +58,7 @@ export function IPOFilters({ companies, onFilterChange }: IPOFiltersProps) {
       end: maxDate,
     },
     industries: [],
+    sectors_38: [],
     priceRange: {
       min: minPrice,
       max: maxPrice,
@@ -63,6 +66,7 @@ export function IPOFilters({ companies, onFilterChange }: IPOFiltersProps) {
   });
 
   const [selectedIndustries, setSelectedIndustries] = useState<Set<string>>(new Set());
+  const [selectedSectors38, setSelectedSectors38] = useState<Set<string>>(new Set());
 
   const handleIndustryToggle = (industry: string) => {
     const newSet = new Set(selectedIndustries);
@@ -76,6 +80,23 @@ export function IPOFilters({ companies, onFilterChange }: IPOFiltersProps) {
     const newFilters = {
       ...filters,
       industries: Array.from(newSet),
+    };
+    setFilters(newFilters);
+    onFilterChange(newFilters);
+  };
+
+  const handleSector38Toggle = (sector: string) => {
+    const newSet = new Set(selectedSectors38);
+    if (newSet.has(sector)) {
+      newSet.delete(sector);
+    } else {
+      newSet.add(sector);
+    }
+    setSelectedSectors38(newSet);
+
+    const newFilters = {
+      ...filters,
+      sectors_38: Array.from(newSet),
     };
     setFilters(newFilters);
     onFilterChange(newFilters);
@@ -113,6 +134,7 @@ export function IPOFilters({ companies, onFilterChange }: IPOFiltersProps) {
         end: maxDate,
       },
       industries: [],
+      sectors_38: [],
       priceRange: {
         min: minPrice,
         max: maxPrice,
@@ -120,6 +142,7 @@ export function IPOFilters({ companies, onFilterChange }: IPOFiltersProps) {
     };
     setFilters(defaultFilters);
     setSelectedIndustries(new Set());
+    setSelectedSectors38(new Set());
     onFilterChange(defaultFilters);
   };
 
@@ -159,7 +182,7 @@ export function IPOFilters({ companies, onFilterChange }: IPOFiltersProps) {
 
         {/* Industry Filter */}
         <div className="space-y-2">
-          <Label>업종</Label>
+          <Label>업종 (KOSDAQ)</Label>
           <div className="max-h-[200px] overflow-y-auto border rounded-md p-3 space-y-2">
             {allIndustries.map((industry) => (
               <div key={industry} className="flex items-center space-x-2">
@@ -184,6 +207,33 @@ export function IPOFilters({ companies, onFilterChange }: IPOFiltersProps) {
           {selectedIndustries.size > 0 && (
             <p className="text-xs text-muted-foreground">
               {selectedIndustries.size}개 선택됨
+            </p>
+          )}
+        </div>
+
+        {/* Sector 38 Filter */}
+        <div className="space-y-2">
+          <Label>업종 (38.co.kr)</Label>
+          <div className="max-h-[200px] overflow-y-auto border rounded-md p-3 space-y-2">
+            {allSectors38.map((sector) => (
+              <div key={sector} className="flex items-center space-x-2">
+                <Checkbox
+                  id={`sector38-${sector}`}
+                  checked={selectedSectors38.has(sector)}
+                  onCheckedChange={() => handleSector38Toggle(sector)}
+                />
+                <label
+                  htmlFor={`sector38-${sector}`}
+                  className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 cursor-pointer"
+                >
+                  {sector}
+                </label>
+              </div>
+            ))}
+          </div>
+          {selectedSectors38.size > 0 && (
+            <p className="text-xs text-muted-foreground">
+              {selectedSectors38.size}개 선택됨
             </p>
           )}
         </div>

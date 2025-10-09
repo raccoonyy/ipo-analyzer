@@ -14,6 +14,7 @@ export interface IPOCompany {
   listing_date: string;
   industry: string;
   theme: string;
+  sector_38: string;
   ipo_price_lower: number;
   ipo_price_upper: number;
   ipo_price_confirmed: number;

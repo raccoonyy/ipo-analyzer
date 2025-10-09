@@ -126,10 +126,23 @@ def parse_ipo_html(html):
             except:
                 pass
 
+    # 9. 업종 (sector/industry)
+    patterns = [
+        r"업종\s*</td>\s*<td[^>]*>&nbsp;\s*([가-힣A-Za-z0-9()\s,./·]+?)\s*</td>",
+        r"업종.*?<td[^>]*>\s*&nbsp;\s*([가-힣A-Za-z0-9()\s,./·]+?)\s*</td>",
+    ]
+    for pattern in patterns:
+        match = re.search(pattern, html, re.DOTALL)
+        if match:
+            sector = match.group(1).strip()
+            if sector and sector != "&nbsp;":
+                data["sector_38"] = sector
+                break
+
     return data if len(data) >= 2 else None  # At least code and one other field
 
 
-def is_target_year(listing_date, target_years=[2022, 2023, 2024]):
+def is_target_year(listing_date, target_years=[2022, 2023, 2024, 2025]):
     """Check if listing date is in target years"""
     if not listing_date:
         return False
@@ -152,14 +165,14 @@ def main():
     print("=" * 80)
     print("38.CO.KR IPO SUBSCRIPTION DATA COLLECTION")
     print("=" * 80)
-    print("Target years: 2022, 2023, 2024")
+    print("Target years: 2022, 2023, 2024, 2025")
     print("Rate limit: 0.6s per request")
     print()
     sys.stdout.flush()
 
     # IPO number range to search
     start_no = 1400
-    end_no = 2300  # Full range for 2022-2024
+    end_no = 2350  # Full range for 2022-2025
 
     collected_data = []
     found_count = 0
@@ -233,9 +246,11 @@ def main():
             "company_name",
             "listing_date",
             "ipo_price",
+            "sector_38",
             "institutional_demand_rate",
             "subscription_competition_rate",
             "lockup_ratio",
+            "shares_offered",
         ]
 
         # Only include columns that exist
@@ -255,9 +270,11 @@ def main():
         print(f"Total records: {len(df)}")
         print(f"\nFields coverage:")
         for col in [
+            "sector_38",
             "institutional_demand_rate",
             "subscription_competition_rate",
             "lockup_ratio",
+            "shares_offered",
         ]:
             if col in df.columns:
                 count = df[col].notna().sum()
@@ -265,7 +282,7 @@ def main():
                 print(f"  {col:35}: {count:3} / {len(df)} ({pct:.1f}%)")
 
         print(f"\nYear distribution:")
-        for year in [2022, 2023, 2024]:
+        for year in [2022, 2023, 2024, 2025]:
             count = df[df["listing_date"].str.startswith(str(year))].shape[0]
             print(f"  {year}: {count} IPOs")
 

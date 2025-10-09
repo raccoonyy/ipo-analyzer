@@ -66,6 +66,13 @@ export default function Analysis() {
         return false;
       }
 
+      // Sector 38 filter
+      if (
+        filters.sectors_38.length > 0 &&
+        !filters.sectors_38.includes(company.sector_38)
+      ) {
+        return false;
+      }
 
       // Price filter
       if (
