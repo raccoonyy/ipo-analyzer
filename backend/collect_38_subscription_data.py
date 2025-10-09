@@ -1,6 +1,7 @@
 """
 Collect IPO subscription data from 38.co.kr
 Rate limit: Max 2 requests per second (0.6s delay)
+HTML caching: Saves downloaded pages to data/cache/38_html/
 """
 
 import sys
@@ -10,16 +11,53 @@ import re
 import time
 import pandas as pd
 from datetime import datetime
+from pathlib import Path
 
 
-def fetch_url(url):
-    """Fetch URL using curl"""
+def fetch_url(url, cache_dir="data/cache/38_html"):
+    """
+    Fetch URL using curl with local caching
+
+    Args:
+        url: URL to fetch
+        cache_dir: Directory to cache HTML files
+
+    Returns:
+        HTML content as string
+    """
+    # Extract IPO number from URL for cache filename
+    match = re.search(r"no=(\d+)", url)
+    if match:
+        ipo_no = match.group(1)
+        cache_path = Path(cache_dir) / f"{ipo_no}.html"
+
+        # Check if cached file exists
+        if cache_path.exists():
+            try:
+                with open(cache_path, "r", encoding="euc-kr", errors="ignore") as f:
+                    return f.read()
+            except:
+                # If read fails, download again
+                pass
+
+    # Download from web
     cmd = ["curl", "-s", url]
     result = subprocess.run(cmd, capture_output=True)
     try:
         html = result.stdout.decode("euc-kr", errors="ignore")
     except:
         html = result.stdout.decode("utf-8", errors="ignore")
+
+    # Save to cache if we have IPO number
+    if match and html and len(html) > 1000:
+        cache_path.parent.mkdir(parents=True, exist_ok=True)
+        try:
+            with open(cache_path, "w", encoding="euc-kr", errors="ignore") as f:
+                f.write(html)
+        except:
+            # Cache write failure is not critical
+            pass
+
     return html
 
 
@@ -167,6 +205,7 @@ def main():
     print("=" * 80)
     print("Target years: 2022, 2023, 2024, 2025")
     print("Rate limit: 0.6s per request")
+    print("HTML Cache: data/cache/38_html/")
     print()
     sys.stdout.flush()
 
@@ -176,7 +215,15 @@ def main():
 
     collected_data = []
     found_count = 0
+    cache_hits = 0
+    cache_misses = 0
 
+    # Check cache directory
+    cache_dir = Path("data/cache/38_html")
+    existing_cache_count = (
+        len(list(cache_dir.glob("*.html"))) if cache_dir.exists() else 0
+    )
+    print(f"Existing cached pages: {existing_cache_count}")
     print(f"Searching IPO numbers {start_no} to {end_no}...")
     print()
 
@@ -194,9 +241,19 @@ def main():
 
         url = f"https://www.38.co.kr/html/fund/?o=v&no={no}"
 
+        # Check if cached before fetching
+        cache_path = Path("data/cache/38_html") / f"{no}.html"
+        was_cached = cache_path.exists()
+
         try:
             html = fetch_url(url)
             data = parse_ipo_html(html)
+
+            # Track cache statistics
+            if was_cached:
+                cache_hits += 1
+            else:
+                cache_misses += 1
 
             if data and "listing_date" in data:
                 # Check if it's a target year
@@ -213,8 +270,9 @@ def main():
         except Exception as e:
             print(f"  ✗ No.{no}: Error - {e}")
 
-        # Rate limit: wait 0.6s between requests
-        time.sleep(0.6)
+        # Rate limit: wait 0.6s between requests (only for web requests)
+        if not was_cached:
+            time.sleep(0.6)
 
     print()
     print("=" * 80)
@@ -222,6 +280,13 @@ def main():
     print("=" * 80)
     print(f"Total IPOs found: {len(collected_data)}")
     print(f"Time elapsed: {(time.time() - start_time)/60:.1f} minutes")
+    print()
+    print("Cache Statistics:")
+    print(f"  Cache hits:   {cache_hits:4} (loaded from disk)")
+    print(f"  Cache misses: {cache_misses:4} (downloaded from web)")
+    if cache_hits + cache_misses > 0:
+        hit_rate = cache_hits / (cache_hits + cache_misses) * 100
+        print(f"  Hit rate:     {hit_rate:.1f}%")
     print()
 
     if collected_data:
