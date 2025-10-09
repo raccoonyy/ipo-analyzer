@@ -194,11 +194,11 @@ export default function Analysis() {
 
           {/* Charts - Main Content */}
           <div className="lg:col-span-3 space-y-6">
-            {/* Error Analysis Chart */}
-            <ErrorAnalysisChart companies={filteredData} />
-
             {/* Quadrant Chart */}
             <QuadrantChart companies={filteredData} />
+
+            {/* Error Analysis Chart */}
+            <ErrorAnalysisChart companies={filteredData} />
 
             {/* Accuracy Matrix */}
             <AccuracyMatrix companies={filteredData} />
