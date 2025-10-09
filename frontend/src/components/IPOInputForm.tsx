@@ -101,7 +101,7 @@ export function IPOInputForm({
             </div>
             <div>
               <p className="text-sm text-muted-foreground">업종</p>
-              <p className="font-medium">{selectedCompany.industry}</p>
+              <p className="font-medium">{selectedCompany.sector_grouped}</p>
             </div>
             <div>
               <p className="text-sm text-muted-foreground">테마</p>
