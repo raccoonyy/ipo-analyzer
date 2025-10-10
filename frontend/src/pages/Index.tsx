@@ -5,7 +5,7 @@ import { PredictionResult } from "@/components/PredictionResult";
 import { IPOData, IPOCompany, IPODataResponse } from "@/types/ipo";
 import { useToast } from "@/hooks/use-toast";
 import { Button } from "@/components/ui/button";
-import { BarChart3 } from "lucide-react";
+import { BarChart3, Calculator } from "lucide-react";
 
 const Index = () => {
   const [selectedCompany, setSelectedCompany] = useState<IPOCompany | null>(null);
@@ -74,12 +74,20 @@ const Index = () => {
                 시장 데이터 기반 IPO 단기 가격 예측 (2022-2025)
               </p>
             </div>
-            <Link to="/analysis">
-              <Button variant="outline" className="gap-2">
-                <BarChart3 className="h-4 w-4" />
-                IPO 분석
-              </Button>
-            </Link>
+            <div className="flex gap-2">
+              <Link to="/analysis">
+                <Button variant="outline" className="gap-2">
+                  <BarChart3 className="h-4 w-4" />
+                  분석
+                </Button>
+              </Link>
+              <Link to="/calculator">
+                <Button variant="outline" className="gap-2">
+                  <Calculator className="h-4 w-4" />
+                  계산기
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </header>

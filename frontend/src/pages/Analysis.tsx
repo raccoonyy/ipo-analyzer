@@ -7,7 +7,7 @@ import { QuadrantChart } from "@/components/QuadrantChart";
 import { AccuracyMatrix } from "@/components/AccuracyMatrix";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Loader2, BarChart3, ArrowLeft } from "lucide-react";
+import { Loader2, BarChart3, ArrowLeft, Calculator } from "lucide-react";
 
 export default function Analysis() {
   const [ipoData, setIpoData] = useState<IPOCompany[]>([]);
@@ -122,12 +122,20 @@ export default function Analysis() {
               <BarChart3 className="h-8 w-8 text-primary" />
               <h1 className="text-4xl font-bold">IPO 분석</h1>
             </div>
-            <Link to="/">
-              <Button variant="outline" className="gap-2">
-                <ArrowLeft className="h-4 w-4" />
-                예측 페이지
-              </Button>
-            </Link>
+            <div className="flex gap-2">
+              <Link to="/">
+                <Button variant="outline" className="gap-2">
+                  <ArrowLeft className="h-4 w-4" />
+                  예측
+                </Button>
+              </Link>
+              <Link to="/calculator">
+                <Button variant="outline" className="gap-2">
+                  <Calculator className="h-4 w-4" />
+                  계산기
+                </Button>
+              </Link>
+            </div>
           </div>
           <p className="text-lg text-muted-foreground">
             예측 모델의 성능을 다양한 관점에서 분석합니다
