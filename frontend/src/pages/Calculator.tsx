@@ -14,7 +14,6 @@ import {
   Tooltip,
   Cell,
   CartesianGrid,
-  Legend,
 } from "recharts";
 
 interface CalculatorData {
@@ -73,8 +72,9 @@ const Calculator = () => {
     lower: number;
     upper: number;
     confidence: string;
+    sampleCount: number;
   } => {
-    if (!calculatorData) return { expected: 0, lower: 0, upper: 0, confidence: "low" };
+    if (!calculatorData) return { expected: 0, lower: 0, upper: 0, confidence: "low", sampleCount: 0 };
 
     const price = ipoPrice[0];
     const comp = competitionRate[0];
@@ -128,6 +128,7 @@ const Calculator = () => {
       lower,
       upper,
       confidence,
+      sampleCount,
     };
   };
 
@@ -255,8 +256,11 @@ const Calculator = () => {
                     step={50}
                     className="w-full"
                   />
-                  <div className="flex justify-between text-xs text-muted-foreground">
+                  <div className="relative flex justify-between text-xs text-muted-foreground">
                     <span>0:1</span>
+                    <span className="absolute left-[16.67%] -translate-x-1/2">500:1</span>
+                    <span className="absolute left-[33.33%] -translate-x-1/2">1,000:1</span>
+                    <span className="absolute left-[66.67%] -translate-x-1/2">2,000:1</span>
                     <span>3,000:1</span>
                   </div>
                 </div>
@@ -277,8 +281,10 @@ const Calculator = () => {
                     step={5}
                     className="w-full"
                   />
-                  <div className="flex justify-between text-xs text-muted-foreground">
+                  <div className="relative flex justify-between text-xs text-muted-foreground">
                     <span>0%</span>
+                    <span className="absolute left-[30%] -translate-x-1/2">30%</span>
+                    <span className="absolute left-[60%] -translate-x-1/2">60%</span>
                     <span>100%</span>
                   </div>
                 </div>
@@ -312,7 +318,7 @@ const Calculator = () => {
                     </span>
                   </div>
                   <div className="flex justify-between text-sm">
-                    <span className="text-muted-foreground">신뢰도</span>
+                    <span className="text-muted-foreground">신뢰도 (샘플 수)</span>
                     <span
                       className={`font-medium ${
                         result.confidence === "high"
@@ -326,9 +332,18 @@ const Calculator = () => {
                         ? "높음"
                         : result.confidence === "medium"
                         ? "중간"
-                        : "낮음"}
+                        : "낮음"}{" "}
+                      ({result.sampleCount}건)
                     </span>
                   </div>
+                </div>
+
+                <div className="p-3 bg-muted rounded-md border">
+                  <p className="text-xs text-muted-foreground">
+                    💡 <strong>신뢰구간</strong>: 실제 수익률이 이 범위에 포함될 확률이 약 68%입니다.
+                    <br />
+                    💡 <strong>신뢰도</strong>: 높음(20건 이상), 중간(10-19건), 낮음(10건 미만). 샘플이 많을수록 예측이 정확합니다.
+                  </p>
                 </div>
 
                 <div className="p-3 bg-blue-50 dark:bg-blue-950 rounded-md border border-blue-200 dark:border-blue-800">
@@ -393,7 +408,6 @@ const Calculator = () => {
                         <Cell key={`cell-${index}`} fill={getReturnColor(entry.z)} />
                       ))}
                     </Scatter>
-                    <Legend />
                   </ScatterChart>
                 </ResponsiveContainer>
               </CardContent>
@@ -403,7 +417,9 @@ const Calculator = () => {
             <Card>
               <CardHeader>
                 <CardTitle>수익률 높은 조합 TOP 5</CardTitle>
-                <CardDescription>실제 데이터 기반</CardDescription>
+                <CardDescription>
+                  청약경쟁률 × 의무보유비율 조합 (실제 데이터 기반)
+                </CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="space-y-3">
@@ -414,7 +430,7 @@ const Calculator = () => {
                     >
                       <div className="flex-1">
                         <p className="text-sm font-medium">
-                          {idx + 1}. {combo.competition} + {combo.lockup}
+                          {idx + 1}. {combo.competition} 경쟁률 + {combo.lockup} 의무보유
                         </p>
                         <p className="text-xs text-muted-foreground">
                           {combo.sample_count}건 샘플
@@ -427,6 +443,15 @@ const Calculator = () => {
                       </div>
                     </div>
                   ))}
+                </div>
+                <div className="mt-4 p-3 bg-muted rounded-md border">
+                  <p className="text-xs text-muted-foreground">
+                    💡 <strong>구간 설명</strong>
+                    <br />
+                    • Low/Medium/High/Very High: 청약경쟁률 구간 (Low &lt;500, Medium 500-1K, High 1K-2K, Very High &gt;2K)
+                    <br />
+                    • Low/Medium/High: 의무보유비율 구간 (Low &lt;30%, Medium 30-60%, High &gt;60%)
+                  </p>
                 </div>
               </CardContent>
             </Card>
