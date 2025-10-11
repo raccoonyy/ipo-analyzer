@@ -95,8 +95,9 @@ export function IPOInputForm({
             <div>
               <p className="text-sm text-muted-foreground">희망공모가액</p>
               <p className="font-medium">
-                ₩{selectedCompany.ipo_price_lower.toLocaleString()} - ₩
-                {selectedCompany.ipo_price_upper.toLocaleString()}
+                {selectedCompany.ipo_price_lower && selectedCompany.ipo_price_upper
+                  ? `₩${selectedCompany.ipo_price_lower.toLocaleString()} - ₩${selectedCompany.ipo_price_upper.toLocaleString()}`
+                  : 'N/A'}
               </p>
             </div>
             <div>
