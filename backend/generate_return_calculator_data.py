@@ -9,10 +9,8 @@ import json
 from pathlib import Path
 
 # Load data
-df = pd.read_csv("data/raw/ipo_full_dataset_2022_2025.csv")
-df["day1_return"] = (
-    (df["day1_close"] - df["ipo_price_confirmed"]) / df["ipo_price_confirmed"] * 100
-)
+df = pd.read_csv("data/raw/ipo_full_dataset_2018_2025.csv")
+df["day1_return"] = (df["day1_close"] - df["ipo_price"]) / df["ipo_price"] * 100
 df = df[df["day1_return"].notna()].copy()
 
 print("=" * 80)
@@ -39,9 +37,7 @@ heatmap_data = []
 
 for comp_level in ["Low (<500)", "Medium (500-1K)", "High (1K-2K)", "Very High (>2K)"]:
     for lockup_level in ["Low (<30%)", "Medium (30-60%)", "High (>60%)"]:
-        subset = df[
-            (df["comp_bin"] == comp_level) & (df["lockup_bin"] == lockup_level)
-        ]
+        subset = df[(df["comp_bin"] == comp_level) & (df["lockup_bin"] == lockup_level)]
 
         if len(subset) >= 3:  # At least 3 samples
             mean_return = subset["day1_return"].mean()
@@ -87,10 +83,7 @@ price_factors = {}
 overall_mean = df["day1_return"].mean()
 
 for label, (min_price, max_price) in price_bins.items():
-    subset = df[
-        (df["ipo_price_confirmed"] >= min_price)
-        & (df["ipo_price_confirmed"] < max_price)
-    ]
+    subset = df[(df["ipo_price"] >= min_price) & (df["ipo_price"] < max_price)]
 
     if len(subset) >= 5:
         bin_mean = subset["day1_return"].mean()
@@ -173,7 +166,7 @@ output = {
         "total_samples": int(len(df)),
         "overall_mean_return": round(df["day1_return"].mean(), 2),
         "overall_median_return": round(df["day1_return"].median(), 2),
-        "data_period": "2022-2025",
+        "data_period": "2018-2025",
     },
     "heatmap_data": heatmap_data,
     "price_factors": price_factors,
@@ -197,7 +190,9 @@ print("=" * 80)
 print("SUMMARY")
 print("=" * 80)
 print(f"Overall mean return: {output['metadata']['overall_mean_return']:.2f}%")
-print(f"Heatmap cells: {len([h for h in heatmap_data if h['count'] > 0])}/{len(heatmap_data)} with data")
+print(
+    f"Heatmap cells: {len([h for h in heatmap_data if h['count'] > 0])}/{len(heatmap_data)} with data"
+)
 print(f"Price factors: {len(price_factors)}")
 print()
 
