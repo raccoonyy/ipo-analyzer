@@ -23,6 +23,26 @@ def safe_value(val):
     return val
 
 
+def safe_int(val):
+    """Safely convert to int or return None"""
+    if pd.isna(val):
+        return None
+    try:
+        return int(val)
+    except:
+        return None
+
+
+def safe_float(val):
+    """Safely convert to float or return None"""
+    if pd.isna(val):
+        return None
+    try:
+        return float(val)
+    except:
+        return None
+
+
 def main():
     """Generate predictions for frontend"""
     print("=" * 80)
@@ -96,6 +116,13 @@ def main():
 
     ipos_list = []
     for idx, row in df_filtered.iterrows():
+        ipo_price = safe_int(row.get("ipo_price")) or safe_int(
+            row.get("ipo_price_confirmed")
+        )
+        pred_day0_high = int(round(predictions["day0_high"][idx]))
+        pred_day0_close = int(round(predictions["day0_close"][idx]))
+        pred_day1_close = int(round(predictions["day1_close"][idx]))
+
         ipo_dict = {
             "id": int(idx),
             "code": str(row["code"]),
@@ -103,29 +130,36 @@ def main():
             "listing_date": str(row["listing_date"]),
             "industry": safe_value(row.get("industry", "기타")) or "기타",
             "theme": safe_value(row.get("theme", "주권")) or "주권",
-            "ipo_price_confirmed": (
-                int(row["ipo_price"]) if pd.notna(row["ipo_price"]) else None
+            "ipo_price_lower": safe_int(row.get("ipo_price_lower")),
+            "ipo_price_upper": safe_int(row.get("ipo_price_upper")),
+            "ipo_price_confirmed": ipo_price,
+            "shares_offered": safe_int(row.get("shares_offered")),
+            "institutional_demand_rate": safe_float(
+                row.get("institutional_demand_rate")
             ),
-            "shares_offered": (
-                int(row["shares_offered"]) if pd.notna(row["shares_offered"]) else None
+            "subscription_competition_rate": safe_float(
+                row.get("subscription_competition_rate")
             ),
-            "institutional_demand_rate": (
-                float(row["institutional_demand_rate"])
-                if pd.notna(row["institutional_demand_rate"])
-                else None
-            ),
-            "subscription_competition_rate": (
-                float(row["subscription_competition_rate"])
-                if pd.notna(row["subscription_competition_rate"])
-                else None
-            ),
-            "lockup_ratio": (
-                float(row["lockup_ratio"]) if pd.notna(row["lockup_ratio"]) else None
-            ),
-            "predicted_day0_high": int(round(predictions["day0_high"][idx])),
-            "predicted_day0_close": int(round(predictions["day0_close"][idx])),
-            "predicted_day1_close": int(round(predictions["day1_close"][idx])),
+            "lockup_ratio": safe_float(row.get("lockup_ratio")),
+            "predicted_day0_high": pred_day0_high,
+            "predicted_day0_close": pred_day0_close,
+            "predicted_day1_close": pred_day1_close,
         }
+
+        # Calculate return percentages
+        if ipo_price:
+            ipo_dict["predicted_day0_high_return"] = round(
+                (pred_day0_high - ipo_price) / ipo_price * 100, 2
+            )
+            ipo_dict["predicted_day0_close_return"] = round(
+                (pred_day0_close - ipo_price) / ipo_price * 100, 2
+            )
+            ipo_dict["predicted_day1_close_return"] = round(
+                (pred_day1_close - ipo_price) / ipo_price * 100, 2
+            )
+            ipo_dict["predicted_day0_to_day1_return"] = round(
+                (pred_day1_close - pred_day0_close) / pred_day0_close * 100, 2
+            )
 
         # Add actual values if available (check each value individually)
         if (
@@ -136,9 +170,25 @@ def main():
             and "day1_close" in row
             and pd.notna(row.get("day1_close"))
         ):
-            ipo_dict["actual_day0_high"] = int(row["day0_high"])
-            ipo_dict["actual_day0_close"] = int(row["day0_close"])
-            ipo_dict["actual_day1_close"] = int(row["day1_close"])
+            actual_day0_high = int(row["day0_high"])
+            actual_day0_close = int(row["day0_close"])
+            actual_day1_close = int(row["day1_close"])
+
+            ipo_dict["actual_day0_high"] = actual_day0_high
+            ipo_dict["actual_day0_close"] = actual_day0_close
+            ipo_dict["actual_day1_close"] = actual_day1_close
+
+            # Calculate actual returns
+            if ipo_price:
+                ipo_dict["actual_day0_high_return"] = round(
+                    (actual_day0_high - ipo_price) / ipo_price * 100, 2
+                )
+                ipo_dict["actual_day0_close_return"] = round(
+                    (actual_day0_close - ipo_price) / ipo_price * 100, 2
+                )
+                ipo_dict["actual_day1_close_return"] = round(
+                    (actual_day1_close - ipo_price) / ipo_price * 100, 2
+                )
 
         ipos_list.append(ipo_dict)
 
