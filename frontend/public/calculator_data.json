@@ -1,18 +1,18 @@
 {
   "metadata": {
-    "total_samples": 282,
-    "overall_mean_return": 37.41,
-    "overall_median_return": 7.46,
-    "data_period": "2022-2025"
+    "total_samples": 344,
+    "overall_mean_return": 36.01,
+    "overall_median_return": 4.56,
+    "data_period": "2018-2025"
   },
   "heatmap_data": [
     {
       "competition": "Low (<500)",
       "lockup": "Low (<30%)",
-      "mean_return": 13.93,
-      "median_return": 2.51,
-      "std_return": 49.19,
-      "count": 44
+      "mean_return": 6.28,
+      "median_return": -6.61,
+      "std_return": 57.0,
+      "count": 61
     },
     {
       "competition": "Low (<500)",
@@ -33,18 +33,18 @@
     {
       "competition": "Medium (500-1K)",
       "lockup": "Low (<30%)",
-      "mean_return": 32.01,
-      "median_return": 24.93,
-      "std_return": 46.67,
-      "count": 18
+      "mean_return": 9.17,
+      "median_return": -2.14,
+      "std_return": 54.49,
+      "count": 36
     },
     {
       "competition": "Medium (500-1K)",
       "lockup": "Medium (30-60%)",
-      "mean_return": null,
-      "median_return": null,
-      "std_return": null,
-      "count": 0
+      "mean_return": 11.13,
+      "median_return": -1.29,
+      "std_return": 52.81,
+      "count": 7
     },
     {
       "competition": "Medium (500-1K)",
@@ -57,18 +57,18 @@
     {
       "competition": "High (1K-2K)",
       "lockup": "Low (<30%)",
-      "mean_return": 87.07,
-      "median_return": 62.77,
-      "std_return": 92.88,
-      "count": 46
+      "mean_return": 82.88,
+      "median_return": 60.14,
+      "std_return": 92.29,
+      "count": 50
     },
     {
       "competition": "High (1K-2K)",
       "lockup": "Medium (30-60%)",
-      "mean_return": 130.51,
-      "median_return": 122.45,
-      "std_return": 46.39,
-      "count": 4
+      "mean_return": 87.89,
+      "median_return": 111.43,
+      "std_return": 114.18,
+      "count": 7
     },
     {
       "competition": "High (1K-2K)",
@@ -105,245 +105,27 @@
   ],
   "price_factors": {
     "0-10K": {
-      "factor": 0.956,
-      "mean_return": 35.76,
-      "count": 133
+      "factor": 0.954,
+      "mean_return": 34.35,
+      "count": 151
     },
     "10-20K": {
-      "factor": 1.015,
-      "mean_return": 37.98,
-      "count": 94
+      "factor": 0.73,
+      "mean_return": 26.3,
+      "count": 114
     },
     "20-50K": {
-      "factor": 0.93,
-      "mean_return": 34.8,
-      "count": 49
+      "factor": 1.625,
+      "mean_return": 58.5,
+      "count": 68
     },
     "50K+": {
-      "factor": 2.307,
-      "mean_return": 86.3,
-      "count": 6
+      "factor": 0.569,
+      "mean_return": 20.49,
+      "count": 11
     }
   },
-  "competition_curve": [
-    {
-      "rate": 0,
-      "expected_return": 18.93
-    },
-    {
-      "rate": 100,
-      "expected_return": 18.93
-    },
-    {
-      "rate": 200,
-      "expected_return": 18.93
-    },
-    {
-      "rate": 300,
-      "expected_return": 18.93
-    },
-    {
-      "rate": 400,
-      "expected_return": 18.93
-    },
-    {
-      "rate": 500,
-      "expected_return": 28.53
-    },
-    {
-      "rate": 600,
-      "expected_return": 28.53
-    },
-    {
-      "rate": 700,
-      "expected_return": 28.53
-    },
-    {
-      "rate": 800,
-      "expected_return": 28.53
-    },
-    {
-      "rate": 900,
-      "expected_return": 28.53
-    },
-    {
-      "rate": 1000,
-      "expected_return": 82.11
-    },
-    {
-      "rate": 1100,
-      "expected_return": 82.11
-    },
-    {
-      "rate": 1200,
-      "expected_return": 82.11
-    },
-    {
-      "rate": 1300,
-      "expected_return": 82.11
-    },
-    {
-      "rate": 1400,
-      "expected_return": 82.11
-    },
-    {
-      "rate": 1500,
-      "expected_return": 82.11
-    },
-    {
-      "rate": 1600,
-      "expected_return": 82.11
-    },
-    {
-      "rate": 1700,
-      "expected_return": 82.11
-    },
-    {
-      "rate": 1800,
-      "expected_return": 82.11
-    },
-    {
-      "rate": 1900,
-      "expected_return": 82.11
-    },
-    {
-      "rate": 2000,
-      "expected_return": 101.39
-    },
-    {
-      "rate": 2100,
-      "expected_return": 101.39
-    },
-    {
-      "rate": 2200,
-      "expected_return": 101.39
-    },
-    {
-      "rate": 2300,
-      "expected_return": 101.39
-    },
-    {
-      "rate": 2400,
-      "expected_return": 101.39
-    },
-    {
-      "rate": 2500,
-      "expected_return": 101.39
-    },
-    {
-      "rate": 2600,
-      "expected_return": 101.39
-    },
-    {
-      "rate": 2700,
-      "expected_return": 101.39
-    },
-    {
-      "rate": 2800,
-      "expected_return": 101.39
-    },
-    {
-      "rate": 2900,
-      "expected_return": 101.39
-    },
-    {
-      "rate": 3000,
-      "expected_return": 101.39
-    }
-  ],
-  "lockup_curve": [
-    {
-      "ratio": 0,
-      "expected_return": 35.49
-    },
-    {
-      "ratio": 5,
-      "expected_return": 35.49
-    },
-    {
-      "ratio": 10,
-      "expected_return": 35.49
-    },
-    {
-      "ratio": 15,
-      "expected_return": 35.49
-    },
-    {
-      "ratio": 20,
-      "expected_return": 35.49
-    },
-    {
-      "ratio": 25,
-      "expected_return": 35.49
-    },
-    {
-      "ratio": 30,
-      "expected_return": 102.38
-    },
-    {
-      "ratio": 35,
-      "expected_return": 102.38
-    },
-    {
-      "ratio": 40,
-      "expected_return": 102.38
-    },
-    {
-      "ratio": 45,
-      "expected_return": 102.38
-    },
-    {
-      "ratio": 50,
-      "expected_return": 102.38
-    },
-    {
-      "ratio": 55,
-      "expected_return": 102.38
-    },
-    {
-      "ratio": 60,
-      "expected_return": 110.17
-    },
-    {
-      "ratio": 65,
-      "expected_return": 110.17
-    },
-    {
-      "ratio": 70,
-      "expected_return": 110.17
-    },
-    {
-      "ratio": 75,
-      "expected_return": 110.17
-    },
-    {
-      "ratio": 80,
-      "expected_return": 110.17
-    },
-    {
-      "ratio": 85,
-      "expected_return": 110.17
-    },
-    {
-      "ratio": 90,
-      "expected_return": 110.17
-    },
-    {
-      "ratio": 95,
-      "expected_return": 110.17
-    },
-    {
-      "ratio": 100,
-      "expected_return": 110.17
-    }
-  ],
   "top_combinations": [
-    {
-      "competition": "High (1K-2K)",
-      "lockup": "Medium (30-60%)",
-      "expected_return": 130.51,
-      "sample_count": 4
-    },
     {
       "competition": "Very High (>2K)",
       "lockup": "Low (<30%)",
@@ -352,21 +134,27 @@
     },
     {
       "competition": "High (1K-2K)",
+      "lockup": "Medium (30-60%)",
+      "expected_return": 87.89,
+      "sample_count": 7
+    },
+    {
+      "competition": "High (1K-2K)",
       "lockup": "Low (<30%)",
-      "expected_return": 87.07,
-      "sample_count": 46
+      "expected_return": 82.88,
+      "sample_count": 50
+    },
+    {
+      "competition": "Medium (500-1K)",
+      "lockup": "Medium (30-60%)",
+      "expected_return": 11.13,
+      "sample_count": 7
     },
     {
       "competition": "Medium (500-1K)",
       "lockup": "Low (<30%)",
-      "expected_return": 32.01,
-      "sample_count": 18
-    },
-    {
-      "competition": "Low (<500)",
-      "lockup": "Low (<30%)",
-      "expected_return": 13.93,
-      "sample_count": 44
+      "expected_return": 9.17,
+      "sample_count": 36
     }
   ]
 }
