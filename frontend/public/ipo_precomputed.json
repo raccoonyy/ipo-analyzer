@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2025-10-11T23:52:57.384627",
+    "generated_at": "2025-10-12T00:01:41.366059",
     "model_version": "v2.1",
     "total_ipos": 195,
     "date_range": {
@@ -34,4193 +34,3651 @@
       "day0_turnover_rate",
       "day1_turnover_rate",
       "day0_volatility"
-    ]
+    ],
+    "model_type": "random_forest"
   },
-  "predictions": [
+  "ipos": [
     {
+      "id": 0,
       "code": "255220",
       "company_name": "에스지이",
       "listing_date": "2018-01-26",
-      "ipo_price": 6000,
-      "predicted": {
-        "day0_high": 8427,
-        "day0_close": 8540,
-        "day1_close": 8490
-      },
-      "metadata": {
-        "shares_offered": 595181,
-        "institutional_demand_rate": 17.03,
-        "subscription_competition_rate": 0.44,
-        "lockup_ratio": 0.0
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 6000,
+      "shares_offered": 595181,
+      "institutional_demand_rate": 17.03,
+      "subscription_competition_rate": 0.44,
+      "lockup_ratio": 0.0,
+      "predicted_day0_high": 8427,
+      "predicted_day0_close": 8540,
+      "predicted_day1_close": 8490
     },
     {
+      "id": 1,
       "code": "42000",
       "company_name": "카페24",
       "listing_date": "2018-02-08",
-      "ipo_price": 57000,
-      "predicted": {
-        "day0_high": 108171,
-        "day0_close": 103354,
-        "day1_close": 94458
-      },
-      "metadata": {
-        "shares_offered": 63000,
-        "institutional_demand_rate": 672.71,
-        "subscription_competition_rate": 731.58,
-        "lockup_ratio": 42.9
-      },
-      "actual": {
-        "day0_high": 47350,
-        "day0_close": 42350,
-        "day1_close": 38500
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 57000,
+      "shares_offered": 63000,
+      "institutional_demand_rate": 672.71,
+      "subscription_competition_rate": 731.58,
+      "lockup_ratio": 42.9,
+      "predicted_day0_high": 108171,
+      "predicted_day0_close": 103354,
+      "predicted_day1_close": 94458,
+      "actual_day0_high": 47350,
+      "actual_day0_close": 42350,
+      "actual_day1_close": 38500
     },
     {
+      "id": 2,
       "code": "154030",
       "company_name": "아시아종묘",
       "listing_date": "2018-02-12",
-      "ipo_price": 4500,
-      "predicted": {
-        "day0_high": 6792,
-        "day0_close": 5745,
-        "day1_close": 4317
-      },
-      "metadata": {
-        "shares_offered": 190000,
-        "institutional_demand_rate": 239.52,
-        "subscription_competition_rate": 243.2,
-        "lockup_ratio": 4.39
-      },
-      "actual": {
-        "day0_high": 5690,
-        "day0_close": 4570,
-        "day1_close": 4700
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 4500,
+      "shares_offered": 190000,
+      "institutional_demand_rate": 239.52,
+      "subscription_competition_rate": 243.2,
+      "lockup_ratio": 4.39,
+      "predicted_day0_high": 6792,
+      "predicted_day0_close": 5745,
+      "predicted_day1_close": 4317,
+      "actual_day0_high": 5690,
+      "actual_day0_close": 4570,
+      "actual_day1_close": 4700
     },
     {
+      "id": 3,
       "code": "64510",
       "company_name": "에코마이스터",
       "listing_date": "2018-03-15",
-      "ipo_price": 5200,
-      "predicted": {
-        "day0_high": 6837,
-        "day0_close": 7063,
-        "day1_close": 7556
-      },
-      "metadata": {
-        "shares_offered": 147400,
-        "institutional_demand_rate": 15.54,
-        "subscription_competition_rate": 213.78,
-        "lockup_ratio": 0.0
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 5200,
+      "shares_offered": 147400,
+      "institutional_demand_rate": 15.54,
+      "subscription_competition_rate": 213.78,
+      "lockup_ratio": 0.0,
+      "predicted_day0_high": 6837,
+      "predicted_day0_close": 7063,
+      "predicted_day1_close": 7556
     },
     {
+      "id": 4,
       "code": "18250",
       "company_name": "애경산업",
       "listing_date": "2018-03-22",
-      "ipo_price": 29100,
-      "predicted": {
-        "day0_high": 37241,
-        "day0_close": 28891,
-        "day1_close": 32417
-      },
-      "metadata": {
-        "shares_offered": 952000,
-        "institutional_demand_rate": 24.3,
-        "subscription_competition_rate": 6.73,
-        "lockup_ratio": 8.51
-      },
-      "actual": {
-        "day0_high": 31253,
-        "day0_close": 29807,
-        "day1_close": 30683
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 29100,
+      "shares_offered": 952000,
+      "institutional_demand_rate": 24.3,
+      "subscription_competition_rate": 6.73,
+      "lockup_ratio": 8.51,
+      "predicted_day0_high": 37241,
+      "predicted_day0_close": 28891,
+      "predicted_day1_close": 32417,
+      "actual_day0_high": 31253,
+      "actual_day0_close": 29807,
+      "actual_day1_close": 30683
     },
     {
+      "id": 5,
       "code": "122310",
       "company_name": "제노레이",
       "listing_date": "2018-05-28",
-      "ipo_price": 23000,
-      "predicted": {
-        "day0_high": 39120,
-        "day0_close": 29135,
-        "day1_close": 31331
-      },
-      "metadata": {
-        "shares_offered": 327621000,
-        "institutional_demand_rate": 907.12,
-        "subscription_competition_rate": 1028.72,
-        "lockup_ratio": 32.59
-      },
-      "actual": {
-        "day0_high": 12074,
-        "day0_close": 9825,
-        "day1_close": 8812
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 23000,
+      "shares_offered": 327621000,
+      "institutional_demand_rate": 907.12,
+      "subscription_competition_rate": 1028.72,
+      "lockup_ratio": 32.59,
+      "predicted_day0_high": 39120,
+      "predicted_day0_close": 29135,
+      "predicted_day1_close": 31331,
+      "actual_day0_high": 12074,
+      "actual_day0_close": 9825,
+      "actual_day1_close": 8812
     },
     {
+      "id": 6,
       "code": "258830",
       "company_name": "세종메디칼",
       "listing_date": "2018-05-29",
-      "ipo_price": 15000,
-      "predicted": {
-        "day0_high": 24852,
-        "day0_close": 20377,
-        "day1_close": 21237
-      },
-      "metadata": {
-        "shares_offered": 1358771000,
-        "institutional_demand_rate": 836.68,
-        "subscription_competition_rate": 922.71,
-        "lockup_ratio": 39.75
-      },
-      "actual": {
-        "day0_high": 5874,
-        "day0_close": 5874,
-        "day1_close": 6599
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 15000,
+      "shares_offered": 1358771000,
+      "institutional_demand_rate": 836.68,
+      "subscription_competition_rate": 922.71,
+      "lockup_ratio": 39.75,
+      "predicted_day0_high": 24852,
+      "predicted_day0_close": 20377,
+      "predicted_day1_close": 21237,
+      "actual_day0_high": 5874,
+      "actual_day0_close": 5874,
+      "actual_day1_close": 6599
     },
     {
+      "id": 7,
       "code": "37030",
       "company_name": "파워넷",
       "listing_date": "2018-06-07",
-      "ipo_price": 6500,
-      "predicted": {
-        "day0_high": 9490,
-        "day0_close": 8570,
-        "day1_close": 8003
-      },
-      "metadata": {
-        "shares_offered": 1542890576,
-        "institutional_demand_rate": 590.6,
-        "subscription_competition_rate": 1144.0,
-        "lockup_ratio": 7.66
-      },
-      "actual": {
-        "day0_high": 10500,
-        "day0_close": 7750,
-        "day1_close": 10050
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 6500,
+      "shares_offered": 1542890576,
+      "institutional_demand_rate": 590.6,
+      "subscription_competition_rate": 1144.0,
+      "lockup_ratio": 7.66,
+      "predicted_day0_high": 9490,
+      "predicted_day0_close": 8570,
+      "predicted_day1_close": 8003,
+      "actual_day0_high": 10500,
+      "actual_day0_close": 7750,
+      "actual_day1_close": 10050
     },
     {
+      "id": 8,
       "code": "245620",
       "company_name": "이원다이애그노믹스",
       "listing_date": "2018-06-26",
-      "ipo_price": 6500,
-      "predicted": {
-        "day0_high": 11992,
-        "day0_close": 11369,
-        "day1_close": 16132
-      },
-      "metadata": {
-        "shares_offered": 1152000,
-        "institutional_demand_rate": 749.79,
-        "subscription_competition_rate": 810.33,
-        "lockup_ratio": 27.87
-      },
-      "actual": {
-        "day0_high": 4772,
-        "day0_close": 4528,
-        "day1_close": 3752
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 6500,
+      "shares_offered": 1152000,
+      "institutional_demand_rate": 749.79,
+      "subscription_competition_rate": 810.33,
+      "lockup_ratio": 27.87,
+      "predicted_day0_high": 11992,
+      "predicted_day0_close": 11369,
+      "predicted_day1_close": 16132,
+      "actual_day0_high": 4772,
+      "actual_day0_close": 4528,
+      "actual_day1_close": 3752
     },
     {
+      "id": 9,
       "code": "88260",
       "company_name": "이리츠코크렙기업",
       "listing_date": "2018-06-27",
-      "ipo_price": 5000,
-      "predicted": {
-        "day0_high": 6525,
-        "day0_close": 6226,
-        "day1_close": 6240
-      },
-      "metadata": {
-        "shares_offered": 1582147,
-        "institutional_demand_rate": 6.29,
-        "subscription_competition_rate": 0.45,
-        "lockup_ratio": 0.0
-      },
-      "actual": {
-        "day0_high": 3092,
-        "day0_close": 2756,
-        "day1_close": 2598
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 5000,
+      "shares_offered": 1582147,
+      "institutional_demand_rate": 6.29,
+      "subscription_competition_rate": 0.45,
+      "lockup_ratio": 0.0,
+      "predicted_day0_high": 6525,
+      "predicted_day0_close": 6226,
+      "predicted_day1_close": 6240,
+      "actual_day0_high": 3092,
+      "actual_day0_close": 2756,
+      "actual_day1_close": 2598
     },
     {
+      "id": 10,
       "code": "226950",
       "company_name": "올릭스",
       "listing_date": "2018-07-18",
-      "ipo_price": 36000,
-      "predicted": {
-        "day0_high": 47540,
-        "day0_close": 47491,
-        "day1_close": 50845
-      },
-      "metadata": {
-        "shares_offered": 841649000,
-        "institutional_demand_rate": 876.72,
-        "subscription_competition_rate": 847.09,
-        "lockup_ratio": 74.03
-      },
-      "actual": {
-        "day0_high": 37050,
-        "day0_close": 32800,
-        "day1_close": 33650
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 36000,
+      "shares_offered": 841649000,
+      "institutional_demand_rate": 876.72,
+      "subscription_competition_rate": 847.09,
+      "lockup_ratio": 74.03,
+      "predicted_day0_high": 47540,
+      "predicted_day0_close": 47491,
+      "predicted_day1_close": 50845,
+      "actual_day0_high": 37050,
+      "actual_day0_close": 32800,
+      "actual_day1_close": 33650
     },
     {
+      "id": 11,
       "code": "80720",
       "company_name": "한국유니온제약",
       "listing_date": "2018-07-26",
-      "ipo_price": 18000,
-      "predicted": {
-        "day0_high": 26935,
-        "day0_close": 19991,
-        "day1_close": 22392
-      },
-      "metadata": {
-        "shares_offered": 855578000,
-        "institutional_demand_rate": 918.99,
-        "subscription_competition_rate": 1015.13,
-        "lockup_ratio": 9.4
-      },
-      "actual": {
-        "day0_high": 23834,
-        "day0_close": 18014,
-        "day1_close": 17783
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 18000,
+      "shares_offered": 855578000,
+      "institutional_demand_rate": 918.99,
+      "subscription_competition_rate": 1015.13,
+      "lockup_ratio": 9.4,
+      "predicted_day0_high": 26935,
+      "predicted_day0_close": 19991,
+      "predicted_day1_close": 22392,
+      "actual_day0_high": 23834,
+      "actual_day0_close": 18014,
+      "actual_day1_close": 17783
     },
     {
+      "id": 12,
       "code": "286940",
       "company_name": "롯데정보통신",
       "listing_date": "2018-07-27",
-      "ipo_price": 29800,
-      "predicted": {
-        "day0_high": 40340,
-        "day0_close": 34246,
-        "day1_close": 36123
-      },
-      "metadata": {
-        "shares_offered": 471460,
-        "institutional_demand_rate": 79.33,
-        "subscription_competition_rate": 34.22,
-        "lockup_ratio": 25.9
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 29800,
+      "shares_offered": 471460,
+      "institutional_demand_rate": 79.33,
+      "subscription_competition_rate": 34.22,
+      "lockup_ratio": 25.9,
+      "predicted_day0_high": 40340,
+      "predicted_day0_close": 34246,
+      "predicted_day1_close": 36123
     },
     {
+      "id": 13,
       "code": "91810",
       "company_name": "티웨이항공",
       "listing_date": "2018-08-01",
-      "ipo_price": 12000,
-      "predicted": {
-        "day0_high": 13631,
-        "day0_close": 12219,
-        "day1_close": 11773
-      },
-      "metadata": {
-        "shares_offered": 2080000,
-        "institutional_demand_rate": 23.03,
-        "subscription_competition_rate": 1.15,
-        "lockup_ratio": 0.0
-      },
-      "actual": {
-        "day0_high": 6802,
-        "day0_close": 6414,
-        "day1_close": 6441
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 12000,
+      "shares_offered": 2080000,
+      "institutional_demand_rate": 23.03,
+      "subscription_competition_rate": 1.15,
+      "lockup_ratio": 0.0,
+      "predicted_day0_high": 13631,
+      "predicted_day0_close": 12219,
+      "predicted_day1_close": 11773,
+      "actual_day0_high": 6802,
+      "actual_day0_close": 6414,
+      "actual_day1_close": 6441
     },
     {
+      "id": 14,
       "code": "275630",
       "company_name": "에스에스알",
       "listing_date": "2018-08-06",
-      "ipo_price": 9000,
-      "predicted": {
-        "day0_high": 11613,
-        "day0_close": 11151,
-        "day1_close": 16696
-      },
-      "metadata": {
-        "shares_offered": 1054703000,
-        "institutional_demand_rate": 928.44,
-        "subscription_competition_rate": 1231.66,
-        "lockup_ratio": 41.62
-      },
-      "actual": {
-        "day0_high": 23400,
-        "day0_close": 23400,
-        "day1_close": 29000
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 9000,
+      "shares_offered": 1054703000,
+      "institutional_demand_rate": 928.44,
+      "subscription_competition_rate": 1231.66,
+      "lockup_ratio": 41.62,
+      "predicted_day0_high": 11613,
+      "predicted_day0_close": 11151,
+      "predicted_day1_close": 16696,
+      "actual_day0_high": 23400,
+      "actual_day0_close": 23400,
+      "actual_day1_close": 29000
     },
     {
+      "id": 15,
       "code": "110990",
       "company_name": "디아이티",
       "listing_date": "2018-08-07",
-      "ipo_price": 10000,
-      "predicted": {
-        "day0_high": 9683,
-        "day0_close": 8270,
-        "day1_close": 9428
-      },
-      "metadata": {
-        "shares_offered": 237040361,
-        "institutional_demand_rate": 105.14,
-        "subscription_competition_rate": 11.1,
-        "lockup_ratio": 6.8
-      },
-      "actual": {
-        "day0_high": 10376,
-        "day0_close": 8876,
-        "day1_close": 8184
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 10000,
+      "shares_offered": 237040361,
+      "institutional_demand_rate": 105.14,
+      "subscription_competition_rate": 11.1,
+      "lockup_ratio": 6.8,
+      "predicted_day0_high": 9683,
+      "predicted_day0_close": 8270,
+      "predicted_day1_close": 9428,
+      "actual_day0_high": 10376,
+      "actual_day0_close": 8876,
+      "actual_day1_close": 8184
     },
     {
+      "id": 16,
       "code": "86820",
       "company_name": "바이오솔루션",
       "listing_date": "2018-08-20",
-      "ipo_price": 29000,
-      "predicted": {
-        "day0_high": 30355,
-        "day0_close": 25091,
-        "day1_close": 29581
-      },
-      "metadata": {
-        "shares_offered": 201011000,
-        "institutional_demand_rate": 174.79,
-        "subscription_competition_rate": 302.62,
-        "lockup_ratio": 5.04
-      },
-      "actual": {
-        "day0_high": 10333,
-        "day0_close": 9500,
-        "day1_close": 9866
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 29000,
+      "shares_offered": 201011000,
+      "institutional_demand_rate": 174.79,
+      "subscription_competition_rate": 302.62,
+      "lockup_ratio": 5.04,
+      "predicted_day0_high": 30355,
+      "predicted_day0_close": 25091,
+      "predicted_day1_close": 29581,
+      "actual_day0_high": 10333,
+      "actual_day0_close": 9500,
+      "actual_day1_close": 9866
     },
     {
+      "id": 17,
       "code": "290740",
       "company_name": "액트로",
       "listing_date": "2018-08-28",
-      "ipo_price": 20000,
-      "predicted": {
-        "day0_high": 22846,
-        "day0_close": 18835,
-        "day1_close": 21424
-      },
-      "metadata": {
-        "shares_offered": 123613000,
-        "institutional_demand_rate": 132.07,
-        "subscription_competition_rate": 545.42,
-        "lockup_ratio": 1.86
-      },
-      "actual": {
-        "day0_high": 8969,
-        "day0_close": 7724,
-        "day1_close": 7810
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 20000,
+      "shares_offered": 123613000,
+      "institutional_demand_rate": 132.07,
+      "subscription_competition_rate": 545.42,
+      "lockup_ratio": 1.86,
+      "predicted_day0_high": 22846,
+      "predicted_day0_close": 18835,
+      "predicted_day1_close": 21424,
+      "actual_day0_high": 8969,
+      "actual_day0_close": 7724,
+      "actual_day1_close": 7810
     },
     {
+      "id": 18,
       "code": "197140",
       "company_name": "디지캡",
       "listing_date": "2018-09-07",
-      "ipo_price": 12000,
-      "predicted": {
-        "day0_high": 16734,
-        "day0_close": 15455,
-        "day1_close": 12919
-      },
-      "metadata": {
-        "shares_offered": 457764000,
-        "institutional_demand_rate": 979.06,
-        "subscription_competition_rate": 931.79,
-        "lockup_ratio": 4.18
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 12000,
+      "shares_offered": 457764000,
+      "institutional_demand_rate": 979.06,
+      "subscription_competition_rate": 931.79,
+      "lockup_ratio": 4.18,
+      "predicted_day0_high": 16734,
+      "predicted_day0_close": 15455,
+      "predicted_day1_close": 12919
     },
     {
+      "id": 19,
       "code": "257370",
       "company_name": "명성티엔에스",
       "listing_date": "2018-09-13",
-      "ipo_price": 20000,
-      "predicted": {
-        "day0_high": 30394,
-        "day0_close": 23103,
-        "day1_close": 25099
-      },
-      "metadata": {
-        "shares_offered": 1070621148,
-        "institutional_demand_rate": 745.56,
-        "subscription_competition_rate": 804.79,
-        "lockup_ratio": 11.73
-      },
-      "actual": {
-        "day0_high": 28600,
-        "day0_close": 28600,
-        "day1_close": 37150
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 20000,
+      "shares_offered": 1070621148,
+      "institutional_demand_rate": 745.56,
+      "subscription_competition_rate": 804.79,
+      "lockup_ratio": 11.73,
+      "predicted_day0_high": 30394,
+      "predicted_day0_close": 23103,
+      "predicted_day1_close": 25099,
+      "actual_day0_high": 28600,
+      "actual_day0_close": 28600,
+      "actual_day1_close": 37150
     },
     {
+      "id": 20,
       "code": "10400",
       "company_name": "우진아이엔에스",
       "listing_date": "2018-09-14",
-      "ipo_price": 15000,
-      "predicted": {
-        "day0_high": 19592,
-        "day0_close": 18105,
-        "day1_close": 16827
-      },
-      "metadata": {
-        "shares_offered": 162616000,
-        "institutional_demand_rate": 129.06,
-        "subscription_competition_rate": 11.17,
-        "lockup_ratio": 0.77
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 15000,
+      "shares_offered": 162616000,
+      "institutional_demand_rate": 129.06,
+      "subscription_competition_rate": 11.17,
+      "lockup_ratio": 0.77,
+      "predicted_day0_high": 19592,
+      "predicted_day0_close": 18105,
+      "predicted_day1_close": 16827
     },
     {
+      "id": 21,
       "code": "110790",
       "company_name": "크리스에프앤씨",
       "listing_date": "2018-10-01",
-      "ipo_price": 30000,
-      "predicted": {
-        "day0_high": 30064,
-        "day0_close": 28166,
-        "day1_close": 32460
-      },
-      "metadata": {
-        "shares_offered": 632880,
-        "institutional_demand_rate": 7.89,
-        "subscription_competition_rate": 0.53,
-        "lockup_ratio": 0.0
-      },
-      "actual": {
-        "day0_high": 11113,
-        "day0_close": 8890,
-        "day1_close": 9520
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 30000,
+      "shares_offered": 632880,
+      "institutional_demand_rate": 7.89,
+      "subscription_competition_rate": 0.53,
+      "lockup_ratio": 0.0,
+      "predicted_day0_high": 30064,
+      "predicted_day0_close": 28166,
+      "predicted_day1_close": 32460,
+      "actual_day0_high": 11113,
+      "actual_day0_close": 8890,
+      "actual_day1_close": 9520
     },
     {
+      "id": 22,
       "code": "293480",
       "company_name": "하나제약",
       "listing_date": "2018-10-02",
-      "ipo_price": 26000,
-      "predicted": {
-        "day0_high": 27874,
-        "day0_close": 22931,
-        "day1_close": 25549
-      },
-      "metadata": {
-        "shares_offered": 248553381,
-        "institutional_demand_rate": 101.5,
-        "subscription_competition_rate": 147.5,
-        "lockup_ratio": 0.1
-      },
-      "actual": {
-        "day0_high": 28800,
-        "day0_close": 24830,
-        "day1_close": 22995
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 26000,
+      "shares_offered": 248553381,
+      "institutional_demand_rate": 101.5,
+      "subscription_competition_rate": 147.5,
+      "lockup_ratio": 0.1,
+      "predicted_day0_high": 27874,
+      "predicted_day0_close": 22931,
+      "predicted_day1_close": 25549,
+      "actual_day0_high": 28800,
+      "actual_day0_close": 24830,
+      "actual_day1_close": 22995
     },
     {
+      "id": 23,
       "code": "290720",
       "company_name": "푸드나무",
       "listing_date": "2018-10-04",
-      "ipo_price": 24000,
-      "predicted": {
-        "day0_high": 36263,
-        "day0_close": 26535,
-        "day1_close": 29065
-      },
-      "metadata": {
-        "shares_offered": 264500,
-        "institutional_demand_rate": 791.08,
-        "subscription_competition_rate": 914.05,
-        "lockup_ratio": 16.5
-      },
-      "actual": {
-        "day0_high": 24362,
-        "day0_close": 15990,
-        "day1_close": 15285
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 24000,
+      "shares_offered": 264500,
+      "institutional_demand_rate": 791.08,
+      "subscription_competition_rate": 914.05,
+      "lockup_ratio": 16.5,
+      "predicted_day0_high": 36263,
+      "predicted_day0_close": 26535,
+      "predicted_day1_close": 29065,
+      "actual_day0_high": 24362,
+      "actual_day0_close": 15990,
+      "actual_day1_close": 15285
     },
     {
+      "id": 24,
       "code": "293580",
       "company_name": "나우아이비캐피탈",
       "listing_date": "2018-10-04",
-      "ipo_price": 8500,
-      "predicted": {
-        "day0_high": 7973,
-        "day0_close": 7787,
-        "day1_close": 8691
-      },
-      "metadata": {
-        "shares_offered": 126337000,
-        "institutional_demand_rate": 63.17,
-        "subscription_competition_rate": 64.89,
-        "lockup_ratio": 0.0
-      },
-      "actual": {
-        "day0_high": 234,
-        "day0_close": 172,
-        "day1_close": 159
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 8500,
+      "shares_offered": 126337000,
+      "institutional_demand_rate": 63.17,
+      "subscription_competition_rate": 64.89,
+      "lockup_ratio": 0.0,
+      "predicted_day0_high": 7973,
+      "predicted_day0_close": 7787,
+      "predicted_day1_close": 8691,
+      "actual_day0_high": 234,
+      "actual_day0_close": 172,
+      "actual_day1_close": 159
     },
     {
+      "id": 25,
       "code": "288620",
       "company_name": "에스퓨얼셀",
       "listing_date": "2018-10-15",
-      "ipo_price": 16500,
-      "predicted": {
-        "day0_high": 25563,
-        "day0_close": 21306,
-        "day1_close": 21886
-      },
-      "metadata": {
-        "shares_offered": 340200,
-        "institutional_demand_rate": 942.85,
-        "subscription_competition_rate": 857.78,
-        "lockup_ratio": 40.5
-      },
-      "actual": {
-        "day0_high": 40322,
-        "day0_close": 33192,
-        "day1_close": 28471
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 16500,
+      "shares_offered": 340200,
+      "institutional_demand_rate": 942.85,
+      "subscription_competition_rate": 857.78,
+      "lockup_ratio": 40.5,
+      "predicted_day0_high": 25563,
+      "predicted_day0_close": 21306,
+      "predicted_day1_close": 21886,
+      "actual_day0_high": 40322,
+      "actual_day0_close": 33192,
+      "actual_day1_close": 28471
     },
     {
+      "id": 26,
       "code": "108490",
       "company_name": "로보티즈",
       "listing_date": "2018-10-26",
-      "ipo_price": 14000,
-      "predicted": {
-        "day0_high": 25930,
-        "day0_close": 22730,
-        "day1_close": 23412
-      },
-      "metadata": {
-        "shares_offered": 255000,
-        "institutional_demand_rate": 958.6,
-        "subscription_competition_rate": 1043.92,
-        "lockup_ratio": 39.8
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 14000,
+      "shares_offered": 255000,
+      "institutional_demand_rate": 958.6,
+      "subscription_competition_rate": 1043.92,
+      "lockup_ratio": 39.8,
+      "predicted_day0_high": 25930,
+      "predicted_day0_close": 22730,
+      "predicted_day1_close": 23412
     },
     {
+      "id": 27,
       "code": "290650",
       "company_name": "엘앤씨바이오",
       "listing_date": "2018-11-01",
-      "ipo_price": 24000,
-      "predicted": {
-        "day0_high": 37839,
-        "day0_close": 26811,
-        "day1_close": 30275
-      },
-      "metadata": {
-        "shares_offered": 160000,
-        "institutional_demand_rate": 937.08,
-        "subscription_competition_rate": 985.59,
-        "lockup_ratio": 17.27
-      },
-      "actual": {
-        "day0_high": 8778,
-        "day0_close": 8778,
-        "day1_close": 8925
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 24000,
+      "shares_offered": 160000,
+      "institutional_demand_rate": 937.08,
+      "subscription_competition_rate": 985.59,
+      "lockup_ratio": 17.27,
+      "predicted_day0_high": 37839,
+      "predicted_day0_close": 26811,
+      "predicted_day1_close": 30275,
+      "actual_day0_high": 8778,
+      "actual_day0_close": 8778,
+      "actual_day1_close": 8925
     },
     {
+      "id": 28,
       "code": "285490",
       "company_name": "노바텍",
       "listing_date": "2018-11-02",
-      "ipo_price": 10000,
-      "predicted": {
-        "day0_high": 9626,
-        "day0_close": 8290,
-        "day1_close": 8918
-      },
-      "metadata": {
-        "shares_offered": 60779000,
-        "institutional_demand_rate": 66.32,
-        "subscription_competition_rate": 326.67,
-        "lockup_ratio": 0.03
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 10000,
+      "shares_offered": 60779000,
+      "institutional_demand_rate": 66.32,
+      "subscription_competition_rate": 326.67,
+      "lockup_ratio": 0.03,
+      "predicted_day0_high": 9626,
+      "predicted_day0_close": 8290,
+      "predicted_day1_close": 8918
     },
     {
+      "id": 29,
       "code": "290670",
       "company_name": "대보마그네틱",
       "listing_date": "2018-11-06",
-      "ipo_price": 31000,
-      "predicted": {
-        "day0_high": 45917,
-        "day0_close": 39146,
-        "day1_close": 41200
-      },
-      "metadata": {
-        "shares_offered": 652980000,
-        "institutional_demand_rate": 995.4,
-        "subscription_competition_rate": 837.58,
-        "lockup_ratio": 45.41
-      },
-      "actual": {
-        "day0_high": 29250,
-        "day0_close": 29250,
-        "day1_close": 30600
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 31000,
+      "shares_offered": 652980000,
+      "institutional_demand_rate": 995.4,
+      "subscription_competition_rate": 837.58,
+      "lockup_ratio": 45.41,
+      "predicted_day0_high": 45917,
+      "predicted_day0_close": 39146,
+      "predicted_day1_close": 41200,
+      "actual_day0_high": 29250,
+      "actual_day0_close": 29250,
+      "actual_day1_close": 30600
     },
     {
+      "id": 30,
       "code": "268600",
       "company_name": "셀리버리",
       "listing_date": "2018-11-09",
-      "ipo_price": 25000,
-      "predicted": {
-        "day0_high": 36100,
-        "day0_close": 26690,
-        "day1_close": 29334
-      },
-      "metadata": {
-        "shares_offered": 579117854,
-        "institutional_demand_rate": 698.98,
-        "subscription_competition_rate": 808.45,
-        "lockup_ratio": 16.8
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 25000,
+      "shares_offered": 579117854,
+      "institutional_demand_rate": 698.98,
+      "subscription_competition_rate": 808.45,
+      "lockup_ratio": 16.8,
+      "predicted_day0_high": 36100,
+      "predicted_day0_close": 26690,
+      "predicted_day1_close": 29334
     },
     {
+      "id": 31,
       "code": "208340",
       "company_name": "파멥신",
       "listing_date": "2018-11-21",
-      "ipo_price": 60000,
-      "predicted": {
-        "day0_high": 104875,
-        "day0_close": 98034,
-        "day1_close": 90227
-      },
-      "metadata": {
-        "shares_offered": 144000,
-        "institutional_demand_rate": 764.16,
-        "subscription_competition_rate": 322.78,
-        "lockup_ratio": 18.81
-      },
-      "actual": {
-        "day0_high": 23598,
-        "day0_close": 22468,
-        "day1_close": 24905
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 60000,
+      "shares_offered": 144000,
+      "institutional_demand_rate": 764.16,
+      "subscription_competition_rate": 322.78,
+      "lockup_ratio": 18.81,
+      "predicted_day0_high": 104875,
+      "predicted_day0_close": 98034,
+      "predicted_day1_close": 90227,
+      "actual_day0_high": 23598,
+      "actual_day0_close": 22468,
+      "actual_day1_close": 24905
     },
     {
+      "id": 32,
       "code": "27360",
       "company_name": "아주IB투자",
       "listing_date": "2018-11-21",
-      "ipo_price": 1500,
-      "predicted": {
-        "day0_high": 5227,
-        "day0_close": 4478,
-        "day1_close": 3547
-      },
-      "metadata": {
-        "shares_offered": 3416000,
-        "institutional_demand_rate": 40.55,
-        "subscription_competition_rate": 63.76,
-        "lockup_ratio": 0.0
-      },
-      "actual": {
-        "day0_high": 1280,
-        "day0_close": 1015,
-        "day1_close": 1064
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 1500,
+      "shares_offered": 3416000,
+      "institutional_demand_rate": 40.55,
+      "subscription_competition_rate": 63.76,
+      "lockup_ratio": 0.0,
+      "predicted_day0_high": 5227,
+      "predicted_day0_close": 4478,
+      "predicted_day1_close": 3547,
+      "actual_day0_high": 1280,
+      "actual_day0_close": 1015,
+      "actual_day1_close": 1064
     },
     {
+      "id": 33,
       "code": "263690",
       "company_name": "디알젬",
       "listing_date": "2018-11-22",
-      "ipo_price": 6500,
-      "predicted": {
-        "day0_high": 8351,
-        "day0_close": 7771,
-        "day1_close": 7561
-      },
-      "metadata": {
-        "shares_offered": 363217000,
-        "institutional_demand_rate": 785.43,
-        "subscription_competition_rate": 832.96,
-        "lockup_ratio": 1.05
-      },
-      "actual": {
-        "day0_high": 7454,
-        "day0_close": 5928,
-        "day1_close": 5656
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 6500,
+      "shares_offered": 363217000,
+      "institutional_demand_rate": 785.43,
+      "subscription_competition_rate": 832.96,
+      "lockup_ratio": 1.05,
+      "predicted_day0_high": 8351,
+      "predicted_day0_close": 7771,
+      "predicted_day1_close": 7561,
+      "actual_day0_high": 7454,
+      "actual_day0_close": 5928,
+      "actual_day1_close": 5656
     },
     {
+      "id": 34,
       "code": "290660",
       "company_name": "네오펙트",
       "listing_date": "2018-11-28",
-      "ipo_price": 11000,
-      "predicted": {
-        "day0_high": 12480,
-        "day0_close": 11530,
-        "day1_close": 10928
-      },
-      "metadata": {
-        "shares_offered": 306000,
-        "institutional_demand_rate": 338.01,
-        "subscription_competition_rate": 400.8,
-        "lockup_ratio": 0.89
-      },
-      "actual": {
-        "day0_high": 10100,
-        "day0_close": 7700,
-        "day1_close": 7830
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 11000,
+      "shares_offered": 306000,
+      "institutional_demand_rate": 338.01,
+      "subscription_competition_rate": 400.8,
+      "lockup_ratio": 0.89,
+      "predicted_day0_high": 12480,
+      "predicted_day0_close": 11530,
+      "predicted_day1_close": 10928,
+      "actual_day0_high": 10100,
+      "actual_day0_close": 7700,
+      "actual_day1_close": 7830
     },
     {
+      "id": 35,
       "code": "179290",
       "company_name": "엠아이텍",
       "listing_date": "2018-11-29",
-      "ipo_price": 4500,
-      "predicted": {
-        "day0_high": 5914,
-        "day0_close": 5087,
-        "day1_close": 3187
-      },
-      "metadata": {
-        "shares_offered": 2484332000,
-        "institutional_demand_rate": 472.57,
-        "subscription_competition_rate": 883.39,
-        "lockup_ratio": 0.42
-      },
-      "actual": {
-        "day0_high": 4744,
-        "day0_close": 4326,
-        "day1_close": 4190
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 4500,
+      "shares_offered": 2484332000,
+      "institutional_demand_rate": 472.57,
+      "subscription_competition_rate": 883.39,
+      "lockup_ratio": 0.42,
+      "predicted_day0_high": 5914,
+      "predicted_day0_close": 5087,
+      "predicted_day1_close": 3187,
+      "actual_day0_high": 4744,
+      "actual_day0_close": 4326,
+      "actual_day1_close": 4190
     },
     {
+      "id": 36,
       "code": "290120",
       "company_name": "대유에이피",
       "listing_date": "2018-12-07",
-      "ipo_price": 3000,
-      "predicted": {
-        "day0_high": 5847,
-        "day0_close": 4929,
-        "day1_close": 3175
-      },
-      "metadata": {
-        "shares_offered": 586485000,
-        "institutional_demand_rate": 299.23,
-        "subscription_competition_rate": 11.12,
-        "lockup_ratio": 0.0
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 3000,
+      "shares_offered": 586485000,
+      "institutional_demand_rate": 299.23,
+      "subscription_competition_rate": 11.12,
+      "lockup_ratio": 0.0,
+      "predicted_day0_high": 5847,
+      "predicted_day0_close": 4929,
+      "predicted_day1_close": 3175
     },
     {
+      "id": 37,
       "code": "302430",
       "company_name": "이노메트리",
       "listing_date": "2018-12-12",
-      "ipo_price": 26000,
-      "predicted": {
-        "day0_high": 36363,
-        "day0_close": 27894,
-        "day1_close": 30016
-      },
-      "metadata": {
-        "shares_offered": 710764000,
-        "institutional_demand_rate": 765.22,
-        "subscription_competition_rate": 791.16,
-        "lockup_ratio": 11.39
-      },
-      "actual": {
-        "day0_high": 20847,
-        "day0_close": 14033,
-        "day1_close": 12940
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 26000,
+      "shares_offered": 710764000,
+      "institutional_demand_rate": 765.22,
+      "subscription_competition_rate": 791.16,
+      "lockup_ratio": 11.39,
+      "predicted_day0_high": 36363,
+      "predicted_day0_close": 27894,
+      "predicted_day1_close": 30016,
+      "actual_day0_high": 20847,
+      "actual_day0_close": 14033,
+      "actual_day1_close": 12940
     },
     {
+      "id": 38,
       "code": "270870",
       "company_name": "뉴트리",
       "listing_date": "2018-12-13",
-      "ipo_price": 14500,
-      "predicted": {
-        "day0_high": 15000,
-        "day0_close": 13738,
-        "day1_close": 13753
-      },
-      "metadata": {
-        "shares_offered": 43071000,
-        "institutional_demand_rate": 28.68,
-        "subscription_competition_rate": 0.19,
-        "lockup_ratio": 0.0
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 14500,
+      "shares_offered": 43071000,
+      "institutional_demand_rate": 28.68,
+      "subscription_competition_rate": 0.19,
+      "lockup_ratio": 0.0,
+      "predicted_day0_high": 15000,
+      "predicted_day0_close": 13738,
+      "predicted_day1_close": 13753
     },
     {
+      "id": 39,
       "code": "110020",
       "company_name": "전진바이오팜",
       "listing_date": "2018-12-14",
-      "ipo_price": 10000,
-      "predicted": {
-        "day0_high": 12480,
-        "day0_close": 11528,
-        "day1_close": 16392
-      },
-      "metadata": {
-        "shares_offered": 5876000,
-        "institutional_demand_rate": 14.69,
-        "subscription_competition_rate": 24.8,
-        "lockup_ratio": 27.2
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 10000,
+      "shares_offered": 5876000,
+      "institutional_demand_rate": 14.69,
+      "subscription_competition_rate": 24.8,
+      "lockup_ratio": 27.2,
+      "predicted_day0_high": 12480,
+      "predicted_day0_close": 11528,
+      "predicted_day1_close": 16392
     },
     {
+      "id": 40,
       "code": "100590",
       "company_name": "머큐리",
       "listing_date": "2018-12-14",
-      "ipo_price": 6100,
-      "predicted": {
-        "day0_high": 10259,
-        "day0_close": 9256,
-        "day1_close": 12258
-      },
-      "metadata": {
-        "shares_offered": 2839980000,
-        "institutional_demand_rate": 749.57,
-        "subscription_competition_rate": 930.39,
-        "lockup_ratio": 13.35
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 6100,
+      "shares_offered": 2839980000,
+      "institutional_demand_rate": 749.57,
+      "subscription_competition_rate": 930.39,
+      "lockup_ratio": 13.35,
+      "predicted_day0_high": 10259,
+      "predicted_day0_close": 9256,
+      "predicted_day1_close": 12258
     },
     {
+      "id": 41,
       "code": "298380",
       "company_name": "에이비엘바이오",
       "listing_date": "2018-12-19",
-      "ipo_price": 15000,
-      "predicted": {
-        "day0_high": 18040,
-        "day0_close": 15893,
-        "day1_close": 16518
-      },
-      "metadata": {
-        "shares_offered": 288384000,
-        "institutional_demand_rate": 60.08,
-        "subscription_competition_rate": 0.78,
-        "lockup_ratio": 10.99
-      },
-      "actual": {
-        "day0_high": 14950,
-        "day0_close": 13650,
-        "day1_close": 17700
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 15000,
+      "shares_offered": 288384000,
+      "institutional_demand_rate": 60.08,
+      "subscription_competition_rate": 0.78,
+      "lockup_ratio": 10.99,
+      "predicted_day0_high": 18040,
+      "predicted_day0_close": 15893,
+      "predicted_day1_close": 16518,
+      "actual_day0_high": 14950,
+      "actual_day0_close": 13650,
+      "actual_day1_close": 17700
     },
     {
+      "id": 42,
       "code": "299900",
       "company_name": "위지윅스튜디오",
       "listing_date": "2018-12-20",
-      "ipo_price": 11000,
-      "predicted": {
-        "day0_high": 12112,
-        "day0_close": 11226,
-        "day1_close": 11289
-      },
-      "metadata": {
-        "shares_offered": 351922,
-        "institutional_demand_rate": 177.33,
-        "subscription_competition_rate": 6.84,
-        "lockup_ratio": 1.13
-      },
-      "actual": {
-        "day0_high": 975,
-        "day0_close": 779,
-        "day1_close": 780
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 11000,
+      "shares_offered": 351922,
+      "institutional_demand_rate": 177.33,
+      "subscription_competition_rate": 6.84,
+      "lockup_ratio": 1.13,
+      "predicted_day0_high": 12112,
+      "predicted_day0_close": 11226,
+      "predicted_day1_close": 11289,
+      "actual_day0_high": 975,
+      "actual_day0_close": 779,
+      "actual_day1_close": 780
     },
     {
+      "id": 43,
       "code": "263050",
       "company_name": "유틸렉스",
       "listing_date": "2018-12-24",
-      "ipo_price": 50000,
-      "predicted": {
-        "day0_high": 93126,
-        "day0_close": 88743,
-        "day1_close": 82991
-      },
-      "metadata": {
-        "shares_offered": 321282000,
-        "institutional_demand_rate": 597.2,
-        "subscription_competition_rate": 322.96,
-        "lockup_ratio": 18.63
-      },
-      "actual": {
-        "day0_high": 26033,
-        "day0_close": 26033,
-        "day1_close": 23333
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 50000,
+      "shares_offered": 321282000,
+      "institutional_demand_rate": 597.2,
+      "subscription_competition_rate": 322.96,
+      "lockup_ratio": 18.63,
+      "predicted_day0_high": 93126,
+      "predicted_day0_close": 88743,
+      "predicted_day1_close": 82991,
+      "actual_day0_high": 26033,
+      "actual_day0_close": 26033,
+      "actual_day1_close": 23333
     },
     {
+      "id": 44,
       "code": "238200",
       "company_name": "비피도",
       "listing_date": "2018-12-26",
-      "ipo_price": 18000,
-      "predicted": {
-        "day0_high": 19933,
-        "day0_close": 16592,
-        "day1_close": 17687
-      },
-      "metadata": {
-        "shares_offered": 23029000,
-        "institutional_demand_rate": 74.62,
-        "subscription_competition_rate": 159.97,
-        "lockup_ratio": 0.0
-      },
-      "actual": {
-        "day0_high": 18525,
-        "day0_close": 18250,
-        "day1_close": 15650
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 18000,
+      "shares_offered": 23029000,
+      "institutional_demand_rate": 74.62,
+      "subscription_competition_rate": 159.97,
+      "lockup_ratio": 0.0,
+      "predicted_day0_high": 19933,
+      "predicted_day0_close": 16592,
+      "predicted_day1_close": 17687,
+      "actual_day0_high": 18525,
+      "actual_day0_close": 18250,
+      "actual_day1_close": 15650
     },
     {
+      "id": 45,
       "code": "298690",
       "company_name": "에어부산",
       "listing_date": "2018-12-27",
-      "ipo_price": 3600,
-      "predicted": {
-        "day0_high": 5768,
-        "day0_close": 4880,
-        "day1_close": 3555
-      },
-      "metadata": {
-        "shares_offered": 468630,
-        "institutional_demand_rate": 23.89,
-        "subscription_competition_rate": 36.5,
-        "lockup_ratio": 0.4
-      },
-      "actual": {
-        "day0_high": 9367,
-        "day0_close": 9367,
-        "day1_close": 10928
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 3600,
+      "shares_offered": 468630,
+      "institutional_demand_rate": 23.89,
+      "subscription_competition_rate": 36.5,
+      "lockup_ratio": 0.4,
+      "predicted_day0_high": 5768,
+      "predicted_day0_close": 4880,
+      "predicted_day1_close": 3555,
+      "actual_day0_high": 9367,
+      "actual_day0_close": 9367,
+      "actual_day1_close": 10928
     },
     {
+      "id": 46,
       "code": "53580",
       "company_name": "웹케시",
       "listing_date": "2019-01-25",
-      "ipo_price": 26000,
-      "predicted": {
-        "day0_high": 32900,
-        "day0_close": 25781,
-        "day1_close": 28187
-      },
-      "metadata": {
-        "shares_offered": 164900,
-        "institutional_demand_rate": 614.0,
-        "subscription_competition_rate": 947.0,
-        "lockup_ratio": 6.8
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 26000,
+      "shares_offered": 164900,
+      "institutional_demand_rate": 614.0,
+      "subscription_competition_rate": 947.0,
+      "lockup_ratio": 6.8,
+      "predicted_day0_high": 32900,
+      "predicted_day0_close": 25781,
+      "predicted_day1_close": 28187
     },
     {
+      "id": 47,
       "code": "104620",
       "company_name": "노랑풍선",
       "listing_date": "2019-01-30",
-      "ipo_price": 20000,
-      "predicted": {
-        "day0_high": 34937,
-        "day0_close": 25575,
-        "day1_close": 28228
-      },
-      "metadata": {
-        "shares_offered": 110000,
-        "institutional_demand_rate": 978.43,
-        "subscription_competition_rate": 1025.2,
-        "lockup_ratio": 12.42
-      },
-      "actual": {
-        "day0_high": 12268,
-        "day0_close": 10646,
-        "day1_close": 9945
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 20000,
+      "shares_offered": 110000,
+      "institutional_demand_rate": 978.43,
+      "subscription_competition_rate": 1025.2,
+      "lockup_ratio": 12.42,
+      "predicted_day0_high": 34937,
+      "predicted_day0_close": 25575,
+      "predicted_day1_close": 28228,
+      "actual_day0_high": 12268,
+      "actual_day0_close": 10646,
+      "actual_day1_close": 9945
     },
     {
+      "id": 48,
       "code": "246960",
       "company_name": "이노테라피",
       "listing_date": "2019-02-01",
-      "ipo_price": 18000,
-      "predicted": {
-        "day0_high": 22550,
-        "day0_close": 19962,
-        "day1_close": 20945
-      },
-      "metadata": {
-        "shares_offered": 61774000,
-        "institutional_demand_rate": 154.44,
-        "subscription_competition_rate": 463.37,
-        "lockup_ratio": 2.83
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 18000,
+      "shares_offered": 61774000,
+      "institutional_demand_rate": 154.44,
+      "subscription_competition_rate": 463.37,
+      "lockup_ratio": 2.83,
+      "predicted_day0_high": 22550,
+      "predicted_day0_close": 19962,
+      "predicted_day1_close": 20945
     },
     {
+      "id": 49,
       "code": "278280",
       "company_name": "천보",
       "listing_date": "2019-02-11",
-      "ipo_price": 40000,
-      "predicted": {
-        "day0_high": 43268,
-        "day0_close": 39801,
-        "day1_close": 45805
-      },
-      "metadata": {
-        "shares_offered": 1559412000,
-        "institutional_demand_rate": 891.1,
-        "subscription_competition_rate": 426.09,
-        "lockup_ratio": 15.8
-      },
-      "actual": {
-        "day0_high": 52246,
-        "day0_close": 46627,
-        "day1_close": 47810
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 40000,
+      "shares_offered": 1559412000,
+      "institutional_demand_rate": 891.1,
+      "subscription_competition_rate": 426.09,
+      "lockup_ratio": 15.8,
+      "predicted_day0_high": 43268,
+      "predicted_day0_close": 39801,
+      "predicted_day1_close": 45805,
+      "actual_day0_high": 52246,
+      "actual_day0_close": 46627,
+      "actual_day1_close": 47810
     },
     {
+      "id": 50,
       "code": "299660",
       "company_name": "셀리드",
       "listing_date": "2019-02-20",
-      "ipo_price": 33000,
-      "predicted": {
-        "day0_high": 40137,
-        "day0_close": 31175,
-        "day1_close": 36469
-      },
-      "metadata": {
-        "shares_offered": 740396760,
-        "institutional_demand_rate": 778.77,
-        "subscription_competition_rate": 818.83,
-        "lockup_ratio": 10.49
-      },
-      "actual": {
-        "day0_high": 56200,
-        "day0_close": 51100,
-        "day1_close": 49400
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 33000,
+      "shares_offered": 740396760,
+      "institutional_demand_rate": 778.77,
+      "subscription_competition_rate": 818.83,
+      "lockup_ratio": 10.49,
+      "predicted_day0_high": 40137,
+      "predicted_day0_close": 31175,
+      "predicted_day1_close": 36469,
+      "actual_day0_high": 56200,
+      "actual_day0_close": 51100,
+      "actual_day1_close": 49400
     },
     {
+      "id": 51,
       "code": "247540",
       "company_name": "에코프로비엠",
       "listing_date": "2019-03-05",
-      "ipo_price": 48000,
-      "predicted": {
-        "day0_high": 71043,
-        "day0_close": 67649,
-        "day1_close": 66864
-      },
-      "metadata": {
-        "shares_offered": 540000,
-        "institutional_demand_rate": 988.49,
-        "subscription_competition_rate": 273.78,
-        "lockup_ratio": 45.04
-      },
-      "actual": {
-        "day0_high": 15818,
-        "day0_close": 15240,
-        "day1_close": 16566
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 48000,
+      "shares_offered": 540000,
+      "institutional_demand_rate": 988.49,
+      "subscription_competition_rate": 273.78,
+      "lockup_ratio": 45.04,
+      "predicted_day0_high": 71043,
+      "predicted_day0_close": 67649,
+      "predicted_day1_close": 66864,
+      "actual_day0_high": 15818,
+      "actual_day0_close": 15240,
+      "actual_day1_close": 16566
     },
     {
+      "id": 52,
       "code": "100790",
       "company_name": "미래에셋벤처투자",
       "listing_date": "2019-03-15",
-      "ipo_price": 4500,
-      "predicted": {
-        "day0_high": 7373,
-        "day0_close": 5834,
-        "day1_close": 3841
-      },
-      "metadata": {
-        "shares_offered": 765000,
-        "institutional_demand_rate": 441.4,
-        "subscription_competition_rate": 1021.77,
-        "lockup_ratio": 3.7
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 4500,
+      "shares_offered": 765000,
+      "institutional_demand_rate": 441.4,
+      "subscription_competition_rate": 1021.77,
+      "lockup_ratio": 3.7,
+      "predicted_day0_high": 7373,
+      "predicted_day0_close": 5834,
+      "predicted_day1_close": 3841
     },
     {
+      "id": 53,
       "code": "99750",
       "company_name": "이지케어텍",
       "listing_date": "2019-03-22",
-      "ipo_price": 12300,
-      "predicted": {
-        "day0_high": 25072,
-        "day0_close": 21276,
-        "day1_close": 21611
-      },
-      "metadata": {
-        "shares_offered": 986147000,
-        "institutional_demand_rate": 1108.03,
-        "subscription_competition_rate": 1272.11,
-        "lockup_ratio": 40.25
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 12300,
+      "shares_offered": 986147000,
+      "institutional_demand_rate": 1108.03,
+      "subscription_competition_rate": 1272.11,
+      "lockup_ratio": 40.25,
+      "predicted_day0_high": 25072,
+      "predicted_day0_close": 21276,
+      "predicted_day1_close": 21611
     },
     {
+      "id": 54,
       "code": "228760",
       "company_name": "지노믹트리",
       "listing_date": "2019-03-27",
-      "ipo_price": 27000,
-      "predicted": {
-        "day0_high": 38314,
-        "day0_close": 30107,
-        "day1_close": 32943
-      },
-      "metadata": {
-        "shares_offered": 1146957000,
-        "institutional_demand_rate": 372.0,
-        "subscription_competition_rate": 13.1,
-        "lockup_ratio": 22.8
-      },
-      "actual": {
-        "day0_high": 39800,
-        "day0_close": 38000,
-        "day1_close": 27300
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 27000,
+      "shares_offered": 1146957000,
+      "institutional_demand_rate": 372.0,
+      "subscription_competition_rate": 13.1,
+      "lockup_ratio": 22.8,
+      "predicted_day0_high": 38314,
+      "predicted_day0_close": 30107,
+      "predicted_day1_close": 32943,
+      "actual_day0_high": 39800,
+      "actual_day0_close": 38000,
+      "actual_day1_close": 27300
     },
     {
+      "id": 55,
       "code": "307950",
       "company_name": "현대오토에버",
       "listing_date": "2019-03-28",
-      "ipo_price": 48000,
-      "predicted": {
-        "day0_high": 73687,
-        "day0_close": 72633,
-        "day1_close": 70817
-      },
-      "metadata": {
-        "shares_offered": 379080,
-        "institutional_demand_rate": 797.36,
-        "subscription_competition_rate": 345.24,
-        "lockup_ratio": 57.79
-      },
-      "actual": {
-        "day0_high": 88832,
-        "day0_close": 83468,
-        "day1_close": 77258
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 48000,
+      "shares_offered": 379080,
+      "institutional_demand_rate": 797.36,
+      "subscription_competition_rate": 345.24,
+      "lockup_ratio": 57.79,
+      "predicted_day0_high": 73687,
+      "predicted_day0_close": 72633,
+      "predicted_day1_close": 70817,
+      "actual_day0_high": 88832,
+      "actual_day0_close": 83468,
+      "actual_day1_close": 77258
     },
     {
+      "id": 56,
       "code": "125210",
       "company_name": "아모그린텍",
       "listing_date": "2019-03-29",
-      "ipo_price": 9900,
-      "predicted": {
-        "day0_high": 9718,
-        "day0_close": 8100,
-        "day1_close": 8680
-      },
-      "metadata": {
-        "shares_offered": 508432600,
-        "institutional_demand_rate": 164.22,
-        "subscription_competition_rate": 22.13,
-        "lockup_ratio": 3.05
-      },
-      "actual": {
-        "day0_high": 12250,
-        "day0_close": 10200,
-        "day1_close": 11900
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 9900,
+      "shares_offered": 508432600,
+      "institutional_demand_rate": 164.22,
+      "subscription_competition_rate": 22.13,
+      "lockup_ratio": 3.05,
+      "predicted_day0_high": 9718,
+      "predicted_day0_close": 8100,
+      "predicted_day1_close": 8680,
+      "actual_day0_high": 12250,
+      "actual_day0_close": 10200,
+      "actual_day1_close": 11900
     },
     {
+      "id": 57,
       "code": "950180",
       "company_name": "에스앤케이",
       "listing_date": "2019-05-07",
-      "ipo_price": 40400,
-      "predicted": {
-        "day0_high": 44902,
-        "day0_close": 41438,
-        "day1_close": 46601
-      },
-      "metadata": {
-        "shares_offered": 756000,
-        "institutional_demand_rate": 317.3,
-        "subscription_competition_rate": 185.17,
-        "lockup_ratio": 11.59
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 40400,
+      "shares_offered": 756000,
+      "institutional_demand_rate": 317.3,
+      "subscription_competition_rate": 185.17,
+      "lockup_ratio": 11.59,
+      "predicted_day0_high": 44902,
+      "predicted_day0_close": 41438,
+      "predicted_day1_close": 46601
     },
     {
+      "id": 58,
       "code": "253840",
       "company_name": "수젠텍",
       "listing_date": "2019-05-28",
-      "ipo_price": 12000,
-      "predicted": {
-        "day0_high": 13537,
-        "day0_close": 11786,
-        "day1_close": 11513
-      },
-      "metadata": {
-        "shares_offered": 78968000,
-        "institutional_demand_rate": 75.21,
-        "subscription_competition_rate": 1.48,
-        "lockup_ratio": 3.15
-      },
-      "actual": {
-        "day0_high": 10720,
-        "day0_close": 10575,
-        "day1_close": 9803
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 12000,
+      "shares_offered": 78968000,
+      "institutional_demand_rate": 75.21,
+      "subscription_competition_rate": 1.48,
+      "lockup_ratio": 3.15,
+      "predicted_day0_high": 13537,
+      "predicted_day0_close": 11786,
+      "predicted_day1_close": 11513,
+      "actual_day0_high": 10720,
+      "actual_day0_close": 10575,
+      "actual_day1_close": 9803
     },
     {
+      "id": 59,
       "code": "305090",
       "company_name": "마이크로디지탈",
       "listing_date": "2019-06-05",
-      "ipo_price": 23000,
-      "predicted": {
-        "day0_high": 29255,
-        "day0_close": 21971,
-        "day1_close": 24709
-      },
-      "metadata": {
-        "shares_offered": 343681000,
-        "institutional_demand_rate": 621.48,
-        "subscription_competition_rate": 1116.34,
-        "lockup_ratio": 2.29
-      },
-      "actual": {
-        "day0_high": 13325,
-        "day0_close": 9775,
-        "day1_close": 8925
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 23000,
+      "shares_offered": 343681000,
+      "institutional_demand_rate": 621.48,
+      "subscription_competition_rate": 1116.34,
+      "lockup_ratio": 2.29,
+      "predicted_day0_high": 29255,
+      "predicted_day0_close": 21971,
+      "predicted_day1_close": 24709,
+      "actual_day0_high": 13325,
+      "actual_day0_close": 9775,
+      "actual_day1_close": 8925
     },
     {
+      "id": 60,
       "code": "293780",
       "company_name": "압타바이오",
       "listing_date": "2019-06-12",
-      "ipo_price": 30000,
-      "predicted": {
-        "day0_high": 45424,
-        "day0_close": 38869,
-        "day1_close": 39835
-      },
-      "metadata": {
-        "shares_offered": 305200,
-        "institutional_demand_rate": 856.41,
-        "subscription_competition_rate": 663.03,
-        "lockup_ratio": 35.1
-      },
-      "actual": {
-        "day0_high": 27000,
-        "day0_close": 19450,
-        "day1_close": 17850
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 30000,
+      "shares_offered": 305200,
+      "institutional_demand_rate": 856.41,
+      "subscription_competition_rate": 663.03,
+      "lockup_ratio": 35.1,
+      "predicted_day0_high": 45424,
+      "predicted_day0_close": 38869,
+      "predicted_day1_close": 39835,
+      "actual_day0_high": 27000,
+      "actual_day0_close": 19450,
+      "actual_day1_close": 17850
     },
     {
+      "id": 61,
       "code": "312610",
       "company_name": "에이에프더블류",
       "listing_date": "2019-07-01",
-      "ipo_price": 22500,
-      "predicted": {
-        "day0_high": 32099,
-        "day0_close": 23646,
-        "day1_close": 26850
-      },
-      "metadata": {
-        "shares_offered": 2632080000,
-        "institutional_demand_rate": 866.03,
-        "subscription_competition_rate": 552.22,
-        "lockup_ratio": 13.72
-      },
-      "actual": {
-        "day0_high": 14215,
-        "day0_close": 10552,
-        "day1_close": 10358
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 22500,
+      "shares_offered": 2632080000,
+      "institutional_demand_rate": 866.03,
+      "subscription_competition_rate": 552.22,
+      "lockup_ratio": 13.72,
+      "predicted_day0_high": 32099,
+      "predicted_day0_close": 23646,
+      "predicted_day1_close": 26850,
+      "actual_day0_high": 14215,
+      "actual_day0_close": 10552,
+      "actual_day1_close": 10358
     },
     {
+      "id": 62,
       "code": "251970",
       "company_name": "펌텍코리아",
       "listing_date": "2019-07-04",
-      "ipo_price": 190000,
-      "predicted": {
-        "day0_high": 102879,
-        "day0_close": 99585,
-        "day1_close": 92978
-      },
-      "metadata": {
-        "shares_offered": 2353200,
-        "institutional_demand_rate": 5.75,
-        "subscription_competition_rate": 0.51,
-        "lockup_ratio": 0.0
-      },
-      "actual": {
-        "day0_high": 24690,
-        "day0_close": 20890,
-        "day1_close": 22468
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 190000,
+      "shares_offered": 2353200,
+      "institutional_demand_rate": 5.75,
+      "subscription_competition_rate": 0.51,
+      "lockup_ratio": 0.0,
+      "predicted_day0_high": 102879,
+      "predicted_day0_close": 99585,
+      "predicted_day1_close": 92978,
+      "actual_day0_high": 24690,
+      "actual_day0_close": 20890,
+      "actual_day1_close": 22468
     },
     {
+      "id": 63,
       "code": "289010",
       "company_name": "아이스크림에듀",
       "listing_date": "2019-07-11",
-      "ipo_price": 15900,
-      "predicted": {
-        "day0_high": 15578,
-        "day0_close": 14344,
-        "day1_close": 14418
-      },
-      "metadata": {
-        "shares_offered": 232000,
-        "institutional_demand_rate": 124.73,
-        "subscription_competition_rate": 5.7,
-        "lockup_ratio": 1.34
-      },
-      "actual": {
-        "day0_high": 13980,
-        "day0_close": 11398,
-        "day1_close": 11349
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 15900,
+      "shares_offered": 232000,
+      "institutional_demand_rate": 124.73,
+      "subscription_competition_rate": 5.7,
+      "lockup_ratio": 1.34,
+      "predicted_day0_high": 15578,
+      "predicted_day0_close": 14344,
+      "predicted_day1_close": 14418,
+      "actual_day0_high": 13980,
+      "actual_day0_close": 11398,
+      "actual_day1_close": 11349
     },
     {
+      "id": 64,
       "code": "234340",
       "company_name": "세틀뱅크",
       "listing_date": "2019-07-12",
-      "ipo_price": 55000,
-      "predicted": {
-        "day0_high": 105457,
-        "day0_close": 99907,
-        "day1_close": 91582
-      },
-      "metadata": {
-        "shares_offered": 144700,
-        "institutional_demand_rate": 1122.0,
-        "subscription_competition_rate": 309.6,
-        "lockup_ratio": 14.8
-      },
-      "actual": {
-        "day0_high": 34092,
-        "day0_close": 30383,
-        "day1_close": 28616
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 55000,
+      "shares_offered": 144700,
+      "institutional_demand_rate": 1122.0,
+      "subscription_competition_rate": 309.6,
+      "lockup_ratio": 14.8,
+      "predicted_day0_high": 105457,
+      "predicted_day0_close": 99907,
+      "predicted_day1_close": 91582,
+      "actual_day0_high": 34092,
+      "actual_day0_close": 30383,
+      "actual_day1_close": 28616
     },
     {
+      "id": 65,
       "code": "300080",
       "company_name": "플리토",
       "listing_date": "2019-07-17",
-      "ipo_price": 26000,
-      "predicted": {
-        "day0_high": 37099,
-        "day0_close": 27529,
-        "day1_close": 29942
-      },
-      "metadata": {
-        "shares_offered": 1335616000,
-        "institutional_demand_rate": 1133.0,
-        "subscription_competition_rate": 710.71,
-        "lockup_ratio": 22.0
-      },
-      "actual": {
-        "day0_high": 11133,
-        "day0_close": 9266,
-        "day1_close": 8516
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 26000,
+      "shares_offered": 1335616000,
+      "institutional_demand_rate": 1133.0,
+      "subscription_competition_rate": 710.71,
+      "lockup_ratio": 22.0,
+      "predicted_day0_high": 37099,
+      "predicted_day0_close": 27529,
+      "predicted_day1_close": 29942,
+      "actual_day0_high": 11133,
+      "actual_day0_close": 9266,
+      "actual_day1_close": 8516
     },
     {
+      "id": 66,
       "code": "317850",
       "company_name": "대모엔지니어링",
       "listing_date": "2019-07-24",
-      "ipo_price": 5200,
-      "predicted": {
-        "day0_high": 9026,
-        "day0_close": 8733,
-        "day1_close": 11456
-      },
-      "metadata": {
-        "shares_offered": 1778819000,
-        "institutional_demand_rate": 1103.1,
-        "subscription_competition_rate": 1268.53,
-        "lockup_ratio": 15.6
-      },
-      "actual": {
-        "day0_high": 10475,
-        "day0_close": 10475,
-        "day1_close": 12051
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 5200,
+      "shares_offered": 1778819000,
+      "institutional_demand_rate": 1103.1,
+      "subscription_competition_rate": 1268.53,
+      "lockup_ratio": 15.6,
+      "predicted_day0_high": 9026,
+      "predicted_day0_close": 8733,
+      "predicted_day1_close": 11456,
+      "actual_day0_high": 10475,
+      "actual_day0_close": 10475,
+      "actual_day1_close": 12051
     },
     {
+      "id": 67,
       "code": "313760",
       "company_name": "윌링스",
       "listing_date": "2019-07-25",
-      "ipo_price": 12500,
-      "predicted": {
-        "day0_high": 19376,
-        "day0_close": 15303,
-        "day1_close": 16949
-      },
-      "metadata": {
-        "shares_offered": 972093000,
-        "institutional_demand_rate": 1082.15,
-        "subscription_competition_rate": 532.83,
-        "lockup_ratio": 18.18
-      },
-      "actual": {
-        "day0_high": 28812,
-        "day0_close": 28812,
-        "day1_close": 21901
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 12500,
+      "shares_offered": 972093000,
+      "institutional_demand_rate": 1082.15,
+      "subscription_competition_rate": 532.83,
+      "lockup_ratio": 18.18,
+      "predicted_day0_high": 19376,
+      "predicted_day0_close": 15303,
+      "predicted_day1_close": 16949,
+      "actual_day0_high": 28812,
+      "actual_day0_close": 28812,
+      "actual_day1_close": 21901
     },
     {
+      "id": 68,
       "code": "318000",
       "company_name": "한국바이오젠",
       "listing_date": "2019-08-01",
-      "ipo_price": 6000,
-      "predicted": {
-        "day0_high": 7829,
-        "day0_close": 8371,
-        "day1_close": 8232
-      },
-      "metadata": {
-        "shares_offered": 1552589000,
-        "institutional_demand_rate": 1087.6,
-        "subscription_competition_rate": 1019.62,
-        "lockup_ratio": 0.0
-      },
-      "actual": {
-        "day0_high": 14183,
-        "day0_close": 12118,
-        "day1_close": 10970
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 6000,
+      "shares_offered": 1552589000,
+      "institutional_demand_rate": 1087.6,
+      "subscription_competition_rate": 1019.62,
+      "lockup_ratio": 0.0,
+      "predicted_day0_high": 7829,
+      "predicted_day0_close": 8371,
+      "predicted_day1_close": 8232,
+      "actual_day0_high": 14183,
+      "actual_day0_close": 12118,
+      "actual_day1_close": 10970
     },
     {
+      "id": 69,
       "code": "317770",
       "company_name": "슈프리마아이디",
       "listing_date": "2019-08-01",
-      "ipo_price": 27000,
-      "predicted": {
-        "day0_high": 38476,
-        "day0_close": 27879,
-        "day1_close": 33217
-      },
-      "metadata": {
-        "shares_offered": 776944000,
-        "institutional_demand_rate": 1124.05,
-        "subscription_competition_rate": 707.26,
-        "lockup_ratio": 13.14
-      },
-      "actual": {
-        "day0_high": 5450,
-        "day0_close": 4000,
-        "day1_close": 3900
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 27000,
+      "shares_offered": 776944000,
+      "institutional_demand_rate": 1124.05,
+      "subscription_competition_rate": 707.26,
+      "lockup_ratio": 13.14,
+      "predicted_day0_high": 38476,
+      "predicted_day0_close": 27879,
+      "predicted_day1_close": 33217,
+      "actual_day0_high": 5450,
+      "actual_day0_close": 4000,
+      "actual_day1_close": 3900
     },
     {
+      "id": 70,
       "code": "317330",
       "company_name": "덕산테코피아",
       "listing_date": "2019-08-02",
-      "ipo_price": 19000,
-      "predicted": {
-        "day0_high": 23595,
-        "day0_close": 18583,
-        "day1_close": 21204
-      },
-      "metadata": {
-        "shares_offered": 1036881000,
-        "institutional_demand_rate": 348.63,
-        "subscription_competition_rate": 1.96,
-        "lockup_ratio": 7.17
-      },
-      "actual": {
-        "day0_high": 18500,
-        "day0_close": 15600,
-        "day1_close": 14300
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 19000,
+      "shares_offered": 1036881000,
+      "institutional_demand_rate": 348.63,
+      "subscription_competition_rate": 1.96,
+      "lockup_ratio": 7.17,
+      "predicted_day0_high": 23595,
+      "predicted_day0_close": 18583,
+      "predicted_day1_close": 21204,
+      "actual_day0_high": 18500,
+      "actual_day0_close": 15600,
+      "actual_day1_close": 14300
     },
     {
+      "id": 71,
       "code": "282880",
       "company_name": "코윈테크",
       "listing_date": "2019-08-05",
-      "ipo_price": 34500,
-      "predicted": {
-        "day0_high": 34376,
-        "day0_close": 35458,
-        "day1_close": 41858
-      },
-      "metadata": {
-        "shares_offered": 261667000,
-        "institutional_demand_rate": 163.54,
-        "subscription_competition_rate": 0.48,
-        "lockup_ratio": 0.9
-      },
-      "actual": {
-        "day0_high": 24834,
-        "day0_close": 17396,
-        "day1_close": 15436
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 34500,
+      "shares_offered": 261667000,
+      "institutional_demand_rate": 163.54,
+      "subscription_competition_rate": 0.48,
+      "lockup_ratio": 0.9,
+      "predicted_day0_high": 34376,
+      "predicted_day0_close": 35458,
+      "predicted_day1_close": 41858,
+      "actual_day0_high": 24834,
+      "actual_day0_close": 17396,
+      "actual_day1_close": 15436
     },
     {
+      "id": 72,
       "code": "186230",
       "company_name": "그린플러스",
       "listing_date": "2019-08-07",
-      "ipo_price": 10000,
-      "predicted": {
-        "day0_high": 10127,
-        "day0_close": 8948,
-        "day1_close": 9570
-      },
-      "metadata": {
-        "shares_offered": 423331000,
-        "institutional_demand_rate": 863.94,
-        "subscription_competition_rate": 700.96,
-        "lockup_ratio": 5.85
-      },
-      "actual": {
-        "day0_high": 6650,
-        "day0_close": 6450,
-        "day1_close": 5350
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 10000,
+      "shares_offered": 423331000,
+      "institutional_demand_rate": 863.94,
+      "subscription_competition_rate": 700.96,
+      "lockup_ratio": 5.85,
+      "predicted_day0_high": 10127,
+      "predicted_day0_close": 8948,
+      "predicted_day1_close": 9570,
+      "actual_day0_high": 6650,
+      "actual_day0_close": 6450,
+      "actual_day1_close": 5350
     },
     {
+      "id": 73,
       "code": "317830",
       "company_name": "에스피시스템스",
       "listing_date": "2019-08-14",
-      "ipo_price": 4900,
-      "predicted": {
-        "day0_high": 8212,
-        "day0_close": 7037,
-        "day1_close": 7873
-      },
-      "metadata": {
-        "shares_offered": 1562844000,
-        "institutional_demand_rate": 1116.32,
-        "subscription_competition_rate": 786.16,
-        "lockup_ratio": 13.68
-      },
-      "actual": {
-        "day0_high": 12618,
-        "day0_close": 12618,
-        "day1_close": 9637
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 4900,
+      "shares_offered": 1562844000,
+      "institutional_demand_rate": 1116.32,
+      "subscription_competition_rate": 786.16,
+      "lockup_ratio": 13.68,
+      "predicted_day0_high": 8212,
+      "predicted_day0_close": 7037,
+      "predicted_day1_close": 7873,
+      "actual_day0_high": 12618,
+      "actual_day0_close": 12618,
+      "actual_day1_close": 9637
     },
     {
+      "id": 74,
       "code": "286750",
       "company_name": "나노브릭",
       "listing_date": "2019-08-19",
-      "ipo_price": 16000,
-      "predicted": {
-        "day0_high": 15421,
-        "day0_close": 13713,
-        "day1_close": 13777
-      },
-      "metadata": {
-        "shares_offered": 13449000,
-        "institutional_demand_rate": 39.3,
-        "subscription_competition_rate": 2.58,
-        "lockup_ratio": 0.0
-      },
-      "actual": {
-        "day0_high": 4034,
-        "day0_close": 3363,
-        "day1_close": 3147
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 16000,
+      "shares_offered": 13449000,
+      "institutional_demand_rate": 39.3,
+      "subscription_competition_rate": 2.58,
+      "lockup_ratio": 0.0,
+      "predicted_day0_high": 15421,
+      "predicted_day0_close": 13713,
+      "predicted_day1_close": 13777,
+      "actual_day0_high": 4034,
+      "actual_day0_close": 3363,
+      "actual_day1_close": 3147
     },
     {
+      "id": 75,
       "code": "195500",
       "company_name": "마니커에프앤지",
       "listing_date": "2019-08-20",
-      "ipo_price": 4000,
-      "predicted": {
-        "day0_high": 6472,
-        "day0_close": 5828,
-        "day1_close": 4153
-      },
-      "metadata": {
-        "shares_offered": 2198375000,
-        "institutional_demand_rate": 1056.91,
-        "subscription_competition_rate": 1216.48,
-        "lockup_ratio": 5.43
-      },
-      "actual": {
-        "day0_high": 10400,
-        "day0_close": 6950,
-        "day1_close": 8300
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 4000,
+      "shares_offered": 2198375000,
+      "institutional_demand_rate": 1056.91,
+      "subscription_competition_rate": 1216.48,
+      "lockup_ratio": 5.43,
+      "predicted_day0_high": 6472,
+      "predicted_day0_close": 5828,
+      "predicted_day1_close": 4153,
+      "actual_day0_high": 10400,
+      "actual_day0_close": 6950,
+      "actual_day1_close": 8300
     },
     {
+      "id": 76,
       "code": "256150",
       "company_name": "한독크린텍",
       "listing_date": "2019-09-05",
-      "ipo_price": 15100,
-      "predicted": {
-        "day0_high": 20740,
-        "day0_close": 16832,
-        "day1_close": 17507
-      },
-      "metadata": {
-        "shares_offered": 625859000,
-        "institutional_demand_rate": 1117.61,
-        "subscription_competition_rate": 728.28,
-        "lockup_ratio": 8.77
-      },
-      "actual": {
-        "day0_high": 10421,
-        "day0_close": 8089,
-        "day1_close": 7480
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 15100,
+      "shares_offered": 625859000,
+      "institutional_demand_rate": 1117.61,
+      "subscription_competition_rate": 728.28,
+      "lockup_ratio": 8.77,
+      "predicted_day0_high": 20740,
+      "predicted_day0_close": 16832,
+      "predicted_day1_close": 17507,
+      "actual_day0_high": 10421,
+      "actual_day0_close": 8089,
+      "actual_day1_close": 7480
     },
     {
+      "id": 77,
       "code": "317120",
       "company_name": "라닉스",
       "listing_date": "2019-09-18",
-      "ipo_price": 6000,
-      "predicted": {
-        "day0_high": 7152,
-        "day0_close": 7525,
-        "day1_close": 7914
-      },
-      "metadata": {
-        "shares_offered": 66148000,
-        "institutional_demand_rate": 51.68,
-        "subscription_competition_rate": 770.88,
-        "lockup_ratio": 0.0
-      },
-      "actual": {
-        "day0_high": 9230,
-        "day0_close": 8090,
-        "day1_close": 9330
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 6000,
+      "shares_offered": 66148000,
+      "institutional_demand_rate": 51.68,
+      "subscription_competition_rate": 770.88,
+      "lockup_ratio": 0.0,
+      "predicted_day0_high": 7152,
+      "predicted_day0_close": 7525,
+      "predicted_day1_close": 7914,
+      "actual_day0_high": 9230,
+      "actual_day0_close": 8090,
+      "actual_day1_close": 9330
     },
     {
+      "id": 78,
       "code": "244460",
       "company_name": "올리패스",
       "listing_date": "2019-09-20",
-      "ipo_price": 20000,
-      "predicted": {
-        "day0_high": 23195,
-        "day0_close": 19972,
-        "day1_close": 22176
-      },
-      "metadata": {
-        "shares_offered": 96000,
-        "institutional_demand_rate": 11.07,
-        "subscription_competition_rate": 419.4,
-        "lockup_ratio": 0.4
-      },
-      "actual": {
-        "day0_high": 21333,
-        "day0_close": 16533,
-        "day1_close": 17000
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 20000,
+      "shares_offered": 96000,
+      "institutional_demand_rate": 11.07,
+      "subscription_competition_rate": 419.4,
+      "lockup_ratio": 0.4,
+      "predicted_day0_high": 23195,
+      "predicted_day0_close": 19972,
+      "predicted_day1_close": 22176,
+      "actual_day0_high": 21333,
+      "actual_day0_close": 16533,
+      "actual_day1_close": 17000
     },
     {
+      "id": 79,
       "code": "234690",
       "company_name": "녹십자웰빙",
       "listing_date": "2019-10-14",
-      "ipo_price": 11300,
-      "predicted": {
-        "day0_high": 13351,
-        "day0_close": 11785,
-        "day1_close": 11465
-      },
-      "metadata": {
-        "shares_offered": 1924437000,
-        "institutional_demand_rate": 657.93,
-        "subscription_competition_rate": 657.66,
-        "lockup_ratio": 4.49
-      },
-      "actual": {
-        "day0_high": 13061,
-        "day0_close": 11831,
-        "day1_close": 11547
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 11300,
+      "shares_offered": 1924437000,
+      "institutional_demand_rate": 657.93,
+      "subscription_competition_rate": 657.66,
+      "lockup_ratio": 4.49,
+      "predicted_day0_high": 13351,
+      "predicted_day0_close": 11785,
+      "predicted_day1_close": 11465,
+      "actual_day0_high": 13061,
+      "actual_day0_close": 11831,
+      "actual_day1_close": 11547
     },
     {
+      "id": 80,
       "code": "158430",
       "company_name": "아톤",
       "listing_date": "2019-10-17",
-      "ipo_price": 43000,
-      "predicted": {
-        "day0_high": 50487,
-        "day0_close": 48065,
-        "day1_close": 51012
-      },
-      "metadata": {
-        "shares_offered": 143550,
-        "institutional_demand_rate": 810.88,
-        "subscription_competition_rate": 653.96,
-        "lockup_ratio": 9.5
-      },
-      "actual": {
-        "day0_high": 9019,
-        "day0_close": 8302,
-        "day1_close": 8428
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 43000,
+      "shares_offered": 143550,
+      "institutional_demand_rate": 810.88,
+      "subscription_competition_rate": 653.96,
+      "lockup_ratio": 9.5,
+      "predicted_day0_high": 50487,
+      "predicted_day0_close": 48065,
+      "predicted_day1_close": 51012,
+      "actual_day0_high": 9019,
+      "actual_day0_close": 8302,
+      "actual_day1_close": 8428
     },
     {
+      "id": 81,
       "code": "300120",
       "company_name": "라온피플",
       "listing_date": "2019-10-18",
-      "ipo_price": 14000,
-      "predicted": {
-        "day0_high": 19259,
-        "day0_close": 17925,
-        "day1_close": 16741
-      },
-      "metadata": {
-        "shares_offered": 911030000,
-        "institutional_demand_rate": 330.36,
-        "subscription_competition_rate": 2.07,
-        "lockup_ratio": 1.5
-      },
-      "actual": {
-        "day0_high": 8159,
-        "day0_close": 7355,
-        "day1_close": 6598
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 14000,
+      "shares_offered": 911030000,
+      "institutional_demand_rate": 330.36,
+      "subscription_competition_rate": 2.07,
+      "lockup_ratio": 1.5,
+      "predicted_day0_high": 19259,
+      "predicted_day0_close": 17925,
+      "predicted_day1_close": 16741,
+      "actual_day0_high": 8159,
+      "actual_day0_close": 7355,
+      "actual_day1_close": 6598
     },
     {
+      "id": 82,
       "code": "317870",
       "company_name": "엔바이오니아",
       "listing_date": "2019-10-24",
-      "ipo_price": 8200,
-      "predicted": {
-        "day0_high": 10006,
-        "day0_close": 8967,
-        "day1_close": 9560
-      },
-      "metadata": {
-        "shares_offered": 378113000,
-        "institutional_demand_rate": 425.8,
-        "subscription_competition_rate": 910.32,
-        "lockup_ratio": 3.8
-      },
-      "actual": {
-        "day0_high": 13900,
-        "day0_close": 12100,
-        "day1_close": 13000
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 8200,
+      "shares_offered": 378113000,
+      "institutional_demand_rate": 425.8,
+      "subscription_competition_rate": 910.32,
+      "lockup_ratio": 3.8,
+      "predicted_day0_high": 10006,
+      "predicted_day0_close": 8967,
+      "predicted_day1_close": 9560,
+      "actual_day0_high": 13900,
+      "actual_day0_close": 12100,
+      "actual_day1_close": 13000
     },
     {
+      "id": 83,
       "code": "317530",
       "company_name": "캐리소프트",
       "listing_date": "2019-10-29",
-      "ipo_price": 9000,
-      "predicted": {
-        "day0_high": 10330,
-        "day0_close": 8858,
-        "day1_close": 9875
-      },
-      "metadata": {
-        "shares_offered": 673273000,
-        "institutional_demand_rate": 924.83,
-        "subscription_competition_rate": 1067.0,
-        "lockup_ratio": 2.7
-      },
-      "actual": {
-        "day0_high": 15500,
-        "day0_close": 13850,
-        "day1_close": 11700
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 9000,
+      "shares_offered": 673273000,
+      "institutional_demand_rate": 924.83,
+      "subscription_competition_rate": 1067.0,
+      "lockup_ratio": 2.7,
+      "predicted_day0_high": 10330,
+      "predicted_day0_close": 8858,
+      "predicted_day1_close": 9875,
+      "actual_day0_high": 15500,
+      "actual_day0_close": 13850,
+      "actual_day1_close": 11700
     },
     {
+      "id": 84,
       "code": "330590",
       "company_name": "롯데리츠",
       "listing_date": "2019-10-30",
-      "ipo_price": 5000,
-      "predicted": {
-        "day0_high": 9536,
-        "day0_close": 9261,
-        "day1_close": 15970
-      },
-      "metadata": {
-        "shares_offered": 8598444,
-        "institutional_demand_rate": 358.06,
-        "subscription_competition_rate": 63.28,
-        "lockup_ratio": 44.07
-      },
-      "actual": {
-        "day0_high": 4453,
-        "day0_close": 4453,
-        "day1_close": 4453
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 5000,
+      "shares_offered": 8598444,
+      "institutional_demand_rate": 358.06,
+      "subscription_competition_rate": 63.28,
+      "lockup_ratio": 44.07,
+      "predicted_day0_high": 9536,
+      "predicted_day0_close": 9261,
+      "predicted_day1_close": 15970,
+      "actual_day0_high": 4453,
+      "actual_day0_close": 4453,
+      "actual_day1_close": 4453
     },
     {
+      "id": 85,
       "code": "13890",
       "company_name": "지누스",
       "listing_date": "2019-10-30",
-      "ipo_price": 70000,
-      "predicted": {
-        "day0_high": 104339,
-        "day0_close": 96655,
-        "day1_close": 90560
-      },
-      "metadata": {
-        "shares_offered": 392712,
-        "institutional_demand_rate": 45.68,
-        "subscription_competition_rate": 0.63,
-        "lockup_ratio": 13.73
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 70000,
+      "shares_offered": 392712,
+      "institutional_demand_rate": 45.68,
+      "subscription_competition_rate": 0.63,
+      "lockup_ratio": 13.73,
+      "predicted_day0_high": 104339,
+      "predicted_day0_close": 96655,
+      "predicted_day1_close": 90560
     },
     {
+      "id": 86,
       "code": "317400",
       "company_name": "자이에스앤디",
       "listing_date": "2019-11-06",
-      "ipo_price": 5200,
-      "predicted": {
-        "day0_high": 6868,
-        "day0_close": 5904,
-        "day1_close": 7264
-      },
-      "metadata": {
-        "shares_offered": 4058078000,
-        "institutional_demand_rate": 768.58,
-        "subscription_competition_rate": 665.41,
-        "lockup_ratio": 5.1
-      },
-      "actual": {
-        "day0_high": 5711,
-        "day0_close": 4801,
-        "day1_close": 4684
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 5200,
+      "shares_offered": 4058078000,
+      "institutional_demand_rate": 768.58,
+      "subscription_competition_rate": 665.41,
+      "lockup_ratio": 5.1,
+      "predicted_day0_high": 6868,
+      "predicted_day0_close": 5904,
+      "predicted_day1_close": 7264,
+      "actual_day0_high": 5711,
+      "actual_day0_close": 4801,
+      "actual_day1_close": 4684
     },
     {
+      "id": 87,
       "code": "84850",
       "company_name": "아이티엠반도체",
       "listing_date": "2019-11-07",
-      "ipo_price": 26000,
-      "predicted": {
-        "day0_high": 34629,
-        "day0_close": 27095,
-        "day1_close": 29747
-      },
-      "metadata": {
-        "shares_offered": 4084725000,
-        "institutional_demand_rate": 1078.5,
-        "subscription_competition_rate": 321.09,
-        "lockup_ratio": 15.8
-      },
-      "actual": {
-        "day0_high": 26887,
-        "day0_close": 24326,
-        "day1_close": 24277
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 26000,
+      "shares_offered": 4084725000,
+      "institutional_demand_rate": 1078.5,
+      "subscription_competition_rate": 321.09,
+      "lockup_ratio": 15.8,
+      "predicted_day0_high": 34629,
+      "predicted_day0_close": 27095,
+      "predicted_day1_close": 29747,
+      "actual_day0_high": 26887,
+      "actual_day0_close": 24326,
+      "actual_day1_close": 24277
     },
     {
+      "id": 88,
       "code": "214260",
       "company_name": "라파스",
       "listing_date": "2019-11-11",
-      "ipo_price": 20000,
-      "predicted": {
-        "day0_high": 25467,
-        "day0_close": 19466,
-        "day1_close": 21800
-      },
-      "metadata": {
-        "shares_offered": 155182967,
-        "institutional_demand_rate": 202.06,
-        "subscription_competition_rate": 813.16,
-        "lockup_ratio": 0.0
-      },
-      "actual": {
-        "day0_high": 20800,
-        "day0_close": 18050,
-        "day1_close": 17100
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 20000,
+      "shares_offered": 155182967,
+      "institutional_demand_rate": 202.06,
+      "subscription_competition_rate": 813.16,
+      "lockup_ratio": 0.0,
+      "predicted_day0_high": 25467,
+      "predicted_day0_close": 19466,
+      "predicted_day1_close": 21800,
+      "actual_day0_high": 20800,
+      "actual_day0_close": 18050,
+      "actual_day1_close": 17100
     },
     {
+      "id": 89,
       "code": "272210",
       "company_name": "한화시스템",
       "listing_date": "2019-11-13",
-      "ipo_price": 12250,
-      "predicted": {
-        "day0_high": 16308,
-        "day0_close": 13771,
-        "day1_close": 13781
-      },
-      "metadata": {
-        "shares_offered": 2389922,
-        "institutional_demand_rate": 23.61,
-        "subscription_competition_rate": 16.84,
-        "lockup_ratio": 4.24
-      },
-      "actual": {
-        "day0_high": 9628,
-        "day0_close": 8832,
-        "day1_close": 9270
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 12250,
+      "shares_offered": 2389922,
+      "institutional_demand_rate": 23.61,
+      "subscription_competition_rate": 16.84,
+      "lockup_ratio": 4.24,
+      "predicted_day0_high": 16308,
+      "predicted_day0_close": 13771,
+      "predicted_day1_close": 13781,
+      "actual_day0_high": 9628,
+      "actual_day0_close": 8832,
+      "actual_day1_close": 9270
     },
     {
+      "id": 90,
       "code": "216080",
       "company_name": "제테마",
       "listing_date": "2019-11-14",
-      "ipo_price": 21000,
-      "predicted": {
-        "day0_high": 23708,
-        "day0_close": 18635,
-        "day1_close": 21005
-      },
-      "metadata": {
-        "shares_offered": 153600,
-        "institutional_demand_rate": 12.41,
-        "subscription_competition_rate": 590.02,
-        "lockup_ratio": 0.0
-      },
-      "actual": {
-        "day0_high": 5237,
-        "day0_close": 4325,
-        "day1_close": 5612
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 21000,
+      "shares_offered": 153600,
+      "institutional_demand_rate": 12.41,
+      "subscription_competition_rate": 590.02,
+      "lockup_ratio": 0.0,
+      "predicted_day0_high": 23708,
+      "predicted_day0_close": 18635,
+      "predicted_day1_close": 21005,
+      "actual_day0_high": 5237,
+      "actual_day0_close": 4325,
+      "actual_day1_close": 5612
     },
     {
+      "id": 91,
       "code": "306040",
       "company_name": "에스제이그룹",
       "listing_date": "2019-11-18",
-      "ipo_price": 38600,
-      "predicted": {
-        "day0_high": 46602,
-        "day0_close": 42770,
-        "day1_close": 47091
-      },
-      "metadata": {
-        "shares_offered": 82000,
-        "institutional_demand_rate": 946.62,
-        "subscription_competition_rate": 512.93,
-        "lockup_ratio": 13.56
-      },
-      "actual": {
-        "day0_high": 14843,
-        "day0_close": 13530,
-        "day1_close": 13530
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 38600,
+      "shares_offered": 82000,
+      "institutional_demand_rate": 946.62,
+      "subscription_competition_rate": 512.93,
+      "lockup_ratio": 13.56,
+      "predicted_day0_high": 46602,
+      "predicted_day0_close": 42770,
+      "predicted_day1_close": 47091,
+      "actual_day0_high": 14843,
+      "actual_day0_close": 13530,
+      "actual_day1_close": 13530
     },
     {
+      "id": 92,
       "code": "322000",
       "company_name": "현대에너지솔루션",
       "listing_date": "2019-11-19",
-      "ipo_price": 18000,
-      "predicted": {
-        "day0_high": 20905,
-        "day0_close": 16821,
-        "day1_close": 17559
-      },
-      "metadata": {
-        "shares_offered": 360000,
-        "institutional_demand_rate": 26.63,
-        "subscription_competition_rate": 126.68,
-        "lockup_ratio": 3.07
-      },
-      "actual": {
-        "day0_high": 18331,
-        "day0_close": 17004,
-        "day1_close": 16119
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 18000,
+      "shares_offered": 360000,
+      "institutional_demand_rate": 26.63,
+      "subscription_competition_rate": 126.68,
+      "lockup_ratio": 3.07,
+      "predicted_day0_high": 20905,
+      "predicted_day0_close": 16821,
+      "predicted_day1_close": 17559,
+      "actual_day0_high": 18331,
+      "actual_day0_close": 17004,
+      "actual_day1_close": 16119
     },
     {
+      "id": 93,
       "code": "297090",
       "company_name": "씨에스베어링",
       "listing_date": "2019-11-21",
-      "ipo_price": 8400,
-      "predicted": {
-        "day0_high": 9170,
-        "day0_close": 8392,
-        "day1_close": 9276
-      },
-      "metadata": {
-        "shares_offered": 1957576000,
-        "institutional_demand_rate": 1246.86,
-        "subscription_competition_rate": 699.67,
-        "lockup_ratio": 4.65
-      },
-      "actual": {
-        "day0_high": 5150,
-        "day0_close": 4475,
-        "day1_close": 4650
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 8400,
+      "shares_offered": 1957576000,
+      "institutional_demand_rate": 1246.86,
+      "subscription_competition_rate": 699.67,
+      "lockup_ratio": 4.65,
+      "predicted_day0_high": 9170,
+      "predicted_day0_close": 8392,
+      "predicted_day1_close": 9276,
+      "actual_day0_high": 5150,
+      "actual_day0_close": 4475,
+      "actual_day1_close": 4650
     },
     {
+      "id": 94,
       "code": "321550",
       "company_name": "티움바이오",
       "listing_date": "2019-11-22",
-      "ipo_price": 12000,
-      "predicted": {
-        "day0_high": 15619,
-        "day0_close": 14662,
-        "day1_close": 12715
-      },
-      "metadata": {
-        "shares_offered": 400000,
-        "institutional_demand_rate": 37.3,
-        "subscription_competition_rate": 5.3,
-        "lockup_ratio": 0.0
-      },
-      "actual": {
-        "day0_high": 15000,
-        "day0_close": 13450,
-        "day1_close": 17450
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 12000,
+      "shares_offered": 400000,
+      "institutional_demand_rate": 37.3,
+      "subscription_competition_rate": 5.3,
+      "lockup_ratio": 0.0,
+      "predicted_day0_high": 15619,
+      "predicted_day0_close": 14662,
+      "predicted_day1_close": 12715,
+      "actual_day0_high": 15000,
+      "actual_day0_close": 13450,
+      "actual_day1_close": 17450
     },
     {
+      "id": 95,
       "code": "308170",
       "company_name": "센트랄모텍",
       "listing_date": "2019-11-25",
-      "ipo_price": 6000,
-      "predicted": {
-        "day0_high": 8243,
-        "day0_close": 9256,
-        "day1_close": 9354
-      },
-      "metadata": {
-        "shares_offered": 378000,
-        "institutional_demand_rate": 862.63,
-        "subscription_competition_rate": 580.5,
-        "lockup_ratio": 0.0
-      },
-      "actual": {
-        "day0_high": 9940,
-        "day0_close": 9940,
-        "day1_close": 12900
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 6000,
+      "shares_offered": 378000,
+      "institutional_demand_rate": 862.63,
+      "subscription_competition_rate": 580.5,
+      "lockup_ratio": 0.0,
+      "predicted_day0_high": 8243,
+      "predicted_day0_close": 9256,
+      "predicted_day1_close": 9354,
+      "actual_day0_high": 9940,
+      "actual_day0_close": 9940,
+      "actual_day1_close": 12900
     },
     {
+      "id": 96,
       "code": "290510",
       "company_name": "코리아센터",
       "listing_date": "2019-11-29",
-      "ipo_price": 18000,
-      "predicted": {
-        "day0_high": 23698,
-        "day0_close": 19275,
-        "day1_close": 20011
-      },
-      "metadata": {
-        "shares_offered": 330914,
-        "institutional_demand_rate": 37.77,
-        "subscription_competition_rate": 4.13,
-        "lockup_ratio": 6.04
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 18000,
+      "shares_offered": 330914,
+      "institutional_demand_rate": 37.77,
+      "subscription_competition_rate": 4.13,
+      "lockup_ratio": 6.04,
+      "predicted_day0_high": 23698,
+      "predicted_day0_close": 19275,
+      "predicted_day1_close": 20011
     },
     {
+      "id": 97,
       "code": "338100",
       "company_name": "엔에이치프라임리츠",
       "listing_date": "2019-12-05",
-      "ipo_price": 5000,
-      "predicted": {
-        "day0_high": 9579,
-        "day0_close": 8227,
-        "day1_close": 15200
-      },
-      "metadata": {
-        "shares_offered": 3760000,
-        "institutional_demand_rate": 711.65,
-        "subscription_competition_rate": 317.62,
-        "lockup_ratio": 43.2
-      },
-      "actual": {
-        "day0_high": 4223,
-        "day0_close": 4223,
-        "day1_close": 4093
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 5000,
+      "shares_offered": 3760000,
+      "institutional_demand_rate": 711.65,
+      "subscription_competition_rate": 317.62,
+      "lockup_ratio": 43.2,
+      "predicted_day0_high": 9579,
+      "predicted_day0_close": 8227,
+      "predicted_day1_close": 15200,
+      "actual_day0_high": 4223,
+      "actual_day0_close": 4223,
+      "actual_day1_close": 4093
     },
     {
+      "id": 98,
       "code": "302550",
       "company_name": "리메드",
       "listing_date": "2019-12-06",
-      "ipo_price": 13000,
-      "predicted": {
-        "day0_high": 19042,
-        "day0_close": 16877,
-        "day1_close": 14956
-      },
-      "metadata": {
-        "shares_offered": 11883000,
-        "institutional_demand_rate": 24.76,
-        "subscription_competition_rate": 92.69,
-        "lockup_ratio": 0.0
-      },
-      "actual": {
-        "day0_high": 3170,
-        "day0_close": 2900,
-        "day1_close": 2690
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 13000,
+      "shares_offered": 11883000,
+      "institutional_demand_rate": 24.76,
+      "subscription_competition_rate": 92.69,
+      "lockup_ratio": 0.0,
+      "predicted_day0_high": 19042,
+      "predicted_day0_close": 16877,
+      "predicted_day1_close": 14956,
+      "actual_day0_high": 3170,
+      "actual_day0_close": 2900,
+      "actual_day1_close": 2690
     },
     {
+      "id": 99,
       "code": "124560",
       "company_name": "태웅로직스",
       "listing_date": "2019-12-10",
-      "ipo_price": 4500,
-      "predicted": {
-        "day0_high": 6629,
-        "day0_close": 5530,
-        "day1_close": 4227
-      },
-      "metadata": {
-        "shares_offered": 800000,
-        "institutional_demand_rate": 1024.98,
-        "subscription_competition_rate": 618.52,
-        "lockup_ratio": 2.53
-      },
-      "actual": {
-        "day0_high": 3609,
-        "day0_close": 2594,
-        "day1_close": 2552
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 4500,
+      "shares_offered": 800000,
+      "institutional_demand_rate": 1024.98,
+      "subscription_competition_rate": 618.52,
+      "lockup_ratio": 2.53,
+      "predicted_day0_high": 6629,
+      "predicted_day0_close": 5530,
+      "predicted_day1_close": 4227,
+      "actual_day0_high": 3609,
+      "actual_day0_close": 2594,
+      "actual_day1_close": 2552
     },
     {
+      "id": 100,
       "code": "235980",
       "company_name": "메드팩토",
       "listing_date": "2019-12-19",
-      "ipo_price": 40000,
-      "predicted": {
-        "day0_high": 45059,
-        "day0_close": 45056,
-        "day1_close": 50759
-      },
-      "metadata": {
-        "shares_offered": 101079847,
-        "institutional_demand_rate": 86.41,
-        "subscription_competition_rate": 18.84,
-        "lockup_ratio": 13.83
-      },
-      "actual": {
-        "day0_high": 21875,
-        "day0_close": 17950,
-        "day1_close": 17500
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 40000,
+      "shares_offered": 101079847,
+      "institutional_demand_rate": 86.41,
+      "subscription_competition_rate": 18.84,
+      "lockup_ratio": 13.83,
+      "predicted_day0_high": 45059,
+      "predicted_day0_close": 45056,
+      "predicted_day1_close": 50759,
+      "actual_day0_high": 21875,
+      "actual_day0_close": 17950,
+      "actual_day1_close": 17500
     },
     {
+      "id": 101,
       "code": "288330",
       "company_name": "브릿지바이오테라퓨틱스",
       "listing_date": "2019-12-20",
-      "ipo_price": 60000,
-      "predicted": {
-        "day0_high": 105348,
-        "day0_close": 100647,
-        "day1_close": 92920
-      },
-      "metadata": {
-        "shares_offered": 98000,
-        "institutional_demand_rate": 58.85,
-        "subscription_competition_rate": 33.52,
-        "lockup_ratio": 0.06
-      },
-      "actual": {
-        "day0_high": 17916,
-        "day0_close": 15083,
-        "day1_close": 15611
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 60000,
+      "shares_offered": 98000,
+      "institutional_demand_rate": 58.85,
+      "subscription_competition_rate": 33.52,
+      "lockup_ratio": 0.06,
+      "predicted_day0_high": 105348,
+      "predicted_day0_close": 100647,
+      "predicted_day1_close": 92920,
+      "actual_day0_high": 17916,
+      "actual_day0_close": 15083,
+      "actual_day1_close": 15611
     },
     {
+      "id": 102,
       "code": "62970",
       "company_name": "피피아이",
       "listing_date": "2019-12-26",
-      "ipo_price": 7000,
-      "predicted": {
-        "day0_high": 8748,
-        "day0_close": 8504,
-        "day1_close": 8655
-      },
-      "metadata": {
-        "shares_offered": 797861000,
-        "institutional_demand_rate": 997.33,
-        "subscription_competition_rate": 1147.7,
-        "lockup_ratio": 2.47
-      },
-      "actual": {
-        "day0_high": 11850,
-        "day0_close": 9630,
-        "day1_close": 9600
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 7000,
+      "shares_offered": 797861000,
+      "institutional_demand_rate": 997.33,
+      "subscription_competition_rate": 1147.7,
+      "lockup_ratio": 2.47,
+      "predicted_day0_high": 8748,
+      "predicted_day0_close": 8504,
+      "predicted_day1_close": 8655,
+      "actual_day0_high": 11850,
+      "actual_day0_close": 9630,
+      "actual_day1_close": 9600
     },
     {
+      "id": 103,
       "code": "294140",
       "company_name": "레몬",
       "listing_date": "2020-02-28",
-      "ipo_price": 7200,
-      "predicted": {
-        "day0_high": 10639,
-        "day0_close": 9090,
-        "day1_close": 9072
-      },
-      "metadata": {
-        "shares_offered": 697000,
-        "institutional_demand_rate": 426.0,
-        "subscription_competition_rate": 800.07,
-        "lockup_ratio": 6.3
-      },
-      "actual": {
-        "day0_high": 22400,
-        "day0_close": 20800,
-        "day1_close": 17780
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 7200,
+      "shares_offered": 697000,
+      "institutional_demand_rate": 426.0,
+      "subscription_competition_rate": 800.07,
+      "lockup_ratio": 6.3,
+      "predicted_day0_high": 10639,
+      "predicted_day0_close": 9090,
+      "predicted_day1_close": 9072,
+      "actual_day0_high": 22400,
+      "actual_day0_close": 20800,
+      "actual_day1_close": 17780
     },
     {
+      "id": 104,
       "code": "274090",
       "company_name": "켄코아에어로스페이스",
       "listing_date": "2020-03-03",
-      "ipo_price": 10000,
-      "predicted": {
-        "day0_high": 9610,
-        "day0_close": 8103,
-        "day1_close": 8971
-      },
-      "metadata": {
-        "shares_offered": 148088000,
-        "institutional_demand_rate": 120.75,
-        "subscription_competition_rate": 256.68,
-        "lockup_ratio": 2.55
-      },
-      "actual": {
-        "day0_high": 12900,
-        "day0_close": 10250,
-        "day1_close": 9440
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 10000,
+      "shares_offered": 148088000,
+      "institutional_demand_rate": 120.75,
+      "subscription_competition_rate": 256.68,
+      "lockup_ratio": 2.55,
+      "predicted_day0_high": 9610,
+      "predicted_day0_close": 8103,
+      "predicted_day1_close": 8971,
+      "actual_day0_high": 12900,
+      "actual_day0_close": 10250,
+      "actual_day1_close": 9440
     },
     {
+      "id": 105,
       "code": "204270",
       "company_name": "제이앤티씨",
       "listing_date": "2020-03-04",
-      "ipo_price": 11000,
-      "predicted": {
-        "day0_high": 13571,
-        "day0_close": 11800,
-        "day1_close": 11233
-      },
-      "metadata": {
-        "shares_offered": 1320000,
-        "institutional_demand_rate": 1077.88,
-        "subscription_competition_rate": 3.48,
-        "lockup_ratio": 6.72
-      },
-      "actual": {
-        "day0_high": 11100,
-        "day0_close": 10350,
-        "day1_close": 11450
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 11000,
+      "shares_offered": 1320000,
+      "institutional_demand_rate": 1077.88,
+      "subscription_competition_rate": 3.48,
+      "lockup_ratio": 6.72,
+      "predicted_day0_high": 13571,
+      "predicted_day0_close": 11800,
+      "predicted_day1_close": 11233,
+      "actual_day0_high": 11100,
+      "actual_day0_close": 10350,
+      "actual_day1_close": 11450
     },
     {
+      "id": 106,
       "code": "237820",
       "company_name": "플레이디",
       "listing_date": "2020-03-12",
-      "ipo_price": 8500,
-      "predicted": {
-        "day0_high": 11240,
-        "day0_close": 9341,
-        "day1_close": 9339
-      },
-      "metadata": {
-        "shares_offered": 2817090000,
-        "institutional_demand_rate": 1270.7,
-        "subscription_competition_rate": 864.8,
-        "lockup_ratio": 7.55
-      },
-      "actual": {
-        "day0_high": 11671,
-        "day0_close": 8558,
-        "day1_close": 6905
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 8500,
+      "shares_offered": 2817090000,
+      "institutional_demand_rate": 1270.7,
+      "subscription_competition_rate": 864.8,
+      "lockup_ratio": 7.55,
+      "predicted_day0_high": 11240,
+      "predicted_day0_close": 9341,
+      "predicted_day1_close": 9339,
+      "actual_day0_high": 11671,
+      "actual_day0_close": 8558,
+      "actual_day1_close": 6905
     },
     {
+      "id": 107,
       "code": "223250",
       "company_name": "드림씨아이에스",
       "listing_date": "2020-05-22",
-      "ipo_price": 14900,
-      "predicted": {
-        "day0_high": 22367,
-        "day0_close": 19245,
-        "day1_close": 18238
-      },
-      "metadata": {
-        "shares_offered": 995394000,
-        "institutional_demand_rate": 926.11,
-        "subscription_competition_rate": 669.22,
-        "lockup_ratio": 6.82
-      },
-      "actual": {
-        "day0_high": 8975,
-        "day0_close": 7625,
-        "day1_close": 8112
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 14900,
+      "shares_offered": 995394000,
+      "institutional_demand_rate": 926.11,
+      "subscription_competition_rate": 669.22,
+      "lockup_ratio": 6.82,
+      "predicted_day0_high": 22367,
+      "predicted_day0_close": 19245,
+      "predicted_day1_close": 18238,
+      "actual_day0_high": 8975,
+      "actual_day0_close": 7625,
+      "actual_day1_close": 8112
     },
     {
+      "id": 108,
       "code": "298060",
       "company_name": "에스씨엠생명과학",
       "listing_date": "2020-06-17",
-      "ipo_price": 17000,
-      "predicted": {
-        "day0_high": 21034,
-        "day0_close": 17090,
-        "day1_close": 18226
-      },
-      "metadata": {
-        "shares_offered": 1486324000,
-        "institutional_demand_rate": 1032.17,
-        "subscription_competition_rate": 814.91,
-        "lockup_ratio": 7.7
-      },
-      "actual": {
-        "day0_high": 17000,
-        "day0_close": 17000,
-        "day1_close": 30083
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 17000,
+      "shares_offered": 1486324000,
+      "institutional_demand_rate": 1032.17,
+      "subscription_competition_rate": 814.91,
+      "lockup_ratio": 7.7,
+      "predicted_day0_high": 21034,
+      "predicted_day0_close": 17090,
+      "predicted_day1_close": 18226,
+      "actual_day0_high": 17000,
+      "actual_day0_close": 17000,
+      "actual_day1_close": 30083
     },
     {
+      "id": 109,
       "code": "297890",
       "company_name": "엘이티",
       "listing_date": "2020-06-22",
-      "ipo_price": 7800,
-      "predicted": {
-        "day0_high": 12015,
-        "day0_close": 11522,
-        "day1_close": 15908
-      },
-      "metadata": {
-        "shares_offered": 1655527500,
-        "institutional_demand_rate": 1255.9,
-        "subscription_competition_rate": 1552.16,
-        "lockup_ratio": 24.5
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 7800,
+      "shares_offered": 1655527500,
+      "institutional_demand_rate": 1255.9,
+      "subscription_competition_rate": 1552.16,
+      "lockup_ratio": 24.5,
+      "predicted_day0_high": 12015,
+      "predicted_day0_close": 11522,
+      "predicted_day1_close": 15908
     },
     {
+      "id": 110,
       "code": "229000",
       "company_name": "젠큐릭스",
       "listing_date": "2020-06-25",
-      "ipo_price": 22700,
-      "predicted": {
-        "day0_high": 26228,
-        "day0_close": 21107,
-        "day1_close": 24318
-      },
-      "metadata": {
-        "shares_offered": 61623000,
-        "institutional_demand_rate": 77.03,
-        "subscription_competition_rate": 12.35,
-        "lockup_ratio": 0.0
-      },
-      "actual": {
-        "day0_high": 22900,
-        "day0_close": 22650,
-        "day1_close": 21650
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 22700,
+      "shares_offered": 61623000,
+      "institutional_demand_rate": 77.03,
+      "subscription_competition_rate": 12.35,
+      "lockup_ratio": 0.0,
+      "predicted_day0_high": 26228,
+      "predicted_day0_close": 21107,
+      "predicted_day1_close": 24318,
+      "actual_day0_high": 22900,
+      "actual_day0_close": 22650,
+      "actual_day1_close": 21650
     },
     {
+      "id": 111,
       "code": "326030",
       "company_name": "SK바이오팜",
       "listing_date": "2020-07-02",
-      "ipo_price": 49000,
-      "predicted": {
-        "day0_high": 73354,
-        "day0_close": 72362,
-        "day1_close": 71058
-      },
-      "metadata": {
-        "shares_offered": 1801898,
-        "institutional_demand_rate": 835.66,
-        "subscription_competition_rate": 323.03,
-        "lockup_ratio": 81.15
-      },
-      "actual": {
-        "day0_high": 127000,
-        "day0_close": 127000,
-        "day1_close": 165000
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 49000,
+      "shares_offered": 1801898,
+      "institutional_demand_rate": 835.66,
+      "subscription_competition_rate": 323.03,
+      "lockup_ratio": 81.15,
+      "predicted_day0_high": 73354,
+      "predicted_day0_close": 72362,
+      "predicted_day1_close": 71058,
+      "actual_day0_high": 127000,
+      "actual_day0_close": 127000,
+      "actual_day1_close": 165000
     },
     {
+      "id": 112,
       "code": "330350",
       "company_name": "위더스제약",
       "listing_date": "2020-07-03",
-      "ipo_price": 15900,
-      "predicted": {
-        "day0_high": 25282,
-        "day0_close": 21648,
-        "day1_close": 21623
-      },
-      "metadata": {
-        "shares_offered": 160000,
-        "institutional_demand_rate": 1033.41,
-        "subscription_competition_rate": 1082.03,
-        "lockup_ratio": 17.36
-      },
-      "actual": {
-        "day0_high": 26476,
-        "day0_close": 22296,
-        "day1_close": 17435
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 15900,
+      "shares_offered": 160000,
+      "institutional_demand_rate": 1033.41,
+      "subscription_competition_rate": 1082.03,
+      "lockup_ratio": 17.36,
+      "predicted_day0_high": 25282,
+      "predicted_day0_close": 21648,
+      "predicted_day1_close": 21623,
+      "actual_day0_high": 26476,
+      "actual_day0_close": 22296,
+      "actual_day1_close": 17435
     },
     {
+      "id": 113,
       "code": "290520",
       "company_name": "신도기연",
       "listing_date": "2020-07-06",
-      "ipo_price": 16000,
-      "predicted": {
-        "day0_high": 22397,
-        "day0_close": 18127,
-        "day1_close": 18500
-      },
-      "metadata": {
-        "shares_offered": 1323812000,
-        "institutional_demand_rate": 1272.9,
-        "subscription_competition_rate": 955.01,
-        "lockup_ratio": 14.51
-      },
-      "actual": {
-        "day0_high": 16500,
-        "day0_close": 11200,
-        "day1_close": 10700
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 16000,
+      "shares_offered": 1323812000,
+      "institutional_demand_rate": 1272.9,
+      "subscription_competition_rate": 955.01,
+      "lockup_ratio": 14.51,
+      "predicted_day0_high": 22397,
+      "predicted_day0_close": 18127,
+      "predicted_day1_close": 18500,
+      "actual_day0_high": 16500,
+      "actual_day0_close": 11200,
+      "actual_day1_close": 10700
     },
     {
+      "id": 114,
       "code": "950200",
       "company_name": "소마젠",
       "listing_date": "2020-07-13",
-      "ipo_price": 11000,
-      "predicted": {
-        "day0_high": 11218,
-        "day0_close": 10803,
-        "day1_close": 10075
-      },
-      "metadata": {
-        "shares_offered": 233394000,
-        "institutional_demand_rate": 69.46,
-        "subscription_competition_rate": 4.42,
-        "lockup_ratio": 0.0
-      },
-      "actual": {
-        "day0_high": 15100,
-        "day0_close": 15100,
-        "day1_close": 19600
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 11000,
+      "shares_offered": 233394000,
+      "institutional_demand_rate": 69.46,
+      "subscription_competition_rate": 4.42,
+      "lockup_ratio": 0.0,
+      "predicted_day0_high": 11218,
+      "predicted_day0_close": 10803,
+      "predicted_day1_close": 10075,
+      "actual_day0_high": 15100,
+      "actual_day0_close": 15100,
+      "actual_day1_close": 19600
     },
     {
+      "id": 115,
       "code": "262260",
       "company_name": "에이프로",
       "listing_date": "2020-07-16",
-      "ipo_price": 21600,
-      "predicted": {
-        "day0_high": 33467,
-        "day0_close": 25008,
-        "day1_close": 26576
-      },
-      "metadata": {
-        "shares_offered": 1193701000,
-        "institutional_demand_rate": 1090.8,
-        "subscription_competition_rate": 1582.52,
-        "lockup_ratio": 10.46
-      },
-      "actual": {
-        "day0_high": 28050,
-        "day0_close": 28050,
-        "day1_close": 24025
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 21600,
+      "shares_offered": 1193701000,
+      "institutional_demand_rate": 1090.8,
+      "subscription_competition_rate": 1582.52,
+      "lockup_ratio": 10.46,
+      "predicted_day0_high": 33467,
+      "predicted_day0_close": 25008,
+      "predicted_day1_close": 26576,
+      "actual_day0_high": 28050,
+      "actual_day0_close": 28050,
+      "actual_day1_close": 24025
     },
     {
+      "id": 116,
       "code": "334890",
       "company_name": "이지스밸류플러스리츠",
       "listing_date": "2020-07-16",
-      "ipo_price": 5000,
-      "predicted": {
-        "day0_high": 8725,
-        "day0_close": 5950,
-        "day1_close": 6649
-      },
-      "metadata": {
-        "shares_offered": 7850000,
-        "institutional_demand_rate": 87.09,
-        "subscription_competition_rate": 26.86,
-        "lockup_ratio": 8.7
-      },
-      "actual": {
-        "day0_high": 3184,
-        "day0_close": 2791,
-        "day1_close": 2908
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 5000,
+      "shares_offered": 7850000,
+      "institutional_demand_rate": 87.09,
+      "subscription_competition_rate": 26.86,
+      "lockup_ratio": 8.7,
+      "predicted_day0_high": 8725,
+      "predicted_day0_close": 5950,
+      "predicted_day1_close": 6649,
+      "actual_day0_high": 3184,
+      "actual_day0_close": 2791,
+      "actual_day1_close": 2908
     },
     {
+      "id": 117,
       "code": "277880",
       "company_name": "티에스아이",
       "listing_date": "2020-07-22",
-      "ipo_price": 10000,
-      "predicted": {
-        "day0_high": 11205,
-        "day0_close": 9893,
-        "day1_close": 10216
-      },
-      "metadata": {
-        "shares_offered": 1744587000,
-        "institutional_demand_rate": 1283.73,
-        "subscription_competition_rate": 1621.1,
-        "lockup_ratio": 4.97
-      },
-      "actual": {
-        "day0_high": 13300,
-        "day0_close": 12500,
-        "day1_close": 8600
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 10000,
+      "shares_offered": 1744587000,
+      "institutional_demand_rate": 1283.73,
+      "subscription_competition_rate": 1621.1,
+      "lockup_ratio": 4.97,
+      "predicted_day0_high": 11205,
+      "predicted_day0_close": 9893,
+      "predicted_day1_close": 10216,
+      "actual_day0_high": 13300,
+      "actual_day0_close": 12500,
+      "actual_day1_close": 8600
     },
     {
+      "id": 118,
       "code": "304100",
       "company_name": "솔트룩스",
       "listing_date": "2020-07-23",
-      "ipo_price": 25000,
-      "predicted": {
-        "day0_high": 29152,
-        "day0_close": 21880,
-        "day1_close": 24985
-      },
-      "metadata": {
-        "shares_offered": 237675000,
-        "institutional_demand_rate": 528.17,
-        "subscription_competition_rate": 953.53,
-        "lockup_ratio": 5.58
-      },
-      "actual": {
-        "day0_high": 24175,
-        "day0_close": 17150,
-        "day1_close": 14550
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 25000,
+      "shares_offered": 237675000,
+      "institutional_demand_rate": 528.17,
+      "subscription_competition_rate": 953.53,
+      "lockup_ratio": 5.58,
+      "predicted_day0_high": 29152,
+      "predicted_day0_close": 21880,
+      "predicted_day1_close": 24985,
+      "actual_day0_high": 24175,
+      "actual_day0_close": 17150,
+      "actual_day1_close": 14550
     },
     {
+      "id": 119,
       "code": "225220",
       "company_name": "제놀루션",
       "listing_date": "2020-07-24",
-      "ipo_price": 14000,
-      "predicted": {
-        "day0_high": 25563,
-        "day0_close": 20876,
-        "day1_close": 20738
-      },
-      "metadata": {
-        "shares_offered": 696656000,
-        "institutional_demand_rate": 1161.09,
-        "subscription_competition_rate": 894.67,
-        "lockup_ratio": 21.36
-      },
-      "actual": {
-        "day0_high": 6379,
-        "day0_close": 6130,
-        "day1_close": 4741
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 14000,
+      "shares_offered": 696656000,
+      "institutional_demand_rate": 1161.09,
+      "subscription_competition_rate": 894.67,
+      "lockup_ratio": 21.36,
+      "predicted_day0_high": 25563,
+      "predicted_day0_close": 20876,
+      "predicted_day1_close": 20738,
+      "actual_day0_high": 6379,
+      "actual_day0_close": 6130,
+      "actual_day1_close": 4741
     },
     {
+      "id": 120,
       "code": "298540",
       "company_name": "더네이쳐홀딩스",
       "listing_date": "2020-07-27",
-      "ipo_price": 46000,
-      "predicted": {
-        "day0_high": 41985,
-        "day0_close": 38449,
-        "day1_close": 46095
-      },
-      "metadata": {
-        "shares_offered": 87610000,
-        "institutional_demand_rate": 97.21,
-        "subscription_competition_rate": 151.9,
-        "lockup_ratio": 8.46
-      },
-      "actual": {
-        "day0_high": 21397,
-        "day0_close": 19329,
-        "day1_close": 20857
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 46000,
+      "shares_offered": 87610000,
+      "institutional_demand_rate": 97.21,
+      "subscription_competition_rate": 151.9,
+      "lockup_ratio": 8.46,
+      "predicted_day0_high": 41985,
+      "predicted_day0_close": 38449,
+      "predicted_day1_close": 46095,
+      "actual_day0_high": 21397,
+      "actual_day0_close": 19329,
+      "actual_day1_close": 20857
     },
     {
+      "id": 121,
       "code": "347890",
       "company_name": "엠투아이",
       "listing_date": "2020-07-29",
-      "ipo_price": 15600,
-      "predicted": {
-        "day0_high": 15766,
-        "day0_close": 14169,
-        "day1_close": 14026
-      },
-      "metadata": {
-        "shares_offered": 158689000,
-        "institutional_demand_rate": 61.7,
-        "subscription_competition_rate": 176.83,
-        "lockup_ratio": 1.6
-      },
-      "actual": {
-        "day0_high": 7945,
-        "day0_close": 6562,
-        "day1_close": 6541
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 15600,
+      "shares_offered": 158689000,
+      "institutional_demand_rate": 61.7,
+      "subscription_competition_rate": 176.83,
+      "lockup_ratio": 1.6,
+      "predicted_day0_high": 15766,
+      "predicted_day0_close": 14169,
+      "predicted_day1_close": 14026,
+      "actual_day0_high": 7945,
+      "actual_day0_close": 6562,
+      "actual_day1_close": 6541
     },
     {
+      "id": 122,
       "code": "101360",
       "company_name": "이엔드디",
       "listing_date": "2020-07-30",
-      "ipo_price": 14400,
-      "predicted": {
-        "day0_high": 20895,
-        "day0_close": 17016,
-        "day1_close": 17356
-      },
-      "metadata": {
-        "shares_offered": 2051102500,
-        "institutional_demand_rate": 1168.72,
-        "subscription_competition_rate": 808.62,
-        "lockup_ratio": 8.99
-      },
-      "actual": {
-        "day0_high": 20750,
-        "day0_close": 20416,
-        "day1_close": 17500
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 14400,
+      "shares_offered": 2051102500,
+      "institutional_demand_rate": 1168.72,
+      "subscription_competition_rate": 808.62,
+      "lockup_ratio": 8.99,
+      "predicted_day0_high": 20895,
+      "predicted_day0_close": 17016,
+      "predicted_day1_close": 17356,
+      "actual_day0_high": 20750,
+      "actual_day0_close": 20416,
+      "actual_day1_close": 17500
     },
     {
+      "id": 123,
       "code": "332570",
       "company_name": "와이팜",
       "listing_date": "2020-07-31",
-      "ipo_price": 11000,
-      "predicted": {
-        "day0_high": 14862,
-        "day0_close": 14850,
-        "day1_close": 11983
-      },
-      "metadata": {
-        "shares_offered": 2418726000,
-        "institutional_demand_rate": 407.01,
-        "subscription_competition_rate": 712.13,
-        "lockup_ratio": 8.01
-      },
-      "actual": {
-        "day0_high": 19763,
-        "day0_close": 18393,
-        "day1_close": 16681
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 11000,
+      "shares_offered": 2418726000,
+      "institutional_demand_rate": 407.01,
+      "subscription_competition_rate": 712.13,
+      "lockup_ratio": 8.01,
+      "predicted_day0_high": 14862,
+      "predicted_day0_close": 14850,
+      "predicted_day1_close": 11983,
+      "actual_day0_high": 19763,
+      "actual_day0_close": 18393,
+      "actual_day1_close": 16681
     },
     {
+      "id": 124,
       "code": "32300",
       "company_name": "한국파마",
       "listing_date": "2020-08-10",
-      "ipo_price": 9000,
-      "predicted": {
-        "day0_high": 12477,
-        "day0_close": 13266,
-        "day1_close": 11745
-      },
-      "metadata": {
-        "shares_offered": 551310,
-        "institutional_demand_rate": 1296.86,
-        "subscription_competition_rate": 2036.0,
-        "lockup_ratio": 0.0
-      },
-      "actual": {
-        "day0_high": 21408,
-        "day0_close": 16662,
-        "day1_close": 15970
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 9000,
+      "shares_offered": 551310,
+      "institutional_demand_rate": 1296.86,
+      "subscription_competition_rate": 2036.0,
+      "lockup_ratio": 0.0,
+      "predicted_day0_high": 12477,
+      "predicted_day0_close": 13266,
+      "predicted_day1_close": 11745,
+      "actual_day0_high": 21408,
+      "actual_day0_close": 16662,
+      "actual_day1_close": 15970
     },
     {
+      "id": 125,
       "code": "60850",
       "company_name": "영림원소프트랩",
       "listing_date": "2020-08-12",
-      "ipo_price": 11500,
-      "predicted": {
-        "day0_high": 14685,
-        "day0_close": 15719,
-        "day1_close": 13355
-      },
-      "metadata": {
-        "shares_offered": 1618306000,
-        "institutional_demand_rate": 1269.3,
-        "subscription_competition_rate": 2493.57,
-        "lockup_ratio": 4.3
-      },
-      "actual": {
-        "day0_high": 18017,
-        "day0_close": 13012,
-        "day1_close": 12583
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 11500,
+      "shares_offered": 1618306000,
+      "institutional_demand_rate": 1269.3,
+      "subscription_competition_rate": 2493.57,
+      "lockup_ratio": 4.3,
+      "predicted_day0_high": 14685,
+      "predicted_day0_close": 15719,
+      "predicted_day1_close": 13355,
+      "actual_day0_high": 18017,
+      "actual_day0_close": 13012,
+      "actual_day1_close": 12583
     },
     {
+      "id": 126,
       "code": "337930",
       "company_name": "브랜드엑스코퍼레이션",
       "listing_date": "2020-08-13",
-      "ipo_price": 13000,
-      "predicted": {
-        "day0_high": 16051,
-        "day0_close": 13177,
-        "day1_close": 14306
-      },
-      "metadata": {
-        "shares_offered": 379721,
-        "institutional_demand_rate": 47.06,
-        "subscription_competition_rate": 8.54,
-        "lockup_ratio": 0.0
-      },
-      "actual": {
-        "day0_high": 7841,
-        "day0_close": 6977,
-        "day1_close": 7036
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 13000,
+      "shares_offered": 379721,
+      "institutional_demand_rate": 47.06,
+      "subscription_competition_rate": 8.54,
+      "lockup_ratio": 0.0,
+      "predicted_day0_high": 16051,
+      "predicted_day0_close": 13177,
+      "predicted_day1_close": 14306,
+      "actual_day0_high": 7841,
+      "actual_day0_close": 6977,
+      "actual_day1_close": 7036
     },
     {
+      "id": 127,
       "code": "950190",
       "company_name": "미투젠",
       "listing_date": "2020-08-18",
-      "ipo_price": 27000,
-      "predicted": {
-        "day0_high": 32404,
-        "day0_close": 24435,
-        "day1_close": 27588
-      },
-      "metadata": {
-        "shares_offered": 2852561290,
-        "institutional_demand_rate": 1114.56,
-        "subscription_competition_rate": 1010.86,
-        "lockup_ratio": 1.35
-      },
-      "actual": {
-        "day0_high": 20447,
-        "day0_close": 19281,
-        "day1_close": 18938
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 27000,
+      "shares_offered": 2852561290,
+      "institutional_demand_rate": 1114.56,
+      "subscription_competition_rate": 1010.86,
+      "lockup_ratio": 1.35,
+      "predicted_day0_high": 32404,
+      "predicted_day0_close": 24435,
+      "predicted_day1_close": 27588,
+      "actual_day0_high": 20447,
+      "actual_day0_close": 19281,
+      "actual_day1_close": 18938
     },
     {
+      "id": 128,
       "code": "331920",
       "company_name": "셀레믹스",
       "listing_date": "2020-08-21",
-      "ipo_price": 20000,
-      "predicted": {
-        "day0_high": 26065,
-        "day0_close": 21077,
-        "day1_close": 23661
-      },
-      "metadata": {
-        "shares_offered": 1270810000,
-        "institutional_demand_rate": 1203.41,
-        "subscription_competition_rate": 1176.45,
-        "lockup_ratio": 5.41
-      },
-      "actual": {
-        "day0_high": 31600,
-        "day0_close": 25800,
-        "day1_close": 33100
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 20000,
+      "shares_offered": 1270810000,
+      "institutional_demand_rate": 1203.41,
+      "subscription_competition_rate": 1176.45,
+      "lockup_ratio": 5.41,
+      "predicted_day0_high": 26065,
+      "predicted_day0_close": 21077,
+      "predicted_day1_close": 23661,
+      "actual_day0_high": 31600,
+      "actual_day0_close": 25800,
+      "actual_day1_close": 33100
     },
     {
+      "id": 129,
       "code": "332370",
       "company_name": "아이디피",
       "listing_date": "2020-08-24",
-      "ipo_price": 9800,
-      "predicted": {
-        "day0_high": 11142,
-        "day0_close": 9414,
-        "day1_close": 10277
-      },
-      "metadata": {
-        "shares_offered": 1079952000,
-        "institutional_demand_rate": 894.0,
-        "subscription_competition_rate": 1149.83,
-        "lockup_ratio": 7.4
-      },
-      "actual": {
-        "day0_high": 6012,
-        "day0_close": 5273,
-        "day1_close": 5147
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 9800,
+      "shares_offered": 1079952000,
+      "institutional_demand_rate": 894.0,
+      "subscription_competition_rate": 1149.83,
+      "lockup_ratio": 7.4,
+      "predicted_day0_high": 11142,
+      "predicted_day0_close": 9414,
+      "predicted_day1_close": 10277,
+      "actual_day0_high": 6012,
+      "actual_day0_close": 5273,
+      "actual_day1_close": 5147
     },
     {
+      "id": 130,
       "code": "347740",
       "company_name": "피엔케이",
       "listing_date": "2020-09-09",
-      "ipo_price": 18300,
-      "predicted": {
-        "day0_high": 28741,
-        "day0_close": 22287,
-        "day1_close": 23692
-      },
-      "metadata": {
-        "shares_offered": 2451845000,
-        "institutional_demand_rate": 1372.51,
-        "subscription_competition_rate": 1727.11,
-        "lockup_ratio": 17.1
-      },
-      "actual": {
-        "day0_high": 7383,
-        "day0_close": 6222,
-        "day1_close": 6129
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 18300,
+      "shares_offered": 2451845000,
+      "institutional_demand_rate": 1372.51,
+      "subscription_competition_rate": 1727.11,
+      "lockup_ratio": 17.1,
+      "predicted_day0_high": 28741,
+      "predicted_day0_close": 22287,
+      "predicted_day1_close": 23692,
+      "actual_day0_high": 7383,
+      "actual_day0_close": 6222,
+      "actual_day1_close": 6129
     },
     {
+      "id": 131,
       "code": "293490",
       "company_name": "카카오게임즈",
       "listing_date": "2020-09-10",
-      "ipo_price": 24000,
-      "predicted": {
-        "day0_high": 40674,
-        "day0_close": 35876,
-        "day1_close": 34918
-      },
-      "metadata": {
-        "shares_offered": 1760000,
-        "institutional_demand_rate": 1478.53,
-        "subscription_competition_rate": 1524.8,
-        "lockup_ratio": 58.59
-      },
-      "actual": {
-        "day0_high": 62400,
-        "day0_close": 62400,
-        "day1_close": 81100
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 24000,
+      "shares_offered": 1760000,
+      "institutional_demand_rate": 1478.53,
+      "subscription_competition_rate": 1524.8,
+      "lockup_ratio": 58.59,
+      "predicted_day0_high": 40674,
+      "predicted_day0_close": 35876,
+      "predicted_day1_close": 34918,
+      "actual_day0_high": 62400,
+      "actual_day0_close": 62400,
+      "actual_day1_close": 81100
     },
     {
+      "id": 132,
       "code": "294090",
       "company_name": "이오플로우",
       "listing_date": "2020-09-14",
-      "ipo_price": 19000,
-      "predicted": {
-        "day0_high": 27543,
-        "day0_close": 20129,
-        "day1_close": 22128
-      },
-      "metadata": {
-        "shares_offered": 158414000,
-        "institutional_demand_rate": 150.87,
-        "subscription_competition_rate": 686.71,
-        "lockup_ratio": 14.83
-      },
-      "actual": {
-        "day0_high": 11824,
-        "day0_close": 9516,
-        "day1_close": 9088
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 19000,
+      "shares_offered": 158414000,
+      "institutional_demand_rate": 150.87,
+      "subscription_competition_rate": 686.71,
+      "lockup_ratio": 14.83,
+      "predicted_day0_high": 27543,
+      "predicted_day0_close": 20129,
+      "predicted_day1_close": 22128,
+      "actual_day0_high": 11824,
+      "actual_day0_close": 9516,
+      "actual_day1_close": 9088
     },
     {
+      "id": 133,
       "code": "291650",
       "company_name": "압타머사이언스",
       "listing_date": "2020-09-16",
-      "ipo_price": 25000,
-      "predicted": {
-        "day0_high": 29458,
-        "day0_close": 22701,
-        "day1_close": 25041
-      },
-      "metadata": {
-        "shares_offered": 837897000,
-        "institutional_demand_rate": 830.32,
-        "subscription_competition_rate": 1251.29,
-        "lockup_ratio": 3.27
-      },
-      "actual": {
-        "day0_high": 16250,
-        "day0_close": 13875,
-        "day1_close": 13925
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 25000,
+      "shares_offered": 837897000,
+      "institutional_demand_rate": 830.32,
+      "subscription_competition_rate": 1251.29,
+      "lockup_ratio": 3.27,
+      "predicted_day0_high": 29458,
+      "predicted_day0_close": 22701,
+      "predicted_day1_close": 25041,
+      "actual_day0_high": 16250,
+      "actual_day0_close": 13875,
+      "actual_day1_close": 13925
     },
     {
+      "id": 134,
       "code": "347770",
       "company_name": "핌스",
       "listing_date": "2020-09-18",
-      "ipo_price": 19000,
-      "predicted": {
-        "day0_high": 25581,
-        "day0_close": 19946,
-        "day1_close": 21774
-      },
-      "metadata": {
-        "shares_offered": 1851726526,
-        "institutional_demand_rate": 1210.28,
-        "subscription_competition_rate": 1161.84,
-        "lockup_ratio": 4.39
-      },
-      "actual": {
-        "day0_high": 7266,
-        "day0_close": 6100,
-        "day1_close": 5550
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 19000,
+      "shares_offered": 1851726526,
+      "institutional_demand_rate": 1210.28,
+      "subscription_competition_rate": 1161.84,
+      "lockup_ratio": 4.39,
+      "predicted_day0_high": 25581,
+      "predicted_day0_close": 19946,
+      "predicted_day1_close": 21774,
+      "actual_day0_high": 7266,
+      "actual_day0_close": 6100,
+      "actual_day1_close": 5550
     },
     {
+      "id": 135,
       "code": "323990",
       "company_name": "박셀바이오",
       "listing_date": "2020-09-22",
-      "ipo_price": 30000,
-      "predicted": {
-        "day0_high": 37455,
-        "day0_close": 30419,
-        "day1_close": 34258
-      },
-      "metadata": {
-        "shares_offered": 74224000,
-        "institutional_demand_rate": 94.18,
-        "subscription_competition_rate": 96.44,
-        "lockup_ratio": 11.68
-      },
-      "actual": {
-        "day0_high": 11250,
-        "day0_close": 8875,
-        "day1_close": 10625
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 30000,
+      "shares_offered": 74224000,
+      "institutional_demand_rate": 94.18,
+      "subscription_competition_rate": 96.44,
+      "lockup_ratio": 11.68,
+      "predicted_day0_high": 37455,
+      "predicted_day0_close": 30419,
+      "predicted_day1_close": 34258,
+      "actual_day0_high": 11250,
+      "actual_day0_close": 8875,
+      "actual_day1_close": 10625
     },
     {
+      "id": 136,
       "code": "126340",
       "company_name": "비나텍",
       "listing_date": "2020-09-23",
-      "ipo_price": 33000,
-      "predicted": {
-        "day0_high": 43511,
-        "day0_close": 33119,
-        "day1_close": 36995
-      },
-      "metadata": {
-        "shares_offered": 428260000,
-        "institutional_demand_rate": 1098.1,
-        "subscription_competition_rate": 1386.85,
-        "lockup_ratio": 22.47
-      },
-      "actual": {
-        "day0_high": 44190,
-        "day0_close": 38784,
-        "day1_close": 31928
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 33000,
+      "shares_offered": 428260000,
+      "institutional_demand_rate": 1098.1,
+      "subscription_competition_rate": 1386.85,
+      "lockup_ratio": 22.47,
+      "predicted_day0_high": 43511,
+      "predicted_day0_close": 33119,
+      "predicted_day1_close": 36995,
+      "actual_day0_high": 44190,
+      "actual_day0_close": 38784,
+      "actual_day1_close": 31928
     },
     {
+      "id": 137,
       "code": "53080",
       "company_name": "원방테크",
       "listing_date": "2020-09-24",
-      "ipo_price": 54300,
-      "predicted": {
-        "day0_high": 103478,
-        "day0_close": 99649,
-        "day1_close": 91486
-      },
-      "metadata": {
-        "shares_offered": 398668926,
-        "institutional_demand_rate": 406.8,
-        "subscription_competition_rate": 348.77,
-        "lockup_ratio": 3.2
-      },
-      "actual": {
-        "day0_high": 13940,
-        "day0_close": 12457,
-        "day1_close": 12115
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 54300,
+      "shares_offered": 398668926,
+      "institutional_demand_rate": 406.8,
+      "subscription_competition_rate": 348.77,
+      "lockup_ratio": 3.2,
+      "predicted_day0_high": 103478,
+      "predicted_day0_close": 99649,
+      "predicted_day1_close": 91486,
+      "actual_day0_high": 13940,
+      "actual_day0_close": 12457,
+      "actual_day1_close": 12115
     },
     {
+      "id": 138,
       "code": "352820",
       "company_name": "빅히트엔터테인먼트",
       "listing_date": "2020-10-15",
-      "ipo_price": 135000,
-      "predicted": {
-        "day0_high": 109465,
-        "day0_close": 104165,
-        "day1_close": 95633
-      },
-      "metadata": {
-        "shares_offered": 648182,
-        "institutional_demand_rate": 1117.25,
-        "subscription_competition_rate": 606.97,
-        "lockup_ratio": 43.85
-      },
-      "actual": {
-        "day0_high": 345499,
-        "day0_close": 253956,
-        "day1_close": 197357
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 135000,
+      "shares_offered": 648182,
+      "institutional_demand_rate": 1117.25,
+      "subscription_competition_rate": 606.97,
+      "lockup_ratio": 43.85,
+      "predicted_day0_high": 109465,
+      "predicted_day0_close": 104165,
+      "predicted_day1_close": 95633,
+      "actual_day0_high": 345499,
+      "actual_day0_close": 253956,
+      "actual_day1_close": 197357
     },
     {
+      "id": 139,
       "code": "304840",
       "company_name": "피플바이오",
       "listing_date": "2020-10-19",
-      "ipo_price": 20000,
-      "predicted": {
-        "day0_high": 22501,
-        "day0_close": 18635,
-        "day1_close": 20590
-      },
-      "metadata": {
-        "shares_offered": 16170000,
-        "institutional_demand_rate": 40.4,
-        "subscription_competition_rate": 51.08,
-        "lockup_ratio": 0.0
-      },
-      "actual": {
-        "day0_high": 9750,
-        "day0_close": 9750,
-        "day1_close": 10437
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 20000,
+      "shares_offered": 16170000,
+      "institutional_demand_rate": 40.4,
+      "subscription_competition_rate": 51.08,
+      "lockup_ratio": 0.0,
+      "predicted_day0_high": 22501,
+      "predicted_day0_close": 18635,
+      "predicted_day1_close": 20590,
+      "actual_day0_high": 9750,
+      "actual_day0_close": 9750,
+      "actual_day1_close": 10437
     },
     {
+      "id": 140,
       "code": "301300",
       "company_name": "바이브컴퍼니",
       "listing_date": "2020-10-28",
-      "ipo_price": 28000,
-      "predicted": {
-        "day0_high": 38043,
-        "day0_close": 28941,
-        "day1_close": 30337
-      },
-      "metadata": {
-        "shares_offered": 117000,
-        "institutional_demand_rate": 1221.45,
-        "subscription_competition_rate": 1266.22,
-        "lockup_ratio": 7.96
-      },
-      "actual": {
-        "day0_high": 21200,
-        "day0_close": 15650,
-        "day1_close": 15925
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 28000,
+      "shares_offered": 117000,
+      "institutional_demand_rate": 1221.45,
+      "subscription_competition_rate": 1266.22,
+      "lockup_ratio": 7.96,
+      "predicted_day0_high": 38043,
+      "predicted_day0_close": 28941,
+      "predicted_day1_close": 30337,
+      "actual_day0_high": 21200,
+      "actual_day0_close": 15650,
+      "actual_day1_close": 15925
     },
     {
+      "id": 141,
       "code": "347000",
       "company_name": "센코",
       "listing_date": "2020-10-29",
-      "ipo_price": 13000,
-      "predicted": {
-        "day0_high": 16299,
-        "day0_close": 13323,
-        "day1_close": 13645
-      },
-      "metadata": {
-        "shares_offered": 980369000,
-        "institutional_demand_rate": 848.37,
-        "subscription_competition_rate": 366.42,
-        "lockup_ratio": 2.2
-      },
-      "actual": {
-        "day0_high": 4287,
-        "day0_close": 3812,
-        "day1_close": 3600
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 13000,
+      "shares_offered": 980369000,
+      "institutional_demand_rate": 848.37,
+      "subscription_competition_rate": 366.42,
+      "lockup_ratio": 2.2,
+      "predicted_day0_high": 16299,
+      "predicted_day0_close": 13323,
+      "predicted_day1_close": 13645,
+      "actual_day0_high": 4287,
+      "actual_day0_close": 3812,
+      "actual_day1_close": 3600
     },
     {
+      "id": 142,
       "code": "348350",
       "company_name": "위드텍",
       "listing_date": "2020-10-30",
-      "ipo_price": 25000,
-      "predicted": {
-        "day0_high": 37692,
-        "day0_close": 27301,
-        "day1_close": 30301
-      },
-      "metadata": {
-        "shares_offered": 1080819000,
-        "institutional_demand_rate": 1336.49,
-        "subscription_competition_rate": 1185.51,
-        "lockup_ratio": 23.53
-      },
-      "actual": {
-        "day0_high": 22575,
-        "day0_close": 20170,
-        "day1_close": 19385
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 25000,
+      "shares_offered": 1080819000,
+      "institutional_demand_rate": 1336.49,
+      "subscription_competition_rate": 1185.51,
+      "lockup_ratio": 23.53,
+      "predicted_day0_high": 37692,
+      "predicted_day0_close": 27301,
+      "predicted_day1_close": 30301,
+      "actual_day0_high": 22575,
+      "actual_day0_close": 20170,
+      "actual_day1_close": 19385
     },
     {
+      "id": 143,
       "code": "290690",
       "company_name": "소룩스",
       "listing_date": "2020-11-06",
-      "ipo_price": 10000,
-      "predicted": {
-        "day0_high": 11099,
-        "day0_close": 9492,
-        "day1_close": 9860
-      },
-      "metadata": {
-        "shares_offered": 1793179000,
-        "institutional_demand_rate": 1135.7,
-        "subscription_competition_rate": 1660.08,
-        "lockup_ratio": 0.8
-      },
-      "actual": {
-        "day0_high": 8232,
-        "day0_close": 8232,
-        "day1_close": 10702
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 10000,
+      "shares_offered": 1793179000,
+      "institutional_demand_rate": 1135.7,
+      "subscription_competition_rate": 1660.08,
+      "lockup_ratio": 0.8,
+      "predicted_day0_high": 11099,
+      "predicted_day0_close": 9492,
+      "predicted_day1_close": 9860,
+      "actual_day0_high": 8232,
+      "actual_day0_close": 8232,
+      "actual_day1_close": 10702
     },
     {
+      "id": 144,
       "code": "339770",
       "company_name": "교촌에프앤비",
       "listing_date": "2020-11-12",
-      "ipo_price": 12300,
-      "predicted": {
-        "day0_high": 19364,
-        "day0_close": 14783,
-        "day1_close": 15236
-      },
-      "metadata": {
-        "shares_offered": 3478035000,
-        "institutional_demand_rate": 999.44,
-        "subscription_competition_rate": 1318.29,
-        "lockup_ratio": 3.9
-      },
-      "actual": {
-        "day0_high": 13676,
-        "day0_close": 13676,
-        "day1_close": 12992
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 12300,
+      "shares_offered": 3478035000,
+      "institutional_demand_rate": 999.44,
+      "subscription_competition_rate": 1318.29,
+      "lockup_ratio": 3.9,
+      "predicted_day0_high": 19364,
+      "predicted_day0_close": 14783,
+      "predicted_day1_close": 15236,
+      "actual_day0_high": 13676,
+      "actual_day0_close": 13676,
+      "actual_day1_close": 12992
     },
     {
+      "id": 145,
       "code": "330860",
       "company_name": "네패스아크",
       "listing_date": "2020-11-17",
-      "ipo_price": 26500,
-      "predicted": {
-        "day0_high": 30364,
-        "day0_close": 23699,
-        "day1_close": 25790
-      },
-      "metadata": {
-        "shares_offered": 1275458250,
-        "institutional_demand_rate": 707.7,
-        "subscription_competition_rate": 830.21,
-        "lockup_ratio": 1.6
-      },
-      "actual": {
-        "day0_high": 46750,
-        "day0_close": 38700,
-        "day1_close": 35750
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 26500,
+      "shares_offered": 1275458250,
+      "institutional_demand_rate": 707.7,
+      "subscription_competition_rate": 830.21,
+      "lockup_ratio": 1.6,
+      "predicted_day0_high": 30364,
+      "predicted_day0_close": 23699,
+      "predicted_day1_close": 25790,
+      "actual_day0_high": 46750,
+      "actual_day0_close": 38700,
+      "actual_day1_close": 35750
     },
     {
+      "id": 146,
       "code": "348150",
       "company_name": "고바이오랩",
       "listing_date": "2020-11-18",
-      "ipo_price": 15000,
-      "predicted": {
-        "day0_high": 15944,
-        "day0_close": 14081,
-        "day1_close": 14162
-      },
-      "metadata": {
-        "shares_offered": 240000,
-        "institutional_demand_rate": 64.33,
-        "subscription_competition_rate": 566.54,
-        "lockup_ratio": 0.03
-      },
-      "actual": {
-        "day0_high": 37350,
-        "day0_close": 31300,
-        "day1_close": 29250
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 15000,
+      "shares_offered": 240000,
+      "institutional_demand_rate": 64.33,
+      "subscription_competition_rate": 566.54,
+      "lockup_ratio": 0.03,
+      "predicted_day0_high": 15944,
+      "predicted_day0_close": 14081,
+      "predicted_day1_close": 14162,
+      "actual_day0_high": 37350,
+      "actual_day0_close": 31300,
+      "actual_day1_close": 29250
     },
     {
+      "id": 147,
       "code": "340570",
       "company_name": "티앤엘",
       "listing_date": "2020-11-20",
-      "ipo_price": 36000,
-      "predicted": {
-        "day0_high": 39233,
-        "day0_close": 40315,
-        "day1_close": 43952
-      },
-      "metadata": {
-        "shares_offered": 197647000,
-        "institutional_demand_rate": 338.91,
-        "subscription_competition_rate": 1109.19,
-        "lockup_ratio": 0.41
-      },
-      "actual": {
-        "day0_high": 37438,
-        "day0_close": 25270,
-        "day1_close": 27751
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 36000,
+      "shares_offered": 197647000,
+      "institutional_demand_rate": 338.91,
+      "subscription_competition_rate": 1109.19,
+      "lockup_ratio": 0.41,
+      "predicted_day0_high": 39233,
+      "predicted_day0_close": 40315,
+      "predicted_day1_close": 43952,
+      "actual_day0_high": 37438,
+      "actual_day0_close": 25270,
+      "actual_day1_close": 27751
     },
     {
+      "id": 148,
       "code": "244920",
       "company_name": "에이플러스에셋어드바이저",
       "listing_date": "2020-11-20",
-      "ipo_price": 7500,
-      "predicted": {
-        "day0_high": 12112,
-        "day0_close": 11197,
-        "day1_close": 16382
-      },
-      "metadata": {
-        "shares_offered": 335771,
-        "institutional_demand_rate": 3.66,
-        "subscription_competition_rate": 24.75,
-        "lockup_ratio": 25.4
-      },
-      "actual": {
-        "day0_high": 7192,
-        "day0_close": 5572,
-        "day1_close": 5596
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 7500,
+      "shares_offered": 335771,
+      "institutional_demand_rate": 3.66,
+      "subscription_competition_rate": 24.75,
+      "lockup_ratio": 25.4,
+      "predicted_day0_high": 12112,
+      "predicted_day0_close": 11197,
+      "predicted_day1_close": 16382,
+      "actual_day0_high": 7192,
+      "actual_day0_close": 5572,
+      "actual_day1_close": 5596
     },
     {
+      "id": 149,
       "code": "299030",
       "company_name": "하나기술",
       "listing_date": "2020-11-25",
-      "ipo_price": 35000,
-      "predicted": {
-        "day0_high": 46571,
-        "day0_close": 42269,
-        "day1_close": 46866
-      },
-      "metadata": {
-        "shares_offered": 892144000,
-        "institutional_demand_rate": 1393.98,
-        "subscription_competition_rate": 1802.1,
-        "lockup_ratio": 16.83
-      },
-      "actual": {
-        "day0_high": 45500,
-        "day0_close": 45500,
-        "day1_close": 36750
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 35000,
+      "shares_offered": 892144000,
+      "institutional_demand_rate": 1393.98,
+      "subscription_competition_rate": 1802.1,
+      "lockup_ratio": 16.83,
+      "predicted_day0_high": 46571,
+      "predicted_day0_close": 42269,
+      "predicted_day1_close": 46866,
+      "actual_day0_high": 45500,
+      "actual_day0_close": 45500,
+      "actual_day1_close": 36750
     },
     {
+      "id": 150,
       "code": "199820",
       "company_name": "제일전기공업",
       "listing_date": "2020-11-26",
-      "ipo_price": 17000,
-      "predicted": {
-        "day0_high": 26372,
-        "day0_close": 19281,
-        "day1_close": 20253
-      },
-      "metadata": {
-        "shares_offered": 464000,
-        "institutional_demand_rate": 1196.21,
-        "subscription_competition_rate": 1396.1,
-        "lockup_ratio": 8.86
-      },
-      "actual": {
-        "day0_high": 18487,
-        "day0_close": 12611,
-        "day1_close": 12611
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 17000,
+      "shares_offered": 464000,
+      "institutional_demand_rate": 1196.21,
+      "subscription_competition_rate": 1396.1,
+      "lockup_ratio": 8.86,
+      "predicted_day0_high": 26372,
+      "predicted_day0_close": 19281,
+      "predicted_day1_close": 20253,
+      "actual_day0_high": 18487,
+      "actual_day0_close": 12611,
+      "actual_day1_close": 12611
     },
     {
+      "id": 151,
       "code": "129890",
       "company_name": "앱코",
       "listing_date": "2020-12-02",
-      "ipo_price": 24300,
-      "predicted": {
-        "day0_high": 28674,
-        "day0_close": 22006,
-        "day1_close": 24714
-      },
-      "metadata": {
-        "shares_offered": 2288425000,
-        "institutional_demand_rate": 1141.02,
-        "subscription_competition_rate": 978.13,
-        "lockup_ratio": 3.64
-      },
-      "actual": {
-        "day0_high": 6630,
-        "day0_close": 5780,
-        "day1_close": 6290
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 24300,
+      "shares_offered": 2288425000,
+      "institutional_demand_rate": 1141.02,
+      "subscription_competition_rate": 978.13,
+      "lockup_ratio": 3.64,
+      "predicted_day0_high": 28674,
+      "predicted_day0_close": 22006,
+      "predicted_day1_close": 24714,
+      "actual_day0_high": 6630,
+      "actual_day0_close": 5780,
+      "actual_day1_close": 6290
     },
     {
+      "id": 152,
       "code": "265740",
       "company_name": "엔에프씨",
       "listing_date": "2020-12-02",
-      "ipo_price": 13400,
-      "predicted": {
-        "day0_high": 18523,
-        "day0_close": 15686,
-        "day1_close": 15759
-      },
-      "metadata": {
-        "shares_offered": 1567900850,
-        "institutional_demand_rate": 979.94,
-        "subscription_competition_rate": 643.85,
-        "lockup_ratio": 6.15
-      },
-      "actual": {
-        "day0_high": 9881,
-        "day0_close": 7994,
-        "day1_close": 7971
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 13400,
+      "shares_offered": 1567900850,
+      "institutional_demand_rate": 979.94,
+      "subscription_competition_rate": 643.85,
+      "lockup_ratio": 6.15,
+      "predicted_day0_high": 18523,
+      "predicted_day0_close": 15686,
+      "predicted_day1_close": 15759,
+      "actual_day0_high": 9881,
+      "actual_day0_close": 7994,
+      "actual_day1_close": 7971
     },
     {
+      "id": 153,
       "code": "318020",
       "company_name": "포인트모바일",
       "listing_date": "2020-12-03",
-      "ipo_price": 15000,
-      "predicted": {
-        "day0_high": 24434,
-        "day0_close": 20059,
-        "day1_close": 20804
-      },
-      "metadata": {
-        "shares_offered": 1045107000,
-        "institutional_demand_rate": 1447.07,
-        "subscription_competition_rate": 1842.97,
-        "lockup_ratio": 18.19
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 15000,
+      "shares_offered": 1045107000,
+      "institutional_demand_rate": 1447.07,
+      "subscription_competition_rate": 1842.97,
+      "lockup_ratio": 18.19,
+      "predicted_day0_high": 24434,
+      "predicted_day0_close": 20059,
+      "predicted_day1_close": 20804
     },
     {
+      "id": 154,
       "code": "352770",
       "company_name": "클리노믹스",
       "listing_date": "2020-12-04",
-      "ipo_price": 13900,
-      "predicted": {
-        "day0_high": 19368,
-        "day0_close": 17734,
-        "day1_close": 16772
-      },
-      "metadata": {
-        "shares_offered": 779778000,
-        "institutional_demand_rate": 494.2,
-        "subscription_competition_rate": 341.46,
-        "lockup_ratio": 2.05
-      },
-      "actual": {
-        "day0_high": 11863,
-        "day0_close": 10387,
-        "day1_close": 9923
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 13900,
+      "shares_offered": 779778000,
+      "institutional_demand_rate": 494.2,
+      "subscription_competition_rate": 341.46,
+      "lockup_ratio": 2.05,
+      "predicted_day0_high": 19368,
+      "predicted_day0_close": 17734,
+      "predicted_day1_close": 16772,
+      "actual_day0_high": 11863,
+      "actual_day0_close": 10387,
+      "actual_day1_close": 9923
     },
     {
+      "id": 155,
       "code": "9900",
       "company_name": "명신산업",
       "listing_date": "2020-12-07",
-      "ipo_price": 6500,
-      "predicted": {
-        "day0_high": 11966,
-        "day0_close": 12098,
-        "day1_close": 16279
-      },
-      "metadata": {
-        "shares_offered": 1336948,
-        "institutional_demand_rate": 1195.69,
-        "subscription_competition_rate": 1372.94,
-        "lockup_ratio": 30.6
-      },
-      "actual": {
-        "day0_high": 16506,
-        "day0_close": 16506,
-        "day1_close": 19827
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 6500,
+      "shares_offered": 1336948,
+      "institutional_demand_rate": 1195.69,
+      "subscription_competition_rate": 1372.94,
+      "lockup_ratio": 30.6,
+      "predicted_day0_high": 11966,
+      "predicted_day0_close": 12098,
+      "predicted_day1_close": 16279,
+      "actual_day0_high": 16506,
+      "actual_day0_close": 16506,
+      "actual_day1_close": 19827
     },
     {
+      "id": 156,
       "code": "317690",
       "company_name": "퀀타매트릭스",
       "listing_date": "2020-12-09",
-      "ipo_price": 25500,
-      "predicted": {
-        "day0_high": 28108,
-        "day0_close": 21649,
-        "day1_close": 25132
-      },
-      "metadata": {
-        "shares_offered": 253404000,
-        "institutional_demand_rate": 185.56,
-        "subscription_competition_rate": 167.87,
-        "lockup_ratio": 4.6
-      },
-      "actual": {
-        "day0_high": 29850,
-        "day0_close": 24100,
-        "day1_close": 24650
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 25500,
+      "shares_offered": 253404000,
+      "institutional_demand_rate": 185.56,
+      "subscription_competition_rate": 167.87,
+      "lockup_ratio": 4.6,
+      "predicted_day0_high": 28108,
+      "predicted_day0_close": 21649,
+      "predicted_day1_close": 25132,
+      "actual_day0_high": 29850,
+      "actual_day0_close": 24100,
+      "actual_day1_close": 24650
     },
     {
+      "id": 157,
       "code": "354200",
       "company_name": "엔젠바이오",
       "listing_date": "2020-12-10",
-      "ipo_price": 14000,
-      "predicted": {
-        "day0_high": 21119,
-        "day0_close": 16204,
-        "day1_close": 16791
-      },
-      "metadata": {
-        "shares_offered": 1968806171,
-        "institutional_demand_rate": 1006.96,
-        "subscription_competition_rate": 1502.4,
-        "lockup_ratio": 3.33
-      },
-      "actual": {
-        "day0_high": 31750,
-        "day0_close": 25650,
-        "day1_close": 24500
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 14000,
+      "shares_offered": 1968806171,
+      "institutional_demand_rate": 1006.96,
+      "subscription_competition_rate": 1502.4,
+      "lockup_ratio": 3.33,
+      "predicted_day0_high": 21119,
+      "predicted_day0_close": 16204,
+      "predicted_day1_close": 16791,
+      "actual_day0_high": 31750,
+      "actual_day0_close": 25650,
+      "actual_day1_close": 24500
     },
     {
+      "id": 158,
       "code": "352940",
       "company_name": "인바이오",
       "listing_date": "2020-12-11",
-      "ipo_price": 5800,
-      "predicted": {
-        "day0_high": 10421,
-        "day0_close": 8449,
-        "day1_close": 8860
-      },
-      "metadata": {
-        "shares_offered": 1807390000,
-        "institutional_demand_rate": 1386.04,
-        "subscription_competition_rate": 1414.15,
-        "lockup_ratio": 8.23
-      },
-      "actual": {
-        "day0_high": 15000,
-        "day0_close": 12200,
-        "day1_close": 11850
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 5800,
+      "shares_offered": 1807390000,
+      "institutional_demand_rate": 1386.04,
+      "subscription_competition_rate": 1414.15,
+      "lockup_ratio": 8.23,
+      "predicted_day0_high": 10421,
+      "predicted_day0_close": 8449,
+      "predicted_day1_close": 8860,
+      "actual_day0_high": 15000,
+      "actual_day0_close": 12200,
+      "actual_day1_close": 11850
     },
     {
+      "id": 159,
       "code": "356860",
       "company_name": "티엘비",
       "listing_date": "2020-12-14",
-      "ipo_price": 38000,
-      "predicted": {
-        "day0_high": 41052,
-        "day0_close": 38704,
-        "day1_close": 42830
-      },
-      "metadata": {
-        "shares_offered": 1015488000,
-        "institutional_demand_rate": 1318.82,
-        "subscription_competition_rate": 1551.19,
-        "lockup_ratio": 6.1
-      },
-      "actual": {
-        "day0_high": 35989,
-        "day0_close": 25774,
-        "day1_close": 27855
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 38000,
+      "shares_offered": 1015488000,
+      "institutional_demand_rate": 1318.82,
+      "subscription_competition_rate": 1551.19,
+      "lockup_ratio": 6.1,
+      "predicted_day0_high": 41052,
+      "predicted_day0_close": 38704,
+      "predicted_day1_close": 42830,
+      "actual_day0_high": 35989,
+      "actual_day0_close": 25774,
+      "actual_day1_close": 27855
     },
     {
+      "id": 160,
       "code": "64850",
       "company_name": "에프앤가이드",
       "listing_date": "2020-12-17",
-      "ipo_price": 7000,
-      "predicted": {
-        "day0_high": 11438,
-        "day0_close": 10377,
-        "day1_close": 9615
-      },
-      "metadata": {
-        "shares_offered": 195143,
-        "institutional_demand_rate": 1327.98,
-        "subscription_competition_rate": 1353.9,
-        "lockup_ratio": 7.6
-      },
-      "actual": {
-        "day0_high": 13354,
-        "day0_close": 12938,
-        "day1_close": 11876
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 7000,
+      "shares_offered": 195143,
+      "institutional_demand_rate": 1327.98,
+      "subscription_competition_rate": 1353.9,
+      "lockup_ratio": 7.6,
+      "predicted_day0_high": 11438,
+      "predicted_day0_close": 10377,
+      "predicted_day1_close": 9615,
+      "actual_day0_high": 13354,
+      "actual_day0_close": 12938,
+      "actual_day1_close": 11876
     },
     {
+      "id": 161,
       "code": "347860",
       "company_name": "알체라",
       "listing_date": "2020-12-21",
-      "ipo_price": 10000,
-      "predicted": {
-        "day0_high": 12192,
-        "day0_close": 10868,
-        "day1_close": 11210
-      },
-      "metadata": {
-        "shares_offered": 240000,
-        "institutional_demand_rate": 1315.61,
-        "subscription_competition_rate": 1322.58,
-        "lockup_ratio": 3.88
-      },
-      "actual": {
-        "day0_high": 21666,
-        "day0_close": 21666,
-        "day1_close": 28166
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 10000,
+      "shares_offered": 240000,
+      "institutional_demand_rate": 1315.61,
+      "subscription_competition_rate": 1322.58,
+      "lockup_ratio": 3.88,
+      "predicted_day0_high": 12192,
+      "predicted_day0_close": 10868,
+      "predicted_day1_close": 11210,
+      "actual_day0_high": 21666,
+      "actual_day0_close": 21666,
+      "actual_day1_close": 28166
     },
     {
+      "id": 162,
       "code": "335810",
       "company_name": "프리시젼바이오",
       "listing_date": "2020-12-22",
-      "ipo_price": 12500,
-      "predicted": {
-        "day0_high": 18928,
-        "day0_close": 15939,
-        "day1_close": 15394
-      },
-      "metadata": {
-        "shares_offered": 1477473000,
-        "institutional_demand_rate": 1231.23,
-        "subscription_competition_rate": 1557.29,
-        "lockup_ratio": 1.62
-      },
-      "actual": {
-        "day0_high": 32500,
-        "day0_close": 32500,
-        "day1_close": 26350
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 12500,
+      "shares_offered": 1477473000,
+      "institutional_demand_rate": 1231.23,
+      "subscription_competition_rate": 1557.29,
+      "lockup_ratio": 1.62,
+      "predicted_day0_high": 18928,
+      "predicted_day0_close": 15939,
+      "predicted_day1_close": 15394,
+      "actual_day0_high": 32500,
+      "actual_day0_close": 32500,
+      "actual_day1_close": 26350
     },
     {
+      "id": 163,
       "code": "314130",
       "company_name": "지놈앤컴퍼니",
       "listing_date": "2020-12-23",
-      "ipo_price": 40000,
-      "predicted": {
-        "day0_high": 45556,
-        "day0_close": 41223,
-        "day1_close": 44166
-      },
-      "metadata": {
-        "shares_offered": 1687054000,
-        "institutional_demand_rate": 1163.49,
-        "subscription_competition_rate": 1175.1,
-        "lockup_ratio": 9.08
-      },
-      "actual": {
-        "day0_high": 45450,
-        "day0_close": 45100,
-        "day1_close": 34400
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 40000,
+      "shares_offered": 1687054000,
+      "institutional_demand_rate": 1163.49,
+      "subscription_competition_rate": 1175.1,
+      "lockup_ratio": 9.08,
+      "predicted_day0_high": 45556,
+      "predicted_day0_close": 41223,
+      "predicted_day1_close": 44166,
+      "actual_day0_high": 45450,
+      "actual_day0_close": 45100,
+      "actual_day1_close": 34400
     },
     {
+      "id": 164,
       "code": "357550",
       "company_name": "석경에이티",
       "listing_date": "2020-12-23",
-      "ipo_price": 10000,
-      "predicted": {
-        "day0_high": 11261,
-        "day0_close": 9976,
-        "day1_close": 10220
-      },
-      "metadata": {
-        "shares_offered": 1112228000,
-        "institutional_demand_rate": 1390.29,
-        "subscription_competition_rate": 1751.58,
-        "lockup_ratio": 6.68
-      },
-      "actual": {
-        "day0_high": 26000,
-        "day0_close": 26000,
-        "day1_close": 31000
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 10000,
+      "shares_offered": 1112228000,
+      "institutional_demand_rate": 1390.29,
+      "subscription_competition_rate": 1751.58,
+      "lockup_ratio": 6.68,
+      "predicted_day0_high": 11261,
+      "predicted_day0_close": 9976,
+      "predicted_day1_close": 10220,
+      "actual_day0_high": 26000,
+      "actual_day0_close": 26000,
+      "actual_day1_close": 31000
     },
     {
+      "id": 165,
       "code": "236810",
       "company_name": "엔비티",
       "listing_date": "2021-01-21",
-      "ipo_price": 19000,
-      "predicted": {
-        "day0_high": 29445,
-        "day0_close": 23346,
-        "day1_close": 24428
-      },
-      "metadata": {
-        "shares_offered": 830107000,
-        "institutional_demand_rate": 1425.3,
-        "subscription_competition_rate": 4397.67,
-        "lockup_ratio": 10.7
-      },
-      "actual": {
-        "day0_high": 24500,
-        "day0_close": 18250,
-        "day1_close": 19275
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 19000,
+      "shares_offered": 830107000,
+      "institutional_demand_rate": 1425.3,
+      "subscription_competition_rate": 4397.67,
+      "lockup_ratio": 10.7,
+      "predicted_day0_high": 29445,
+      "predicted_day0_close": 23346,
+      "predicted_day1_close": 24428,
+      "actual_day0_high": 24500,
+      "actual_day0_close": 18250,
+      "actual_day1_close": 19275
     },
     {
+      "id": 166,
       "code": "86710",
       "company_name": "선진뷰티사이언스",
       "listing_date": "2021-01-27",
-      "ipo_price": 11500,
-      "predicted": {
-        "day0_high": 17930,
-        "day0_close": 16372,
-        "day1_close": 17611
-      },
-      "metadata": {
-        "shares_offered": 220200,
-        "institutional_demand_rate": 1431.0,
-        "subscription_competition_rate": 1987.74,
-        "lockup_ratio": 17.83
-      },
-      "actual": {
-        "day0_high": 14761,
-        "day0_close": 14761,
-        "day1_close": 16044
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 11500,
+      "shares_offered": 220200,
+      "institutional_demand_rate": 1431.0,
+      "subscription_competition_rate": 1987.74,
+      "lockup_ratio": 17.83,
+      "predicted_day0_high": 17930,
+      "predicted_day0_close": 16372,
+      "predicted_day1_close": 17611,
+      "actual_day0_high": 14761,
+      "actual_day0_close": 14761,
+      "actual_day1_close": 16044
     },
     {
+      "id": 167,
       "code": "348030",
       "company_name": "모비릭스",
       "listing_date": "2021-01-28",
-      "ipo_price": 14000,
-      "predicted": {
-        "day0_high": 22288,
-        "day0_close": 18464,
-        "day1_close": 18323
-      },
-      "metadata": {
-        "shares_offered": 270000,
-        "institutional_demand_rate": 1407.53,
-        "subscription_competition_rate": 1485.51,
-        "lockup_ratio": 5.73
-      },
-      "actual": {
-        "day0_high": 36400,
-        "day0_close": 36400,
-        "day1_close": 31650
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 14000,
+      "shares_offered": 270000,
+      "institutional_demand_rate": 1407.53,
+      "subscription_competition_rate": 1485.51,
+      "lockup_ratio": 5.73,
+      "predicted_day0_high": 22288,
+      "predicted_day0_close": 18464,
+      "predicted_day1_close": 18323,
+      "actual_day0_high": 36400,
+      "actual_day0_close": 36400,
+      "actual_day1_close": 31650
     },
     {
+      "id": 168,
       "code": "352700",
       "company_name": "씨앤투스성진",
       "listing_date": "2021-01-28",
-      "ipo_price": 32000,
-      "predicted": {
-        "day0_high": 31826,
-        "day0_close": 28450,
-        "day1_close": 31743
-      },
-      "metadata": {
-        "shares_offered": 1292824000,
-        "institutional_demand_rate": 1010.02,
-        "subscription_competition_rate": 674.04,
-        "lockup_ratio": 1.7
-      },
-      "actual": {
-        "day0_high": 8891,
-        "day0_close": 7364,
-        "day1_close": 6427
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 32000,
+      "shares_offered": 1292824000,
+      "institutional_demand_rate": 1010.02,
+      "subscription_competition_rate": 674.04,
+      "lockup_ratio": 1.7,
+      "predicted_day0_high": 31826,
+      "predicted_day0_close": 28450,
+      "predicted_day1_close": 31743,
+      "actual_day0_high": 8891,
+      "actual_day0_close": 7364,
+      "actual_day1_close": 6427
     },
     {
+      "id": 169,
       "code": "163730",
       "company_name": "핑거",
       "listing_date": "2021-01-29",
-      "ipo_price": 16000,
-      "predicted": {
-        "day0_high": 25881,
-        "day0_close": 21645,
-        "day1_close": 20579
-      },
-      "metadata": {
-        "shares_offered": 1133431000,
-        "institutional_demand_rate": 1453.12,
-        "subscription_competition_rate": 939.39,
-        "lockup_ratio": 12.64
-      },
-      "actual": {
-        "day0_high": 40618,
-        "day0_close": 28482,
-        "day1_close": 27845
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 16000,
+      "shares_offered": 1133431000,
+      "institutional_demand_rate": 1453.12,
+      "subscription_competition_rate": 939.39,
+      "lockup_ratio": 12.64,
+      "predicted_day0_high": 25881,
+      "predicted_day0_close": 21645,
+      "predicted_day1_close": 20579,
+      "actual_day0_high": 40618,
+      "actual_day0_close": 28482,
+      "actual_day1_close": 27845
     },
     {
+      "id": 170,
       "code": "248070",
       "company_name": "솔루엠",
       "listing_date": "2021-02-02",
-      "ipo_price": 17000,
-      "predicted": {
-        "day0_high": 28825,
-        "day0_close": 20913,
-        "day1_close": 23431
-      },
-      "metadata": {
-        "shares_offered": 704000,
-        "institutional_demand_rate": 1167.55,
-        "subscription_competition_rate": 1147.76,
-        "lockup_ratio": 20.79
-      },
-      "actual": {
-        "day0_high": 39800,
-        "day0_close": 29150,
-        "day1_close": 28450
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 17000,
+      "shares_offered": 704000,
+      "institutional_demand_rate": 1167.55,
+      "subscription_competition_rate": 1147.76,
+      "lockup_ratio": 20.79,
+      "predicted_day0_high": 28825,
+      "predicted_day0_close": 20913,
+      "predicted_day1_close": 23431,
+      "actual_day0_high": 39800,
+      "actual_day0_close": 29150,
+      "actual_day1_close": 28450
     },
     {
+      "id": 171,
       "code": "321820",
       "company_name": "와이더플래닛",
       "listing_date": "2021-02-03",
-      "ipo_price": 16000,
-      "predicted": {
-        "day0_high": 23659,
-        "day0_close": 19172,
-        "day1_close": 18854
-      },
-      "metadata": {
-        "shares_offered": 1086914000,
-        "institutional_demand_rate": 1449.22,
-        "subscription_competition_rate": 1357.98,
-        "lockup_ratio": 9.59
-      },
-      "actual": {
-        "day0_high": 26850,
-        "day0_close": 20000,
-        "day1_close": 18700
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 16000,
+      "shares_offered": 1086914000,
+      "institutional_demand_rate": 1449.22,
+      "subscription_competition_rate": 1357.98,
+      "lockup_ratio": 9.59,
+      "predicted_day0_high": 23659,
+      "predicted_day0_close": 19172,
+      "predicted_day1_close": 18854,
+      "actual_day0_high": 26850,
+      "actual_day0_close": 20000,
+      "actual_day1_close": 18700
     },
     {
+      "id": 172,
       "code": "277810",
       "company_name": "레인보우로보틱스",
       "listing_date": "2021-02-03",
-      "ipo_price": 10000,
-      "predicted": {
-        "day0_high": 14424,
-        "day0_close": 12240,
-        "day1_close": 16806
-      },
-      "metadata": {
-        "shares_offered": 265000,
-        "institutional_demand_rate": 1489.9,
-        "subscription_competition_rate": 1201.26,
-        "lockup_ratio": 19.9
-      },
-      "actual": {
-        "day0_high": 26000,
-        "day0_close": 26000,
-        "day1_close": 22900
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 10000,
+      "shares_offered": 265000,
+      "institutional_demand_rate": 1489.9,
+      "subscription_competition_rate": 1201.26,
+      "lockup_ratio": 19.9,
+      "predicted_day0_high": 14424,
+      "predicted_day0_close": 12240,
+      "predicted_day1_close": 16806,
+      "actual_day0_high": 26000,
+      "actual_day0_close": 26000,
+      "actual_day1_close": 22900
     },
     {
+      "id": 173,
       "code": "950210",
       "company_name": "프레스티지바이오파마",
       "listing_date": "2021-02-05",
-      "ipo_price": 32000,
-      "predicted": {
-        "day0_high": 41327,
-        "day0_close": 33877,
-        "day1_close": 37641
-      },
-      "metadata": {
-        "shares_offered": 2147830,
-        "institutional_demand_rate": 819.76,
-        "subscription_competition_rate": 237.13,
-        "lockup_ratio": 19.31
-      },
-      "actual": {
-        "day0_high": 53700,
-        "day0_close": 50000,
-        "day1_close": 48600
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 32000,
+      "shares_offered": 2147830,
+      "institutional_demand_rate": 819.76,
+      "subscription_competition_rate": 237.13,
+      "lockup_ratio": 19.31,
+      "predicted_day0_high": 41327,
+      "predicted_day0_close": 33877,
+      "predicted_day1_close": 37641,
+      "actual_day0_high": 53700,
+      "actual_day0_close": 50000,
+      "actual_day1_close": 48600
     },
     {
+      "id": 174,
       "code": "262840",
       "company_name": "아이퀘스트",
       "listing_date": "2021-02-05",
-      "ipo_price": 11000,
-      "predicted": {
-        "day0_high": 16479,
-        "day0_close": 17813,
-        "day1_close": 18107
-      },
-      "metadata": {
-        "shares_offered": 2406439000,
-        "institutional_demand_rate": 1504.02,
-        "subscription_competition_rate": 2853.34,
-        "lockup_ratio": 18.7
-      },
-      "actual": {
-        "day0_high": 10913,
-        "day0_close": 8084,
-        "day1_close": 9054
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 11000,
+      "shares_offered": 2406439000,
+      "institutional_demand_rate": 1504.02,
+      "subscription_competition_rate": 2853.34,
+      "lockup_ratio": 18.7,
+      "predicted_day0_high": 16479,
+      "predicted_day0_close": 17813,
+      "predicted_day1_close": 18107,
+      "actual_day0_high": 10913,
+      "actual_day0_close": 8084,
+      "actual_day1_close": 9054
     },
     {
+      "id": 175,
       "code": "239890",
       "company_name": "피엔에이치테크",
       "listing_date": "2021-02-16",
-      "ipo_price": 18000,
-      "predicted": {
-        "day0_high": 28920,
-        "day0_close": 22288,
-        "day1_close": 23303
-      },
-      "metadata": {
-        "shares_offered": 750504000,
-        "institutional_demand_rate": 1454.47,
-        "subscription_competition_rate": 1528.76,
-        "lockup_ratio": 9.58
-      },
-      "actual": {
-        "day0_high": 16975,
-        "day0_close": 16475,
-        "day1_close": 11925
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 18000,
+      "shares_offered": 750504000,
+      "institutional_demand_rate": 1454.47,
+      "subscription_competition_rate": 1528.76,
+      "lockup_ratio": 9.58,
+      "predicted_day0_high": 28920,
+      "predicted_day0_close": 22288,
+      "predicted_day1_close": 23303,
+      "actual_day0_high": 16975,
+      "actual_day0_close": 16475,
+      "actual_day1_close": 11925
     },
     {
+      "id": 176,
       "code": "189330",
       "company_name": "씨이랩",
       "listing_date": "2021-02-24",
-      "ipo_price": 35000,
-      "predicted": {
-        "day0_high": 42639,
-        "day0_close": 39433,
-        "day1_close": 44629
-      },
-      "metadata": {
-        "shares_offered": 713111140,
-        "institutional_demand_rate": 1371.37,
-        "subscription_competition_rate": 195.53,
-        "lockup_ratio": 12.97
-      },
-      "actual": {
-        "day0_high": 28000,
-        "day0_close": 26500,
-        "day1_close": 20400
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 35000,
+      "shares_offered": 713111140,
+      "institutional_demand_rate": 1371.37,
+      "subscription_competition_rate": 195.53,
+      "lockup_ratio": 12.97,
+      "predicted_day0_high": 42639,
+      "predicted_day0_close": 39433,
+      "predicted_day1_close": 44629,
+      "actual_day0_high": 28000,
+      "actual_day0_close": 26500,
+      "actual_day1_close": 20400
     },
     {
+      "id": 177,
       "code": "322310",
       "company_name": "오로스테크놀로지",
       "listing_date": "2021-02-24",
-      "ipo_price": 21000,
-      "predicted": {
-        "day0_high": 39523,
-        "day0_close": 30526,
-        "day1_close": 30593
-      },
-      "metadata": {
-        "shares_offered": 1436424000,
-        "institutional_demand_rate": 1260.0,
-        "subscription_competition_rate": 1033.82,
-        "lockup_ratio": 37.12
-      },
-      "actual": {
-        "day0_high": 54600,
-        "day0_close": 54600,
-        "day1_close": 49850
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 21000,
+      "shares_offered": 1436424000,
+      "institutional_demand_rate": 1260.0,
+      "subscription_competition_rate": 1033.82,
+      "lockup_ratio": 37.12,
+      "predicted_day0_high": 39523,
+      "predicted_day0_close": 30526,
+      "predicted_day1_close": 30593,
+      "actual_day0_high": 54600,
+      "actual_day0_close": 54600,
+      "actual_day1_close": 49850
     },
     {
+      "id": 178,
       "code": "340930",
       "company_name": "유일에너테크",
       "listing_date": "2021-02-25",
-      "ipo_price": 16000,
-      "predicted": {
-        "day0_high": 23994,
-        "day0_close": 20666,
-        "day1_close": 21073
-      },
-      "metadata": {
-        "shares_offered": 2672315000,
-        "institutional_demand_rate": 1427.69,
-        "subscription_competition_rate": 683.55,
-        "lockup_ratio": 61.06
-      },
-      "actual": {
-        "day0_high": 13666,
-        "day0_close": 11500,
-        "day1_close": 9600
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 16000,
+      "shares_offered": 2672315000,
+      "institutional_demand_rate": 1427.69,
+      "subscription_competition_rate": 683.55,
+      "lockup_ratio": 61.06,
+      "predicted_day0_high": 23994,
+      "predicted_day0_close": 20666,
+      "predicted_day1_close": 21073,
+      "actual_day0_high": 13666,
+      "actual_day0_close": 11500,
+      "actual_day1_close": 9600
     },
     {
+      "id": 179,
       "code": "338220",
       "company_name": "뷰노",
       "listing_date": "2021-02-26",
-      "ipo_price": 21000,
-      "predicted": {
-        "day0_high": 37367,
-        "day0_close": 26535,
-        "day1_close": 28444
-      },
-      "metadata": {
-        "shares_offered": 1726857000,
-        "institutional_demand_rate": 1457.21,
-        "subscription_competition_rate": 1102.7,
-        "lockup_ratio": 23.8
-      },
-      "actual": {
-        "day0_high": 39350,
-        "day0_close": 32150,
-        "day1_close": 29400
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 21000,
+      "shares_offered": 1726857000,
+      "institutional_demand_rate": 1457.21,
+      "subscription_competition_rate": 1102.7,
+      "lockup_ratio": 23.8,
+      "predicted_day0_high": 37367,
+      "predicted_day0_close": 26535,
+      "predicted_day1_close": 28444,
+      "actual_day0_high": 39350,
+      "actual_day0_close": 32150,
+      "actual_day1_close": 29400
     },
     {
+      "id": 180,
       "code": "247660",
       "company_name": "나노씨엠에스",
       "listing_date": "2021-03-09",
-      "ipo_price": 20000,
-      "predicted": {
-        "day0_high": 28643,
-        "day0_close": 22424,
-        "day1_close": 24633
-      },
-      "metadata": {
-        "shares_offered": 756717000,
-        "institutional_demand_rate": 1295.75,
-        "subscription_competition_rate": 1243.48,
-        "lockup_ratio": 6.65
-      },
-      "actual": {
-        "day0_high": 36000,
-        "day0_close": 23950,
-        "day1_close": 22400
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 20000,
+      "shares_offered": 756717000,
+      "institutional_demand_rate": 1295.75,
+      "subscription_competition_rate": 1243.48,
+      "lockup_ratio": 6.65,
+      "predicted_day0_high": 28643,
+      "predicted_day0_close": 22424,
+      "predicted_day1_close": 24633,
+      "actual_day0_high": 36000,
+      "actual_day0_close": 23950,
+      "actual_day1_close": 22400
     },
     {
+      "id": 181,
       "code": "334970",
       "company_name": "프레스티지바이오로직스",
       "listing_date": "2021-03-11",
-      "ipo_price": 12400,
-      "predicted": {
-        "day0_high": 17266,
-        "day0_close": 15270,
-        "day1_close": 14730
-      },
-      "metadata": {
-        "shares_offered": 2039114000,
-        "institutional_demand_rate": 369.91,
-        "subscription_competition_rate": 126.06,
-        "lockup_ratio": 6.5
-      },
-      "actual": {
-        "day0_high": 15600,
-        "day0_close": 14300,
-        "day1_close": 12900
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 12400,
+      "shares_offered": 2039114000,
+      "institutional_demand_rate": 369.91,
+      "subscription_competition_rate": 126.06,
+      "lockup_ratio": 6.5,
+      "predicted_day0_high": 17266,
+      "predicted_day0_close": 15270,
+      "predicted_day1_close": 14730,
+      "actual_day0_high": 15600,
+      "actual_day0_close": 14300,
+      "actual_day1_close": 12900
     },
     {
+      "id": 182,
       "code": "356890",
       "company_name": "싸이버원",
       "listing_date": "2021-03-11",
-      "ipo_price": 9500,
-      "predicted": {
-        "day0_high": 12092,
-        "day0_close": 9934,
-        "day1_close": 10146
-      },
-      "metadata": {
-        "shares_offered": 1330155000,
-        "institutional_demand_rate": 1303.1,
-        "subscription_competition_rate": 1880.43,
-        "lockup_ratio": 9.7
-      },
-      "actual": {
-        "day0_high": 8748,
-        "day0_close": 7925,
-        "day1_close": 8262
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 9500,
+      "shares_offered": 1330155000,
+      "institutional_demand_rate": 1303.1,
+      "subscription_competition_rate": 1880.43,
+      "lockup_ratio": 9.7,
+      "predicted_day0_high": 12092,
+      "predicted_day0_close": 9934,
+      "predicted_day1_close": 10146,
+      "actual_day0_high": 8748,
+      "actual_day0_close": 7925,
+      "actual_day1_close": 8262
     },
     {
+      "id": 183,
       "code": "950220",
       "company_name": "네오이뮨텍",
       "listing_date": "2021-03-16",
-      "ipo_price": 7500,
-      "predicted": {
-        "day0_high": 12965,
-        "day0_close": 11573,
-        "day1_close": 16226
-      },
-      "metadata": {
-        "shares_offered": 2437500,
-        "institutional_demand_rate": 1374.09,
-        "subscription_competition_rate": 664.65,
-        "lockup_ratio": 25.54
-      },
-      "actual": {
-        "day0_high": 17450,
-        "day0_close": 14350,
-        "day1_close": 14050
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 7500,
+      "shares_offered": 2437500,
+      "institutional_demand_rate": 1374.09,
+      "subscription_competition_rate": 664.65,
+      "lockup_ratio": 25.54,
+      "predicted_day0_high": 12965,
+      "predicted_day0_close": 11573,
+      "predicted_day1_close": 16226,
+      "actual_day0_high": 17450,
+      "actual_day0_close": 14350,
+      "actual_day1_close": 14050
     },
     {
+      "id": 184,
       "code": "314930",
       "company_name": "바이오다인",
       "listing_date": "2021-03-17",
-      "ipo_price": 30000,
-      "predicted": {
-        "day0_high": 37128,
-        "day0_close": 29639,
-        "day1_close": 33944
-      },
-      "metadata": {
-        "shares_offered": 1023641000,
-        "institutional_demand_rate": 1364.85,
-        "subscription_competition_rate": 48.36,
-        "lockup_ratio": 8.8
-      },
-      "actual": {
-        "day0_high": 10400,
-        "day0_close": 8520,
-        "day1_close": 10200
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 30000,
+      "shares_offered": 1023641000,
+      "institutional_demand_rate": 1364.85,
+      "subscription_competition_rate": 48.36,
+      "lockup_ratio": 8.8,
+      "predicted_day0_high": 37128,
+      "predicted_day0_close": 29639,
+      "predicted_day1_close": 33944,
+      "actual_day0_high": 10400,
+      "actual_day0_close": 8520,
+      "actual_day1_close": 10200
     },
     {
+      "id": 185,
       "code": "302440",
       "company_name": "SK바이오사이언스",
       "listing_date": "2021-03-18",
-      "ipo_price": 65000,
-      "predicted": {
-        "day0_high": 106401,
-        "day0_close": 103550,
-        "day1_close": 94577
-      },
-      "metadata": {
-        "shares_offered": 16099563214,
-        "institutional_demand_rate": 1275.47,
-        "subscription_competition_rate": 335.36,
-        "lockup_ratio": 59.92
-      },
-      "actual": {
-        "day0_high": 169000,
-        "day0_close": 169000,
-        "day1_close": 166500
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 65000,
+      "shares_offered": 16099563214,
+      "institutional_demand_rate": 1275.47,
+      "subscription_competition_rate": 335.36,
+      "lockup_ratio": 59.92,
+      "predicted_day0_high": 106401,
+      "predicted_day0_close": 103550,
+      "predicted_day1_close": 94577,
+      "actual_day0_high": 169000,
+      "actual_day0_close": 169000,
+      "actual_day1_close": 166500
     },
     {
+      "id": 186,
       "code": "347700",
       "company_name": "라이프시맨틱스",
       "listing_date": "2021-03-23",
-      "ipo_price": 12500,
-      "predicted": {
-        "day0_high": 19992,
-        "day0_close": 18126,
-        "day1_close": 17485
-      },
-      "metadata": {
-        "shares_offered": 1051628000,
-        "institutional_demand_rate": 1402.17,
-        "subscription_competition_rate": 1774.57,
-        "lockup_ratio": 3.78
-      },
-      "actual": {
-        "day0_high": 25050,
-        "day0_close": 17500,
-        "day1_close": 15950
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 12500,
+      "shares_offered": 1051628000,
+      "institutional_demand_rate": 1402.17,
+      "subscription_competition_rate": 1774.57,
+      "lockup_ratio": 3.78,
+      "predicted_day0_high": 19992,
+      "predicted_day0_close": 18126,
+      "predicted_day1_close": 17485,
+      "actual_day0_high": 25050,
+      "actual_day0_close": 17500,
+      "actual_day1_close": 15950
     },
     {
+      "id": 187,
       "code": "289220",
       "company_name": "자이언트스텝",
       "listing_date": "2021-03-24",
-      "ipo_price": 11000,
-      "predicted": {
-        "day0_high": 16116,
-        "day0_close": 17589,
-        "day1_close": 17473
-      },
-      "metadata": {
-        "shares_offered": 1565628000,
-        "institutional_demand_rate": 1691.65,
-        "subscription_competition_rate": 2342.0,
-        "lockup_ratio": 24.42
-      },
-      "actual": {
-        "day0_high": 14300,
-        "day0_close": 14300,
-        "day1_close": 16375
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 11000,
+      "shares_offered": 1565628000,
+      "institutional_demand_rate": 1691.65,
+      "subscription_competition_rate": 2342.0,
+      "lockup_ratio": 24.42,
+      "predicted_day0_high": 16116,
+      "predicted_day0_close": 17589,
+      "predicted_day1_close": 17473,
+      "actual_day0_high": 14300,
+      "actual_day0_close": 14300,
+      "actual_day1_close": 16375
     },
     {
+      "id": 188,
       "code": "361390",
       "company_name": "제노코",
       "listing_date": "2021-03-24",
-      "ipo_price": 36000,
-      "predicted": {
-        "day0_high": 46902,
-        "day0_close": 42137,
-        "day1_close": 46917
-      },
-      "metadata": {
-        "shares_offered": 491087800,
-        "institutional_demand_rate": 1452.49,
-        "subscription_competition_rate": 2095.45,
-        "lockup_ratio": 22.15
-      },
-      "actual": {
-        "day0_high": 27963,
-        "day0_close": 26507,
-        "day1_close": 23330
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 36000,
+      "shares_offered": 491087800,
+      "institutional_demand_rate": 1452.49,
+      "subscription_competition_rate": 2095.45,
+      "lockup_ratio": 22.15,
+      "predicted_day0_high": 46902,
+      "predicted_day0_close": 42137,
+      "predicted_day1_close": 46917,
+      "actual_day0_high": 27963,
+      "actual_day0_close": 26507,
+      "actual_day1_close": 23330
     },
     {
+      "id": 189,
       "code": "333620",
       "company_name": "엔시스",
       "listing_date": "2021-04-01",
-      "ipo_price": 19000,
-      "predicted": {
-        "day0_high": 31374,
-        "day0_close": 24340,
-        "day1_close": 24685
-      },
-      "metadata": {
-        "shares_offered": 2531827000,
-        "institutional_demand_rate": 1467.73,
-        "subscription_competition_rate": 2573.6,
-        "lockup_ratio": 21.73
-      },
-      "actual": {
-        "day0_high": 43432,
-        "day0_close": 30924,
-        "day1_close": 27330
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 19000,
+      "shares_offered": 2531827000,
+      "institutional_demand_rate": 1467.73,
+      "subscription_competition_rate": 2573.6,
+      "lockup_ratio": 21.73,
+      "predicted_day0_high": 31374,
+      "predicted_day0_close": 24340,
+      "predicted_day1_close": 24685,
+      "actual_day0_high": 43432,
+      "actual_day0_close": 30924,
+      "actual_day1_close": 27330
     },
     {
+      "id": 190,
       "code": "351330",
       "company_name": "이삭엔지니어링",
       "listing_date": "2021-04-21",
-      "ipo_price": 11500,
-      "predicted": {
-        "day0_high": 16844,
-        "day0_close": 16912,
-        "day1_close": 17394
-      },
-      "metadata": {
-        "shares_offered": 2190680000,
-        "institutional_demand_rate": 1427.15,
-        "subscription_competition_rate": 2262.09,
-        "lockup_ratio": 20.73
-      },
-      "actual": {
-        "day0_high": 29600,
-        "day0_close": 26150,
-        "day1_close": 25150
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 11500,
+      "shares_offered": 2190680000,
+      "institutional_demand_rate": 1427.15,
+      "subscription_competition_rate": 2262.09,
+      "lockup_ratio": 20.73,
+      "predicted_day0_high": 16844,
+      "predicted_day0_close": 16912,
+      "predicted_day1_close": 17394,
+      "actual_day0_high": 29600,
+      "actual_day0_close": 26150,
+      "actual_day1_close": 25150
     },
     {
+      "id": 191,
       "code": "59270",
       "company_name": "해성티피씨",
       "listing_date": "2021-04-21",
-      "ipo_price": 13000,
-      "predicted": {
-        "day0_high": 22765,
-        "day0_close": 19230,
-        "day1_close": 20169
-      },
-      "metadata": {
-        "shares_offered": 1131715500,
-        "institutional_demand_rate": 1508.95,
-        "subscription_competition_rate": 2053.27,
-        "lockup_ratio": 16.05
-      },
-      "actual": {
-        "day0_high": 16900,
-        "day0_close": 16900,
-        "day1_close": 18625
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 13000,
+      "shares_offered": 1131715500,
+      "institutional_demand_rate": 1508.95,
+      "subscription_competition_rate": 2053.27,
+      "lockup_ratio": 16.05,
+      "predicted_day0_high": 22765,
+      "predicted_day0_close": 19230,
+      "predicted_day1_close": 20169,
+      "actual_day0_high": 16900,
+      "actual_day0_close": 16900,
+      "actual_day1_close": 18625
     },
     {
+      "id": 192,
       "code": "294570",
       "company_name": "쿠콘",
       "listing_date": "2021-04-28",
-      "ipo_price": 45000,
-      "predicted": {
-        "day0_high": 51173,
-        "day0_close": 45906,
-        "day1_close": 49279
-      },
-      "metadata": {
-        "shares_offered": 1799712000,
-        "institutional_demand_rate": 1594.61,
-        "subscription_competition_rate": 1596.32,
-        "lockup_ratio": 30.9
-      },
-      "actual": {
-        "day0_high": 70867,
-        "day0_close": 51575,
-        "day1_close": 49528
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 45000,
+      "shares_offered": 1799712000,
+      "institutional_demand_rate": 1594.61,
+      "subscription_competition_rate": 1596.32,
+      "lockup_ratio": 30.9,
+      "predicted_day0_high": 51173,
+      "predicted_day0_close": 45906,
+      "predicted_day1_close": 49279,
+      "actual_day0_high": 70867,
+      "actual_day0_close": 51575,
+      "actual_day1_close": 49528
     },
     {
+      "id": 193,
       "code": "357230",
       "company_name": "에이치피오",
       "listing_date": "2021-05-14",
-      "ipo_price": 22200,
-      "predicted": {
-        "day0_high": 26830,
-        "day0_close": 22327,
-        "day1_close": 25375
-      },
-      "metadata": {
-        "shares_offered": 730444000,
-        "institutional_demand_rate": 252.13,
-        "subscription_competition_rate": 95.01,
-        "lockup_ratio": 4.12
-      },
-      "actual": {
-        "day0_high": 8357,
-        "day0_close": 6999,
-        "day1_close": 7417
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 22200,
+      "shares_offered": 730444000,
+      "institutional_demand_rate": 252.13,
+      "subscription_competition_rate": 95.01,
+      "lockup_ratio": 4.12,
+      "predicted_day0_high": 26830,
+      "predicted_day0_close": 22327,
+      "predicted_day1_close": 25375,
+      "actual_day0_high": 8357,
+      "actual_day0_close": 6999,
+      "actual_day1_close": 7417
     },
     {
+      "id": 194,
       "code": "357580",
       "company_name": "아모센스",
       "listing_date": "2021-06-25",
-      "ipo_price": 12400,
-      "predicted": {
-        "day0_high": 18984,
-        "day0_close": 17084,
-        "day1_close": 15830
-      },
-      "metadata": {
-        "shares_offered": 227255000,
-        "institutional_demand_rate": 116.79,
-        "subscription_competition_rate": 26.55,
-        "lockup_ratio": 2.57
-      },
-      "actual": {
-        "day0_high": 15900,
-        "day0_close": 15900,
-        "day1_close": 18200
-      }
+      "industry": "기타",
+      "theme": "주권",
+      "ipo_price_confirmed": 12400,
+      "shares_offered": 227255000,
+      "institutional_demand_rate": 116.79,
+      "subscription_competition_rate": 26.55,
+      "lockup_ratio": 2.57,
+      "predicted_day0_high": 18984,
+      "predicted_day0_close": 17084,
+      "predicted_day1_close": 15830,
+      "actual_day0_high": 15900,
+      "actual_day0_close": 15900,
+      "actual_day1_close": 18200
     }
   ]
 }

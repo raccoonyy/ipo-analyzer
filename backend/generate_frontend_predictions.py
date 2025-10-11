@@ -16,6 +16,13 @@ from src.features.feature_engineering import IPOFeatureEngineer
 from src.models.ipo_predictor import IPOPricePredictor
 
 
+def safe_value(val):
+    """Convert value to JSON-safe format (handle NaN, None, etc.)"""
+    if pd.isna(val):
+        return None
+    return val
+
+
 def main():
     """Generate predictions for frontend"""
     print("=" * 80)
@@ -69,9 +76,9 @@ def main():
 
     # Add missing columns with default values if needed
     if "industry" not in df_renamed.columns:
-        df_renamed["industry"] = "Unknown"
+        df_renamed["industry"] = "기타"
     if "theme" not in df_renamed.columns:
-        df_renamed["theme"] = "Unknown"
+        df_renamed["theme"] = "주권"
 
     features_df = engineer.engineer_features(df_renamed, fit=False)
     X = features_df[engineer.feature_names].values
@@ -84,43 +91,40 @@ def main():
     print("✅ Generated predictions for all targets")
     print()
 
-    # 5. Create output JSON
+    # 5. Create output JSON (matching frontend expected format)
     print("Creating output JSON...")
 
-    predictions_list = []
+    ipos_list = []
     for idx, row in df_filtered.iterrows():
-        pred_dict = {
+        ipo_dict = {
+            "id": int(idx),
             "code": str(row["code"]),
-            "company_name": row["company_name"],
-            "listing_date": row["listing_date"],
-            "ipo_price": int(row["ipo_price"]) if pd.notna(row["ipo_price"]) else None,
-            "predicted": {
-                "day0_high": int(round(predictions["day0_high"][idx])),
-                "day0_close": int(round(predictions["day0_close"][idx])),
-                "day1_close": int(round(predictions["day1_close"][idx])),
-            },
-            "metadata": {
-                "shares_offered": (
-                    int(row["shares_offered"])
-                    if pd.notna(row["shares_offered"])
-                    else None
-                ),
-                "institutional_demand_rate": (
-                    float(row["institutional_demand_rate"])
-                    if pd.notna(row["institutional_demand_rate"])
-                    else None
-                ),
-                "subscription_competition_rate": (
-                    float(row["subscription_competition_rate"])
-                    if pd.notna(row["subscription_competition_rate"])
-                    else None
-                ),
-                "lockup_ratio": (
-                    float(row["lockup_ratio"])
-                    if pd.notna(row["lockup_ratio"])
-                    else None
-                ),
-            },
+            "company_name": str(row["company_name"]),
+            "listing_date": str(row["listing_date"]),
+            "industry": safe_value(row.get("industry", "기타")) or "기타",
+            "theme": safe_value(row.get("theme", "주권")) or "주권",
+            "ipo_price_confirmed": (
+                int(row["ipo_price"]) if pd.notna(row["ipo_price"]) else None
+            ),
+            "shares_offered": (
+                int(row["shares_offered"]) if pd.notna(row["shares_offered"]) else None
+            ),
+            "institutional_demand_rate": (
+                float(row["institutional_demand_rate"])
+                if pd.notna(row["institutional_demand_rate"])
+                else None
+            ),
+            "subscription_competition_rate": (
+                float(row["subscription_competition_rate"])
+                if pd.notna(row["subscription_competition_rate"])
+                else None
+            ),
+            "lockup_ratio": (
+                float(row["lockup_ratio"]) if pd.notna(row["lockup_ratio"]) else None
+            ),
+            "predicted_day0_high": int(round(predictions["day0_high"][idx])),
+            "predicted_day0_close": int(round(predictions["day0_close"][idx])),
+            "predicted_day1_close": int(round(predictions["day1_close"][idx])),
         }
 
         # Add actual values if available (check each value individually)
@@ -132,27 +136,26 @@ def main():
             and "day1_close" in row
             and pd.notna(row.get("day1_close"))
         ):
-            pred_dict["actual"] = {
-                "day0_high": int(row["day0_high"]),
-                "day0_close": int(row["day0_close"]),
-                "day1_close": int(row["day1_close"]),
-            }
+            ipo_dict["actual_day0_high"] = int(row["day0_high"])
+            ipo_dict["actual_day0_close"] = int(row["day0_close"])
+            ipo_dict["actual_day1_close"] = int(row["day1_close"])
 
-        predictions_list.append(pred_dict)
+        ipos_list.append(ipo_dict)
 
-    # Create output structure
+    # Create output structure (matching frontend expected format)
     output = {
         "metadata": {
             "generated_at": datetime.now().isoformat(),
             "model_version": "v2.1",
-            "total_ipos": len(predictions_list),
+            "total_ipos": len(ipos_list),
             "date_range": {
                 "start": df_filtered["listing_date"].min(),
                 "end": df_filtered["listing_date"].max(),
             },
             "features_used": engineer.feature_names,
+            "model_type": "random_forest",
         },
-        "predictions": predictions_list,
+        "ipos": ipos_list,
     }
 
     # 6. Save to frontend public directory
@@ -162,23 +165,23 @@ def main():
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(output, f, indent=2, ensure_ascii=False)
 
-    print(f"✅ Saved {len(predictions_list)} predictions to {output_path}")
+    print(f"✅ Saved {len(ipos_list)} IPO predictions to {output_path}")
     print()
 
     # 7. Show statistics
     print("=" * 80)
     print("PREDICTION STATISTICS")
     print("=" * 80)
-    print(f"Total IPOs: {len(predictions_list)}")
+    print(f"Total IPOs: {len(ipos_list)}")
     print(
         f"Date range: {output['metadata']['date_range']['start']} to {output['metadata']['date_range']['end']}"
     )
     print()
 
     # Calculate prediction ranges
-    day0_highs = [p["predicted"]["day0_high"] for p in predictions_list]
-    day0_closes = [p["predicted"]["day0_close"] for p in predictions_list]
-    day1_closes = [p["predicted"]["day1_close"] for p in predictions_list]
+    day0_highs = [p["predicted_day0_high"] for p in ipos_list]
+    day0_closes = [p["predicted_day0_close"] for p in ipos_list]
+    day1_closes = [p["predicted_day1_close"] for p in ipos_list]
 
     print("Predicted Day 0 High:")
     print(f"  Mean: ₩{np.mean(day0_highs):,.0f}")
@@ -194,8 +197,8 @@ def main():
 
     # Show distribution by year
     years = {}
-    for pred in predictions_list:
-        year = pred["listing_date"][:4]
+    for ipo in ipos_list:
+        year = ipo["listing_date"][:4]
         years[year] = years.get(year, 0) + 1
 
     print("Distribution by year:")
@@ -204,8 +207,8 @@ def main():
     print()
 
     # Show counts with actual data
-    with_actual = sum(1 for p in predictions_list if "actual" in p)
-    print(f"IPOs with actual price data: {with_actual}/{len(predictions_list)}")
+    with_actual = sum(1 for p in ipos_list if "actual_day0_high" in p)
+    print(f"IPOs with actual price data: {with_actual}/{len(ipos_list)}")
     print()
 
     print("=" * 80)
