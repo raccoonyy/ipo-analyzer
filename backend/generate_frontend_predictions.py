@@ -57,6 +57,14 @@ def main():
     print(f"✅ Loaded {len(df)} IPO records")
     print()
 
+    # Merge ipo_price columns (2018-2021 uses 'ipo_price', 2022-2025 uses 'ipo_price_confirmed')
+    if "ipo_price" in df.columns and "ipo_price_confirmed" in df.columns:
+        df["ipo_price"] = df["ipo_price"].fillna(df["ipo_price_confirmed"])
+    elif "ipo_price_confirmed" in df.columns:
+        df["ipo_price"] = df["ipo_price_confirmed"]
+    print(f"✅ Merged ipo_price columns")
+    print()
+
     # Filter to only rows with necessary data for prediction
     required_cols = [
         "code",
@@ -69,11 +77,15 @@ def main():
         "lockup_ratio",
     ]
 
-    # Check which columns exist
-    df_filtered = df.dropna(
-        subset=[col for col in required_cols if col in df.columns]
-    ).reset_index(drop=True)
+    # Check which columns exist and filter
+    df_filtered = df.dropna(subset=required_cols).reset_index(drop=True)
     print(f"After filtering for complete data: {len(df_filtered)} records")
+
+    # Show distribution by year
+    year_counts = df_filtered["listing_date"].str[:4].value_counts().sort_index()
+    print("Distribution by year:")
+    for year, count in year_counts.items():
+        print(f"  {year}: {count} IPOs")
     print()
 
     # 2. Load trained models and transformers
