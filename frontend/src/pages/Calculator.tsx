@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Slider } from "@/components/ui/slider";
 import { Button } from "@/components/ui/button";
-import { Calculator as CalculatorIcon, BarChart3, Home, AlertCircle } from "lucide-react";
+import { Calculator as CalculatorIcon, BarChart3, Home, AlertCircle, TrendingUp } from "lucide-react";
+import { IPOCompany, IPODataResponse } from "@/types/ipo";
 import {
   ResponsiveContainer,
   ScatterChart,
@@ -52,17 +53,25 @@ const Calculator = () => {
   const [competitionRate, setCompetitionRate] = useState([1000]);
   const [lockupRatio, setLockupRatio] = useState([50]);
   const [calculatorData, setCalculatorData] = useState<CalculatorData | null>(null);
+  const [ipoData, setIpoData] = useState<IPOCompany[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`${import.meta.env.BASE_URL}calculator_data.json`)
-      .then((res) => res.json())
-      .then((data: CalculatorData) => {
-        setCalculatorData(data);
+    Promise.all([
+      fetch(`${import.meta.env.BASE_URL}calculator_data.json`).then((res) => res.json()),
+      fetch(`${import.meta.env.BASE_URL}ipo_precomputed.json`).then((res) => res.json()),
+    ])
+      .then(([calcData, ipoResponse]: [CalculatorData, IPODataResponse]) => {
+        setCalculatorData(calcData);
+        // Filter only IPOs with actual data
+        const withActualData = ipoResponse.ipos.filter(
+          (ipo) => ipo.actual_day0_close_return !== undefined
+        );
+        setIpoData(withActualData);
         setIsLoading(false);
       })
       .catch((err) => {
-        console.error("Failed to load calculator data:", err);
+        console.error("Failed to load data:", err);
         setIsLoading(false);
       });
   }, []);
@@ -133,6 +142,39 @@ const Calculator = () => {
   };
 
   const result = calculateExpectedReturn();
+
+  // Find similar IPOs based on current conditions
+  const findSimilarIPOs = (): IPOCompany[] => {
+    const price = ipoPrice[0];
+    const comp = competitionRate[0];
+    const lockup = lockupRatio[0];
+
+    // Define similarity thresholds
+    const priceRange = price * 0.3; // ±30%
+    const compRange = comp * 0.3; // ±30%
+    const lockupRange = 20; // ±20%
+
+    // Filter similar IPOs
+    const similar = ipoData.filter((ipo) => {
+      const priceDiff = Math.abs(ipo.ipo_price_confirmed - price);
+      const compDiff = Math.abs(ipo.subscription_competition_rate - comp);
+      const lockupDiff = Math.abs(ipo.lockup_ratio - lockup);
+
+      return (
+        priceDiff <= priceRange &&
+        compDiff <= compRange &&
+        lockupDiff <= lockupRange &&
+        ipo.actual_day0_close_return !== undefined
+      );
+    });
+
+    // Sort by return (highest first) and take top 3
+    return similar
+      .sort((a, b) => (b.actual_day0_close_return || 0) - (a.actual_day0_close_return || 0))
+      .slice(0, 3);
+  };
+
+  const similarIPOs = findSimilarIPOs();
 
   // Prepare heatmap data for chart
   const heatmapChartData =
@@ -354,6 +396,112 @@ const Calculator = () => {
                     </p>
                   </div>
                 </div>
+              </CardContent>
+            </Card>
+
+            {/* Similar IPOs Section */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <TrendingUp className="h-5 w-5" />
+                  비슷한 조건의 기업
+                </CardTitle>
+                <CardDescription>
+                  유사한 공모가/경쟁률/의무보유 조건으로 상장한 기업 (수익률 순)
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                {similarIPOs.length === 0 ? (
+                  <div className="text-center py-8 text-muted-foreground">
+                    <p className="text-sm">조건이 유사한 기업이 없습니다.</p>
+                    <p className="text-xs mt-2">
+                      공모가 ±30%, 청약경쟁률 ±30%, 의무보유확약 ±20% 범위 내 검색
+                    </p>
+                  </div>
+                ) : (
+                  <div className="space-y-4">
+                    {similarIPOs.map((ipo, idx) => (
+                      <div
+                        key={ipo.code}
+                        className="border rounded-lg p-4 space-y-3 bg-card hover:bg-muted/50 transition-colors"
+                      >
+                        <div className="flex items-start justify-between">
+                          <div>
+                            <div className="flex items-center gap-2">
+                              <span className="text-lg font-bold text-primary">
+                                {idx + 1}
+                              </span>
+                              <h3 className="font-semibold text-lg">
+                                {ipo.company_name}
+                              </h3>
+                            </div>
+                            <p className="text-xs text-muted-foreground mt-1">
+                              {ipo.listing_date} 상장
+                            </p>
+                          </div>
+                          <div className="text-right">
+                            <p className="text-xs text-muted-foreground">종가 수익률</p>
+                            <p
+                              className={`text-2xl font-bold ${
+                                (ipo.actual_day0_close_return || 0) >= 0
+                                  ? "text-green-600"
+                                  : "text-red-600"
+                              }`}
+                            >
+                              {(ipo.actual_day0_close_return || 0) >= 0 ? "+" : ""}
+                              {(ipo.actual_day0_close_return || 0).toFixed(1)}%
+                            </p>
+                          </div>
+                        </div>
+
+                        <div className="grid grid-cols-2 gap-3 text-sm">
+                          <div className="space-y-1">
+                            <p className="text-muted-foreground text-xs">공모가</p>
+                            <p className="font-medium">
+                              ₩{ipo.ipo_price_confirmed.toLocaleString()}
+                            </p>
+                          </div>
+                          <div className="space-y-1">
+                            <p className="text-muted-foreground text-xs">상장 첫날 최고가</p>
+                            <p className="font-medium">
+                              ₩{(ipo.actual_day0_high || 0).toLocaleString()}
+                            </p>
+                          </div>
+                          <div className="space-y-1">
+                            <p className="text-muted-foreground text-xs">상장 첫날 종가</p>
+                            <p className="font-medium">
+                              ₩{(ipo.actual_day0_close || 0).toLocaleString()}
+                            </p>
+                          </div>
+                          <div className="space-y-1">
+                            <p className="text-muted-foreground text-xs">청약경쟁률</p>
+                            <p className="font-medium">
+                              {ipo.subscription_competition_rate.toLocaleString()}:1
+                            </p>
+                          </div>
+                          <div className="space-y-1">
+                            <p className="text-muted-foreground text-xs">기관경쟁률</p>
+                            <p className="font-medium">
+                              {ipo.institutional_demand_rate.toLocaleString()}:1
+                            </p>
+                          </div>
+                          <div className="space-y-1">
+                            <p className="text-muted-foreground text-xs">의무보유확약</p>
+                            <p className="font-medium">
+                              {ipo.lockup_ratio.toFixed(1)}%
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+
+                    <div className="p-3 bg-muted rounded-md border mt-4">
+                      <p className="text-xs text-muted-foreground">
+                        💡 유사 조건 기준: 공모가 ±30%, 청약경쟁률 ±30%, 의무보유확약 ±20% 범위
+                      </p>
+                    </div>
+                  </div>
+                )}
               </CardContent>
             </Card>
           </div>
